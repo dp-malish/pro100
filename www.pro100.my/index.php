@@ -1,0 +1,65 @@
+<?php
+namespace lib\Def;
+use \incl\pro100\User as User;
+//Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',0);
+set_include_path(get_include_path().PATH_SEPARATOR.'../');spl_autoload_register();
+$Opt=new Opt('pro100');//Def opt
+
+User\User::$selfUser=new User\User();//первый вход не в кабинет !!!! важно
+
+Cache_File::$cash=new Cache_File(['pro100'],true);
+
+if($_SERVER['REQUEST_URI']!='/'){
+    if(Route::requestURI(3)){
+        switch(Route::$uri_parts[0]){
+            //case 'sota'.Data::DatePass():$AdminCook->setCookieAdmin();Route::$index=1;break;
+
+            case'logdown':User\User::$selfUser->loginUser();break;//отключить платежи
+
+
+            case'login':User\User::$selfUser->loginUser();break;//Вход в акаунт
+            case'exit':User\User::exitLogin();break;//Выход из акаунта
+            case'reg':new User\Reg();break;//регистрация
+
+            case'cabinet':include'../modul/cabinet/rout_cabinet.php';break;//главный кабинет
+            case'perfect':
+                $pm=new \incl\pro100\Pay\Pay_PM();
+/*                $pm->valid_post_request=true;//temp
+                $pm->arrPM['PAYMENT_ID']='12_156774275079';
+                $pm->arrPM['PAYMENT_AMOUNT']='1';
+                $pm->arrPM['PAYMENT_BATCH_NUM']='7777777';*/
+                $pm->processPayment();
+                break;//ответ perfect money платёжки кабинет
+
+
+
+            case'p':new \incl\pro100\Ref\Ref_link();break;//реф ссылка / учёт переходов
+
+
+
+
+
+
+            case'banned':$Opt::$main_content='<br>Заебанен!!!!';break;//Страницу бана сделать при входе
+
+
+
+            //default:new \incl\sota\shop\DefShop();
+            //default:new \incl\burger\Index\IndexContent();;
+        }
+    }
+}else{Route::$index=1;}if(Route::$module404){Route::modul404();}
+if(Route::$index){
+    //new \incl\burger\Index\IndexContent();
+    include'../modul/site/index.php';
+
+}
+
+/*require '../blocks/burger/common/head.php';
+require '../blocks/burger/common/header.php';
+require '../blocks/burger/common/body.php';
+require '../blocks/burger/common/foot.php';*/
+
+
+echo $Opt::$main_content;
+

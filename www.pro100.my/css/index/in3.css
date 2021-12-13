@@ -1,0 +1,105 @@
+#in3{
+    position:relative;
+    width:100%;
+    min-height:875px;/*100vh;*/
+    background:#050505 url("../../img/index/fone3.jpg") no-repeat;
+    background-size:cover;
+    background-position-x:50%;
+    background-position-y:50%;
+    overflow: hidden;
+
+}
+#in3_l1{
+    position: absolute;
+    top:50px;
+    left:0;
+    z-index:8;
+    width:100%;
+
+}
+@media screen and (max-width:540px){
+    #in3_l1{
+        top:13px;
+    }
+}
+#in3_l1 h2{
+    font-size:160%;
+    font-weight:normal;
+}
+
+#in3_l2{
+    position: absolute;
+    top:90px;
+    left:0;
+    z-index:9;
+    width:100%;
+    color:#fcfcfc;
+    border: #ff45cc 1px dot-dash;
+}
+
+#in3_l3{
+    position: absolute;
+    top:190px;
+    left:0;
+    z-index:10;
+    width:100%;
+    color:#fcfcfc;
+    /*border: #4345cc solid;*/
+
+}
+#in3_l3_t{
+    margin:0 auto;
+    display:table;
+    border-spacing:3px 11px;;
+    /*border:solid 2px red;*/
+    /*background-color: #000000;*/
+    box-shadow: 0 4px 14px 2px rgba(76, 165, 198,.4);
+    width:50%;
+}
+@media screen and (min-width:651px) and (max-width:1000px){
+    #in3_l3_t{width:70%;}
+}
+@media screen and (min-width:541px) and (max-width:650px){
+    #in3_l3_t{width:80%;}
+}
+@media screen and (max-width:540px){
+    #in3_l3_t{width:100%;}
+}
+#in3_l3_t > div {display:table-row; border:solid 1px green;}
+#in3_l3_t > div div{
+    display:table-cell;
+    border:solid 1px #4CA5C6;
+    padding: 5px 3px;
+    text-align: center;
+    color: #4f96c6;
+    background:rgba(15,15,15,.8);
+}
+#in3_l3_t .in3_l3_t_c{
+    color:#01CA53;
+}
+
+#in3_l4{
+    position:absolute;
+    top:670px;
+    left:0;
+    z-index:11;
+    width:100%;
+    color:#fcfcfc;
+}
+
+#in3_l4 h2{
+    font-size:160%;
+    font-weight:normal;
+}
+
+#in3_l4_i{
+    text-align: center;
+    margin: 5px auto;
+    width: 150px;
+    height: 100px;
+}
+
+#in3_l4_i img{
+    height: 100%;
+}
+

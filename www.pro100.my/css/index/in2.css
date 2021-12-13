@@ -1,0 +1,149 @@
+#in2{
+    position:relative;
+    width: 100%;
+    min-height:950px;/*100vh;*/
+    background:#050505 url("../../img/index/fone2.jpg") no-repeat;
+    background-size:cover;
+    background-position-x:50%;
+    background-position-y:50%;
+    overflow: hidden;
+}
+
+#in2_l1{
+    position: absolute;
+    top:150px;
+    left:0;
+    z-index:8;
+    width:100%;
+}
+@media screen and (max-width:540px){
+    #in2_l1{
+        top:35px;
+    }
+}
+#in2_l1 h2{
+    font-size:160%;
+    font-weight:normal;
+}
+
+#in2_l2{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:7;
+    width:100%;
+    height:100%;
+    background:#050505 url("../../img/index/phone_logo.png") no-repeat;
+    background-size:cover;
+    background-position-x:50%;
+    background-position-y:50%;
+}
+@media screen and (max-width:540px){
+    #in2_l2{display:none;}
+}
+#in2_l3{
+    position: absolute;
+    top:280px;
+    left:0;
+    z-index:9;
+    width:100%;
+    min-height:150px;
+    color: #fcfcfc;
+
+}
+@media screen and (max-width:540px){
+    #in2_l3{
+        top:200px;
+    }
+}
+
+.in2_l3_line{
+    display: flex;
+    justify-content:space-around;
+    width: 80%;
+    margin:30px auto;
+}
+@media screen and (min-width:541px) and (max-width:900px){
+    .in2_l3_line{margin:10px auto;}
+}
+@media screen and (max-width:540px){
+    .in2_l3_line{width:100%;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+}
+.in2_l3_line_{
+    /*border:1px solid #1b6d85;*/
+    min-height:70px;
+    width:25%;
+    border-radius:10px;
+}
+
+@media screen and (min-width:541px) and (max-width:900px){
+    .in2_l3_line_{width:40%;background:rgba(0,0,0,.5)}
+}
+@media screen and (max-width:540px){
+    .in2_l3_line_{width:100%;margin: 10px 0;background:rgba(0,0,0,.7);}
+}
+
+.in2_l3_line_ h3{
+    color:#4CA5C6;
+}
+
+
+.in2_l3_ico,.in2_l3_ico_r{
+    width:40px;
+    height:40px;
+}
+.in2_l3_ico{
+    float:left;
+    margin:7px 10px 5px 0;
+}
+.in2_l3_ico_r{
+    float:right;
+    margin:7px 0 5px 10px;
+}
+.in2_l3_ico_b,.in2_l3_ico_b_r{
+    height:100%;
+    width:1px;
+    /*background-color: #fcfcfc;*/
+}
+.in2_l3_ico_b{float:left}
+.in2_l3_ico_b_r{float:right}
+
+#in2_l3_l_i1{
+    content:url("../../img/cab/ico/communication.png");
+}
+#in2_l3_l_i2{
+    content:url("../../img/cab/ico/analytics_2.png");
+}
+#in2_l3_l_i3{
+    content:url("../../img/cab/ico/network.png");
+}
+#in2_l3_l_i4{
+    content:url("../../img/cab/ico/mission.png");
+}
+#in2_l3_l_i5{
+    content:url("../../img/cab/ico/digital_marketing.png");
+}
+#in2_l3_l_i6{
+    content:url("../../img/cab/ico/target.png");
+}
+#in2_l4{
+    position:absolute;
+    left:0;
+    bottom:160px;
+    z-index:9;
+    width:100%;
+    min-height:25px;
+    color: #4CA5C6;
+}
+@media screen and (max-width:540px){
+    #in2_l4{
+        bottom:90px;
+    }
+}
+#in2_l4 h3{
+    color: #4CA5C6;
+}
+

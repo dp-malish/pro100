@@ -1,0 +1,27 @@
+#foot{
+    border-top:#4CA5C6 2px solid;
+    background-color:rgba(0,0,0,.9);
+    min-height:50px;
+    position: relative;
+    padding: 20px 0;
+    color: #ffffcc;
+}
+.foot_right{
+    text-align: center;
+}
+#up {
+    width: 85px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #d3ddd4;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 17px;
+    right: 17px;
+    cursor: pointer;
+    display: none;
+    color: #333;
+    font-size: 90%;
+    z-index: 5;
+}

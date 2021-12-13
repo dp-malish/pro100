@@ -1,0 +1,20 @@
+#in4{
+    position:relative;
+    width:100%;
+    min-height:205px;/*100vh;*/
+    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
+    background-size:cover;
+    background-position-x:50%;
+    background-position-y:50%;
+    overflow: hidden;
+}
+
+#in4_l1{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    width:100%;
+    color: #fcfcfc;
+    text-align: center;
+}

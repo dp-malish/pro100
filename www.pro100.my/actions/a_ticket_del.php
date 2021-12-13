@@ -1,0 +1,15 @@
+<?php
+include('../inc/conf.php');
+include('../inc/f_token.php');
+
+if(!USER_LOGGED || $u_id != $admin_uid) { exit('3'); }
+
+if(isset($_POST['id'])){
+if(!empty($_POST['id'])){
+$id = intval($_POST['id']);
+mysqli_query($connect_db, "DELETE FROM `t_ticket_name` WHERE id = '$id'");
+mysqli_query($connect_db, "DELETE FROM `t_ticket_msg` WHERE tid = '$id'");
+echo '1'; exit;
+} else { echo '3'; exit; }
+} else { echo '3'; exit; }
+?>

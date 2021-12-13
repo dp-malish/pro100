@@ -1,0 +1,21 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.php
+RewriteEngine on
+RewriteBase /
+Options +FollowSymlinks
+#RewriteCond %{HTTP_HOST} ^www.site.com [OR]
+#RewriteCond %{SERVER_PORT} !^443$ [OR]
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://site.com/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*) /?%{QUERY_STRING}
+#RewriteRule ^cabinet/user\/(.*?)$ cabinet/user.php?login=$1 [L,QSA]
+#RewriteRule ^cabinet/messages\/(.*?)$ cabinet/messages.php?login=$1 [L,QSA]
+#RewriteRule ^cabinet/support\/(.*?)$ cabinet/support.php?id=$1 [L,QSA]
+#RewriteRule ^cabinet/messages\/(.*?)$ cabinet/messages.php?usr=$1 [L,QSA]
+#RewriteRule ^m_admin/user\/(.*?)$ m_admin/user.php?login=$1 [L,QSA]
+#RewriteRule ^m_admin/support\/(.*?)$ m_admin/support.php?id=$1 [L,QSA]
+#RewriteRule ^p\/(.*?)$ p.php?ref=$1 [L,QSA]
+#RewriteCond %{HTTPS_HOST} ^www\.(.+) [NC]
+#RewriteRule .* http://%1/$0 [L,R=301]
