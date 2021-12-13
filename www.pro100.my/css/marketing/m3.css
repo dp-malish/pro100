@@ -1,0 +1,76 @@
+#m3{
+    position:relative;
+    /*height:calc(100vh - 80px);*/
+    min-height:410px;
+    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
+    background-size:cover;
+    background-position-x:50%;
+    background-position-y:50%;
+    overflow: hidden;
+
+}
+#m3_l1{
+    min-height:70px;
+    padding:35px 0;
+
+    /*border: #1A5EC9 solid 1px;*/
+}
+@media screen and (max-width:540px){
+    #m3_l1{padding:5px 0 0;}
+}
+#m3_l1 h2{
+    font-size:160%;
+    font-weight:normal;
+}
+
+
+#m3_l3{
+
+   /* padding: 15px 0;*/
+
+}
+#in3_l3_t{
+    margin:0 auto;
+    display:table;
+    border-spacing:3px 11px;;
+    /*border:solid 2px red;*/
+    /*background-color: #000000;*/
+    box-shadow: 0 4px 14px 2px rgba(76, 165, 198,.4);
+    width:50%;
+}
+@media screen and (min-width:651px) and (max-width:1000px){
+    #in3_l3_t{width:70%;}
+}
+@media screen and (min-width:541px) and (max-width:650px){
+    #in3_l3_t{width:80%;}
+}
+@media screen and (max-width:540px){
+    #in3_l3_t{width:100%;}
+}
+#in3_l3_t > div {display:table-row; border:solid 1px green;}
+#in3_l3_t > div div{
+    display:table-cell;
+    border:solid 1px #4CA5C6;
+    padding: 5px 3px;
+    text-align: center;
+    color: #4f96c6;
+    background:rgba(15,15,15,.8);
+}
+#in3_l3_t .in3_l3_t_c{
+    color:#01CA53;
+}
+
+#m3_l4{
+    padding:45px 0 20px;
+    color: #fcfcfc;
+    text-align: center;
+    width:80%;
+    margin:0 auto;
+}
+
+#m3_l4 h2{
+    padding:35px 0 20px;
+    font-size:160%;
+    font-weight:normal;
+}
+

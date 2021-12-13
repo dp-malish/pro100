@@ -1,0 +1,48 @@
+#m2{
+    position:relative;
+    /*height:calc(100vh - 80px);*/
+    min-height:410px;
+    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
+    background-size:cover;
+    background-position-x:50%;
+    background-position-y:50%;
+}
+#m2_l1{
+    min-height:70px;
+    padding:35px 0;
+}
+
+@media screen and (max-width:540px){
+    #m2_l1{padding:5px 0 0;}
+}
+#m2_l1 h2{
+    font-size:160%;
+    font-weight:normal;
+}
+#m2_l2{
+    margin:0 auto;
+    text-align: center;
+    width:70%;
+    color:#fcfcfc;
+    padding: 15px;
+}
+
+#m2_l3{
+    text-align:center;
+    margin:5px auto;
+    width:150px;
+    height:100px;
+}
+
+#m2_l3 img{
+    height: 100%;
+}
+
+#m2_l4{
+    color: #fcfcfc;
+    text-align: center;
+    padding: 15px 0;
+
+
+}
+
