@@ -36,7 +36,7 @@ class OptCab{
     const PM_NUMBER='U30627771';//$perfect_number = 'U30627771';
     const PM_UNITS='USD';
     const PM_ID='1517385';//$perfect_id = '1517385';
-    const PM_PASS='suhoryk3016248';//$perfect_pass = 'suhoryk3016248';
+    const PM_PASS='3016248';//$perfect_pass = '3016248';
     const PM_ALT_PHRASE='????????????????';//$perfect_alt_phrase = strtoupper(md5('7krqhnFh5Hb239brGPZvfTEOy'));
     const PM_COMMISSION=2;//КОМИССИЯ СИСТЕМЫ В ПРОЦЕНТАХ
 

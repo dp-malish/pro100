@@ -9,6 +9,9 @@
 namespace incl\pro100\User;
 
 use lib\Def as Def;
+
+use incl\pro100\Def as Def100;
+
 class User{
 
     static $selfUser='';//экземпляр самого себя
@@ -74,7 +77,6 @@ class User{
         Def\Cookie::setCookie(self::$cookie_name['ip_md5'],$ip_md5,$time_live_cookie);
         Def\Cookie::setCookie(self::$cookie_name['u_agent_md5'],$u_agent_md5,$time_live_cookie);
         Def\Cookie::setCookie(self::$cookie_name['trash'],$trash_md5,$time_live_cookie);
-        echo 'cookie login';
     }
     static function cryptCookieValue($val){return md5(md5($val.Def\Opt::SOLT).Def\Opt::COOKIE_SALT);}
 
@@ -90,20 +92,29 @@ class User{
         //Довести проверку входа
 
         //Проверить куку mob
+        if(!Def\Validator::issetCookie('mob')){
+            echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['bad_data'],'code'=>4]);
+        }elseif(isset($_POST['login'])&&isset($_POST['pass'])){
+            $login=Def\Validator::html_cod($_POST['login']);
+            $pass=Def\Validator::html_cod($_POST['pass']);
 
-        if(isset($_REQUEST['login'])&&isset($_REQUEST['pass'])){
-            $login=$_REQUEST['login'];
+            $l_log=mb_strlen($login, 'UTF-8');
+            $l_pass=mb_strlen($pass, 'UTF-8');
+            if($l_log<5||$l_log>15||$l_pass<5||$l_pass>20){
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['bad_data'],'code'=>6]);
+            }else{
             //допилить запрос проверку
-            $DB=$DB=new Def\SQLi();
-            $res=$DB->strSQL('SELECT uid,log,pas,ban FROM t_users WHERE log='.$DB->realEscapeStr($login).' AND pas='.$DB->realEscapeStr(md5(md5($_REQUEST['pass']))).' LIMIT 1;');
-            if ($res){
-                if(!empty($res['ban'])){
-                    echo '2';//Забанен
-                    echo 'Юзер в бане!!!';
-                }else{
-                    self::$u_id=$res['uid'];
-                    $DB->boolSQL('UPDATE `t_users` SET `lastip` = '.$DB->realEscapeStr(self::$ip).', `last` = '.time().' WHERE uid='.self::$u_id.' LIMIT 1');
-                    self::setCookieUserLogin(
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                $DB=$DB=new Def\SQLi();
+                $res=$DB->strSQL('SELECT uid,log,pas,ban FROM t_users WHERE log='.$DB->realEscapeStr($login).' AND pas='.$DB->realEscapeStr(md5(md5($pass))).' LIMIT 1;');
+                if($res){
+                    if(!empty($res['ban'])){//Забанен echo code '2';
+                        echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['banned'],'code'=>2]);
+                    }else{
+                        self::$u_id=$res['uid'];
+                        $DB->boolSQL('UPDATE `t_users` SET `lastip` = '.$DB->realEscapeStr(self::$ip).', `last` = '.time().' WHERE uid='.self::$u_id.' LIMIT 1');
+                        self::setCookieUserLogin(
                         self::$u_id,
                         $this->cryptCookieValue(self::$u_id),
                         $this->cryptCookieValue($res['pas']),
@@ -111,15 +122,19 @@ class User{
                         $this->cryptCookieValue(Def\Validator::getUserAgent()),
                         $this->cryptCookieValue(self::$u_id.Def\Validator::getIp())
                     );
-                    echo 1;//pfi`k
-
-                    echo 'Ты зашёл!!!)))))))))))))'.self::$u_id.' ';
+                        //echo 'Ты зашёл!!!)))))))))))))'.self::$u_id.' ';//echo 1;
+                        echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['login'],'code'=>1]);
+                    }
+                }else{
+                    //echo 3;//Не введён логин или пароль
+                    //echo 'Вход не выполнен!!!';
+                    echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['bad_data'],'code'=>3]);
                 }
-            }else{
-                echo 3;//Не введён логин или пароль
-                echo 'Вход не выполнен!!!';
+
             }
-        }else echo 3;//Не введён логин или пароль
+
+        }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['bad_data'],'code'=>5]);
+        //echo 3;//Не введён логин или пароль
 
 
         //$this->u_id=11;//4955

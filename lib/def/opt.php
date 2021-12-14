@@ -12,6 +12,8 @@ class Opt{
 	static $site='';
 	static $dir_name_site='';
 
+	static $template=1;
+
 	static $meta='';
 	static $css='';
 	static $css_down='';

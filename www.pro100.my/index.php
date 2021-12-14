@@ -1,5 +1,6 @@
 <?php
 namespace lib\Def;
+
 use \incl\pro100\User as User;
 //Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',0);
 set_include_path(get_include_path().PATH_SEPARATOR.'../');spl_autoload_register();
@@ -14,7 +15,15 @@ if($_SERVER['REQUEST_URI']!='/'){
         switch(Route::$uri_parts[0]){
             //case 'sota'.Data::DatePass():$AdminCook->setCookieAdmin();Route::$index=1;break;
 
-            case'logdown':User\User::$selfUser->loginUser();break;//отключить платежи
+            //верхнее меню
+            case'marketing':include'../modul/site/marketing.php';break;//стр. маркетинга
+            case'news':include'../modul/site/news.php';break;//стр. news
+            case'offer':include'../modul/site/offer.php';break;//стр. offer
+            case'faq':include'../modul/site/faq.php';break;//стр. faq
+            //верхнее меню конец
+
+
+            //case'logdown':User\User::$selfUser->loginUser();break;//отключить платежи
 
 
             case'login':User\User::$selfUser->loginUser();break;//Вход в акаунт
@@ -52,14 +61,20 @@ if($_SERVER['REQUEST_URI']!='/'){
 if(Route::$index){
     //new \incl\burger\Index\IndexContent();
     include'../modul/site/index.php';
-
 }
+
+if($Opt::$template==1){
+    include '../blocks/pro100/t1/common/head.php';
+    include '../blocks/pro100/t1/common/header.php';
+    include '../blocks/pro100/t1/common/body.php';
+    include '../blocks/pro100/t1/common/foot.php';
+}else{
+    echo 'template';
+}
+
+
 
 /*require '../blocks/burger/common/head.php';
 require '../blocks/burger/common/header.php';
 require '../blocks/burger/common/body.php';
 require '../blocks/burger/common/foot.php';*/
-
-
-echo $Opt::$main_content;
-
