@@ -4,7 +4,7 @@
 
 
 
-    <!--<link rel="shortcut icon" href="/img/site/ico.png" type="image/png">-->
+    <link rel="shortcut icon" href="/img/site/ico.png" type="image/png">
 
 
     <script async src="/js/scroll.js"></script>
