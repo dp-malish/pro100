@@ -3,9 +3,10 @@
     width:100%;
     min-height:555px;/*100vh;*/
     background:#050505 url("../../img/index/fone5.jpg") no-repeat;
-    background-size:cover;
+    background-size:100%;
+/*    background-size:cover;
     background-position-x:50%;
-    background-position-y:50%;
+    background-position-y:50%;*/
     overflow: hidden;
 
 }
@@ -57,9 +58,11 @@
 .in5_l1_f_dh{
     width:100%;
     min-height:40px;
+    padding:13px 0 5px;
+
 }
 .in5_l1_f_dh h3{
-    font-size:140%;
+    font-size:110%;
     font-weight:normal;
     color:  #4CA5C6;
 }

@@ -13,26 +13,26 @@
 <div id="formLogin" class="form">
     <div class="form_header">
         <span id="closeFormLogin" class="close"></span>
-        <h3>ВХОД</h3>
+        <h3>Authorization </h3>
     </div>
     <div class="form_label">
-        <span>Логин</span>
+        <span>Username</span>
     </div>
     <div class="form_row">
-        <input type="text" id="log_login" placeholder="Ваш логин">
+        <input type="text" id="log_login" placeholder="Enter your Login">
     </div>
     <div class="form_label">
-        <span>Пароль</span>
+        <span>Password</span>
     </div>
     <div class="form_row">
-        <input type="password" id="log_password" placeholder="Ваш пароль">
+        <input type="password" id="log_password" placeholder="Enter your Password">
     </div>
     <div class="form_row rel">
-        <div id="formLoginBtn" class="form_login_in">Вход</div>
-        <div id="rememberPassBtn" class="form_remember link">Забыли пароль?</div>
+        <div id="formLoginBtn" class="form_login_in">Sign in</div>
+        <div id="rememberPassBtn" class="form_remember link">Forgot password?</div>
     </div>
     <div class="form_row rel ac">
-        <span id="formLoginLinkToReg" class="form_link_center link">Зарегистрироваться</span>
+        <span id="formLoginLinkToReg" class="form_link_center link">Register now</span>
     </div>
 </div>
 <!--------------------Форма регистрации------------------->
@@ -140,7 +140,7 @@
         });
 
         function formCallBackLogin(arr){
-            $.jGrowl(arr.answer, { theme: 'growl-error' });//+" "+arr.code
+            $.jGrowl(arr.answer, { theme: 'growl-error', life: 50000  });//+" "+arr.code
             if(arr.code==1)location.href="/cabinet/";
         }
 

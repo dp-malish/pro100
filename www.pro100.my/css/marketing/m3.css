@@ -3,9 +3,10 @@
     /*height:calc(100vh - 80px);*/
     min-height:410px;
     background:#050505 url("../../img/index/fone5.jpg") no-repeat;
-    background-size:cover;
+    background-size: 100%;
+    /*background-size:cover;
     background-position-x:50%;
-    background-position-y:50%;
+    background-position-y:50%;*/
     overflow: hidden;
 
 }

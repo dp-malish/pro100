@@ -3,8 +3,7 @@
     <meta name="copyright" lang="<?=\lib\Def\Opt::$lang;?>" content="SOCHELPING">
 
 
-
-    <link rel="shortcut icon" href="/img/site/ico.png" type="image/png">
+    <link rel="shortcut icon" href="/img/ico.png" type="image/png">
 
 
     <script async src="/js/scroll.js"></script>

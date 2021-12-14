@@ -18,23 +18,23 @@ h3{font-size:120%}
 h1, h2, h3, h4 {
     color: #fcfcfc;
 }
-p{margin:5px}
+p{margin:5px;color:#fcfcfc;}
 
 A:link, .link {
-    color: #fcfcfc;
-    text-decoration: underline
+    color:#fcfcfc;
+    text-decoration:underline
 }
 
 A:active {
-    color: #1A5EC9
+    color:#4CA5C6
 }
 
 A:visited {
-    color: #1A5EC9
+    color:#4CA5C6
 }
 
 A:hover, .link:hover {
-    color: #1A5EC9;
+    color:#4CA5C6;
     text-decoration: blink
 }
 
@@ -44,10 +44,21 @@ A:hover, .link:hover {
     }
 }*/
 
-.maxw {
+.maxw{
     margin: 0 auto;
     min-width: 150px;
     max-width: 1240px
+}
+.b_fon{
+    position:relative;
+    min-height:410px;
+    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
+    background-size:100%;
+    overflow:hidden;
+}
+.d_defs{
+    min-height: 500px;
+    width:100%;
 }
 #shadow{
     display:none;

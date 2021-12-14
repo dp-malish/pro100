@@ -1,6 +1,6 @@
 #foot{
     border-top:#4CA5C6 2px solid;
-    background-color:rgba(0,0,0,.9);
+    background-color:rgba(0,0,0,.99);
     min-height:50px;
     position: relative;
     padding: 20px 0;
@@ -11,7 +11,7 @@
 }
 #up {
     width: 85px;
-    border: 1px solid #ccc;
+    border:rgba(3,109,3,.8) 2px solid;;
     border-radius: 4px;
     background: #d3ddd4;
     text-align: center;
@@ -23,5 +23,5 @@
     display: none;
     color: #333;
     font-size: 90%;
-    z-index: 5;
+    z-index:50;
 }
