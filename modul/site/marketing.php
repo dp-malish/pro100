@@ -15,7 +15,7 @@ Opt::$description='SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
 
 
 
-Opt::$main_content.='
+Opt::$main_content.='<main>
 <div id="m1">
     <div id="m1_l1">
         <h2>SOCHELPING - SOCIAL NETWORK OF FINANCIAL MUTUAL SUPPORT</h2>
@@ -115,4 +115,4 @@ Opt::$main_content.='
             <p>If You have any questions, our Customer Service team will be happy to answer You anytime.</p>
         </div>
     </div>
-</div>';
+</div></main>';

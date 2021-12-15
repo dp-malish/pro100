@@ -5,6 +5,7 @@ html, body {
     font: 15px Arial, Helvetica, sans-serif;
     text-align: justify;
     cursor: default;
+    background-color: #000000;
 }
 h1, h2, h3, h4 {
     text-align: center;
@@ -18,7 +19,8 @@ h3{font-size:120%}
 h1, h2, h3, h4 {
     color: #fcfcfc;
 }
-p{margin:5px;color:#fcfcfc;}
+p,ul{margin:5px;color:#fcfcfc;}
+ul li{list-style-type: none}
 
 A:link, .link {
     color:#fcfcfc;
@@ -49,6 +51,11 @@ A:hover, .link:hover {
     min-width: 150px;
     max-width: 1240px
 }
+.maxw8{
+    margin:0 auto;
+    width:80%;
+}
+
 .b_fon{
     position:relative;
     min-height:410px;

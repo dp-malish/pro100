@@ -30,9 +30,9 @@
 #in1_l2{
     position: absolute;
     left: 0;
-    top:65px;
-    width: 100%;
-    text-align: center;
+    top:80px;
+    width:100%;
+    text-align:center;
     color:#fcfcfc;
     font-size:130%;
     z-index:7;
@@ -40,7 +40,7 @@
 @media screen and (min-width:281px) and (max-width:700px){
     #in1_l2{
         font-size:110%;
-        top:93px;
+        top:101px;
     }
 }
 @media screen and (max-width:280px){

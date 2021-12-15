@@ -17,7 +17,7 @@ Opt::$description='SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
 
 
 
-Opt::$main_content.='
+Opt::$main_content.='<main>
 <div id="in1">
     <div id="in1_l1">
         <h1>SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT</h1>
@@ -217,7 +217,7 @@ Opt::$main_content.='
     </div>
 
 
-</div>';
+</div></main>';
 
 
 

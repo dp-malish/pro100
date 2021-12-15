@@ -13,8 +13,10 @@ Opt::$description='FAQ SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
 
 
 
-Opt::$main_content.='
+Opt::$main_content.='<main>
 <div class="ac"><br>FAQ<br><br></div>
+
+</main>
 ';
 
 Opt::$main_content.='<br> <br><br><br> User#'.\incl\pro100\User\User::$u_id;
