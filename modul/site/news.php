@@ -19,3 +19,5 @@ Opt::$main_content.='<main>
 ';
 
 
+Opt::$main_content.='<br> <br><br><br><p> User#'.\incl\pro100\User\User::$u_id.'</p>';
+
