@@ -6,6 +6,7 @@ html, body {
     text-align: justify;
     cursor: default;
     background-color: #000000;
+    color: #fcfcfc;
 }
 h1, h2, h3, h4 {
     text-align: center;
