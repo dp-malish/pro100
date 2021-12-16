@@ -36,6 +36,8 @@ Opt::$main_content.='<main>
             <div class="l1_log_btn_triangle_"></div>';
             Opt::$main_content.=(\lib\Def\Opt::$live_user?"Exit":"Login").'
         </div>
+        <script type="text/javascript">';
+            Opt::$main_content.=(\lib\Def\Opt::$live_user?'document.getElementById("in1_l4_log").onclick=function(){location.href="/exit";};document.getElementById("in1_l4_reg").onclick=function(){location.href="/cabinet/";};':'document.getElementById("in1_l4_log").onclick=function(){loginBtn();};document.getElementById("in1_l4_reg").onclick=function(){registrationBtn();};').'</script>
         </div>
     </div>
     <div id="in1_l5">

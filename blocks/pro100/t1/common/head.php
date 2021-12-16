@@ -5,7 +5,6 @@
 
     <link rel="shortcut icon" href="/img/ico.png" type="image/png">
 
-
     <script async src="/js/scroll.js"></script>
 <!--    <script async src="/js/common.php?v2"></script>
     <script async src="/js/ya_share.php"></script>
@@ -29,8 +28,5 @@
     <link rel="stylesheet" type="text/css" href="/css/all_jGrowl.css">
     <script src="/j/lib/all_jGrowl.js"></script>
     <script async src="/js/common_v1_0.js"></script>
-
-
-
 
     <?=$Opt::$jscript.$Opt::$css.'<meta name="description" content="'.$Opt::$description.'"><title>'.$Opt::$title.'</title>';?></head>

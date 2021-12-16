@@ -1,17 +1,10 @@
 <body>
 <header>
-
-
-
     <div id="l1" class="rel">
-
         <div  class="maxw rel">
-
             <div id="l1_logo">
                 <img src="/img/logo.png" alt="logo">
             </div>
-            <!--<div id="l1_logo_back"></div>-->
-
             <!--pc version-->
             <div class="l1_r">
                 <div class="l1_Login_btn">
@@ -25,9 +18,7 @@
                         <div class="l1_log_btn_triangle_"></div>
                         <?=(\lib\Def\Opt::$live_user?"Exit":"Login");?>
                     </div>
-                </div>
-                <?=(\lib\Def\Opt::$live_user?'<script type="text/javascript">document.getElementById("l1_log_btn").onclick=function(){location.href="/exit";};document.getElementById("l1_reg_btn").onclick=function(){location.href="/cabinet/";};</script>':'<script src="/j/m_login.js"></script>');?>
-
+                </div><?=(\lib\Def\Opt::$live_user?'<script type="text/javascript">document.getElementById("l1_log_btn").onclick=function(){location.href="/exit";};document.getElementById("l1_reg_btn").onclick=function(){location.href="/cabinet/";};</script>':'<script src="/j/m_login.js"></script>');?>
 
                 <div class="l1_mob_burger">
                     <div id="l1_mob_burger">
@@ -35,25 +26,17 @@
                         <div class="l1_mob_burg_line"></div>
                         <div class="l1_mob_burg_line"></div>
                     </div>
-                </div>
-
-                <script type="text/javascript">
+                </div><script type="text/javascript">
                     document.getElementById('l1_mob_burger').onclick=function(){
                         document.getElementById('shadow').style.display='block';
                         document.getElementById('l1_mob_burger_can').style.display='block';
-
-                        //alert('Клик!');
                     };
-
                 </script>
-
-
 
                 <div id="l1_pc_menu">
 
-
                     <div id="l1_lng_trans">
-                        <!--переводчик !!!!!!-->
+                        <!--translate!!!!!!-->
                     </div>
 
                     <div id="l1_pc_link">
@@ -104,16 +87,19 @@
             <a href="/offer">Offer</a>
         </div>
         <div class="l1_mob_bur_line"></div>
+        <?=(\lib\Def\Opt::$live_user?"<div class=\"l1_mob_bur_line\"><a href=\"/cabinet\">Cabinet</a></div><div class=\"l1_mob_bur_line\"><a href=\"/exit\">Exit</a></div>":"");?>
 
 
+        <div id="l1_bur_log" class="l1_mob_bur_line">Login</div>
+        <script type="text/javascript">
+            document.getElementById('l1_bur_log').onclick=function(){
+                //document.getElementById('shadow').style.display='none';
+                document.getElementById('l1_mob_burger_can').style.display='none';
+            }
 
-        <div class="l1_mob_bur_line">
-            <a href="/cabinet">Cabinet</a>
 
-        </div>
-        <div class="l1_mob_bur_line">
-            <a href="/exit">Exit</a>
-        </div>
+        </script>
+
     </div>
 
     <div id="l1_back"></div><!--Не забыть расстояние-->
