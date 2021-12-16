@@ -29,12 +29,13 @@ Opt::$main_content.='<main>
         <div class="dwfce">
         <div id="in1_l4_reg">
             <div class="l1_reg_btn_triangle"></div>
-            <div class="l1_reg_btn_triangle_"></div>
-            Registration</div>
+            <div class="l1_reg_btn_triangle_"></div>';
+            Opt::$main_content.=(\lib\Def\Opt::$live_user?"Cabinet":"Registration").'</div>
         <div id="in1_l4_log">
             <div class="l1_log_btn_triangle"></div>
-            <div class="l1_log_btn_triangle_"></div>
-            Login</div>
+            <div class="l1_log_btn_triangle_"></div>';
+            Opt::$main_content.=(\lib\Def\Opt::$live_user?"Exit":"Login").'
+        </div>
         </div>
     </div>
     <div id="in1_l5">

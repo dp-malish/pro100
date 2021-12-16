@@ -83,8 +83,8 @@ class User{
     //выйти из аккаунта
     static function exitLogin(){
        self::setCookieUserLogin(0,0,0,0,0,0,-100);
-        //Def\Route::location($exit_url);
-        echo 'Вышел';
+        Def\Route::location();
+        //echo 'Вышел';
     }
 
 

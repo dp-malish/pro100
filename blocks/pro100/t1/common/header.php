@@ -18,14 +18,15 @@
                     <div id="l1_reg_btn">
                         <div class="l1_reg_btn_triangle"></div>
                         <div class="l1_reg_btn_triangle_"></div>
-                        Registration
+                        <?=(\lib\Def\Opt::$live_user?"Cabinet":"Registration");?>
                     </div>
                     <div id="l1_log_btn">
                         <div class="l1_log_btn_triangle"></div>
                         <div class="l1_log_btn_triangle_"></div>
-                        Login
+                        <?=(\lib\Def\Opt::$live_user?"Exit":"Login");?>
                     </div>
-                </div><script src="/j/m_login.js"></script>
+                </div>
+                <?=(\lib\Def\Opt::$live_user?'<script type="text/javascript">document.getElementById("l1_log_btn").onclick=function(){location.href="/exit";};document.getElementById("l1_reg_btn").onclick=function(){location.href="/cabinet/";};</script>':'<script src="/j/m_login.js"></script>');?>
 
 
                 <div class="l1_mob_burger">
