@@ -234,8 +234,9 @@
     width: 100%;
     line-height:33px;
     text-align: center;
-
+    color:#1b6d85;
     border: #1b6d85 1px dotted;
+    cursor:pointer;
 }
 
 .l1_mob_bur_line a{
@@ -249,7 +250,7 @@
 .l1_mob_bur_line a:visited{
     color: #1b6d85;
 }
-.l1_mob_bur_line a:hover{
+.l1_mob_bur_line a:hover,.l1_mob_bur_line:hover{
     color: #ffffcc;
 }
 

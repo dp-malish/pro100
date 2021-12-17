@@ -121,7 +121,7 @@
 }
 
 
-.form_login_in,.form_login_reg{
+.form_login_in,.form_login_reg,.form_login_res{
     padding: 0 7px;
     height:34px;
     width:90px;
@@ -135,15 +135,14 @@
     cursor:pointer;
     font-weight: bold;
 }
-.form_login_in:hover,.form_login_reg:hover{
+.form_login_in:hover,.form_login_reg:hover,.form_login_res:hover{
     color: black;
 }
-.form_login_in:active,.form_login_reg:active{
+.form_login_in:active,.form_login_reg:active,.form_login_res:active{
     background-color:#00A72D;
 }
-.form_login_reg{
-    width:120px;
-}
+.form_login_reg{width:120px}
+.form_login_res{width:150px}
 
 .form_remember,.check_box_reg{
     position:absolute;

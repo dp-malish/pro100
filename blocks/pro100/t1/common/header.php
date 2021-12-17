@@ -1,5 +1,4 @@
-<body>
-<header>
+<body><header>
     <div id="l1" class="rel">
         <div  class="maxw rel">
             <div id="l1_logo">
@@ -19,7 +18,6 @@
                         <?=(\lib\Def\Opt::$live_user?"Exit":"Login");?>
                     </div>
                 </div><?=(\lib\Def\Opt::$live_user?'<script type="text/javascript">document.getElementById("l1_log_btn").onclick=function(){location.href="/exit";};document.getElementById("l1_reg_btn").onclick=function(){location.href="/cabinet/";};</script>':'<script src="/j/m_login.js"></script>');?>
-
                 <div class="l1_mob_burger">
                     <div id="l1_mob_burger">
                         <div class="l1_mob_burg_line"></div>
@@ -32,7 +30,6 @@
                         document.getElementById('l1_mob_burger_can').style.display='block';
                     };
                 </script>
-
                 <div id="l1_pc_menu">
 
                     <div id="l1_lng_trans">
@@ -48,59 +45,41 @@
                             <li><a href="/faq">FAQ</a></li>
                         </ul>
                     </div>
-
                     <div class="cl"></div>
                 </div>
-
-
-
                 <div class="cl"></div>
             </div>
-
-
             <div class="cl"></div>
         </div>
     </div>
     <div id="l1_mob_burger_can">
-        <div id="l1_bur_cl" class="close_btn">X</div>
-        <script type="text/javascript">
+        <div id="l1_bur_cl" class="close_btn">X</div><script type="text/javascript">
             document.getElementById('l1_bur_cl').onclick=function(){
                 document.getElementById('shadow').style.display='none';
                 document.getElementById('l1_mob_burger_can').style.display='none';
-            }
-        </script>
-
+            }</script>
         <div class="l1_mob_bur_line"></div>
-        <div class="l1_mob_bur_line">
-            <a href="/">Home</a>
-        </div>
-        <div class="l1_mob_bur_line">
-            <a href="/marketing">Marketing</a>
-        </div>
-        <div class="l1_mob_bur_line">
-            <a href="/news">News</a>
-        </div>
-        <div class="l1_mob_bur_line">
-            <a href="/faq">FAQ</a>
-        </div>
-        <div class="l1_mob_bur_line">
-            <a href="/offer">Offer</a>
-        </div>
-        <div class="l1_mob_bur_line"></div>
-        <?=(\lib\Def\Opt::$live_user?"<div class=\"l1_mob_bur_line\"><a href=\"/cabinet\">Cabinet</a></div><div class=\"l1_mob_bur_line\"><a href=\"/exit\">Exit</a></div>":"");?>
-
-
-        <div id="l1_bur_log" class="l1_mob_bur_line">Login</div>
-        <script type="text/javascript">
-            document.getElementById('l1_bur_log').onclick=function(){
-                //document.getElementById('shadow').style.display='none';
-                document.getElementById('l1_mob_burger_can').style.display='none';
+        <div class="l1_mob_bur_line"><a href="/">Home</a></div>
+        <div class="l1_mob_bur_line"><a href="/marketing">Marketing</a></div>
+        <div class="l1_mob_bur_line"><a href="/news">News</a></div>
+        <div class="l1_mob_bur_line"><a href="/faq">FAQ</a></div>
+        <div class="l1_mob_bur_line"><a href="/offer">Offer</a></div>
+        <div class="l1_mob_bur_line"></div><?php
+        if(\lib\Def\Opt::$live_user){
+            echo'<div class=\"l1_mob_bur_line\"><a href=\"/cabinet\">Cabinet</a></div><div class=\"l1_mob_bur_line\"><a href=\"/exit\">Exit</a></div>';
+        }else{
+            echo'<div id="l1_bur_log" class="l1_mob_bur_line">Login</div><div id="l1_bur_reg" class="l1_mob_bur_line">Registration</div><script type="text/javascript">
+            document.getElementById("l1_bur_log").onclick=function(){
+                document.getElementById("shadow").style.display="none";
+                document.getElementById("l1_mob_burger_can").style.display="none";
+                document.getElementById("shadowForm").style.display = "block";
+                document.getElementById("formLogin").style.display = "block";
             }
-
-
-        </script>
-
-    </div>
-
-    <div id="l1_back"></div><!--Не забыть расстояние-->
-</header>
+            document.getElementById("l1_bur_reg").onclick=function(){
+                document.getElementById("shadow").style.display="none";
+                document.getElementById("l1_mob_burger_can").style.display="none";
+                document.getElementById("shadowForm").style.display = "block";
+                document.getElementById("formReg").style.display = "block";
+            }</script>';
+        };?>
+    </div><div id="l1_back"></div></header>

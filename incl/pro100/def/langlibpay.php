@@ -48,6 +48,24 @@ class LangLibPay{
         ]
     ];
 
+    const ARR_ERR_RESET_PASS=[
+        'ru'=>[
+            'post_null'=>'Неизвестная ошибка',
+            'banned'=>'Пользователь забанен',
+            'mail_bad'=>'Неверный формат E-mail',
+            'mail_data'=>'Инструкция отправлена',
+
+        ],
+        'en'=>[
+            'post_null'=>'Unknown error',
+            'banned'=>'User is banned',
+            'mail_bad'=>'Incorrect E-mail format',
+            'mail_data'=>'Instruction sent',
+        ]
+    ];
+
+
+
     const ARR_WORKS_ON_THE_SITE=[
         'ru'=>[
             'maintenance'=>'Раздел на техническом обслуживании',

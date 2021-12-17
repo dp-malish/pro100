@@ -12,9 +12,13 @@
     }
 
     function rememberPasswordFormLogin(){
-        alert("Напомнить пароль?");
+        document.getElementById("formLogin").style.display = "none";
+        document.getElementById("formReset").style.display = "block";
     }
-
+    function formResetClose() {//закрыть форму (скрыть)
+        document.getElementById("formReset").style.display = "none";
+        document.getElementById("shadowForm").style.display = "none";
+    }
 //*******************Form Reg**************************//
 // открыть/закрыть форму регистрации и тень
     function registrationBtn() {//открыть форму (показать)
@@ -46,11 +50,8 @@ $(document).ready(function(){
     //*******************Form Reg**************************//
     document.getElementById('l1_reg_btn').onclick=function(){registrationBtn();}
     document.getElementById("closeFormReg").addEventListener("click", formRegClose, false);
-
+    //*******************Form Reset***************************************
+    document.getElementById("closeFormReset").addEventListener("click", formResetClose, false);
     //*******************************************************************
     //*******************************************************************
-    //*******************************************************************
-
-
-
 });
