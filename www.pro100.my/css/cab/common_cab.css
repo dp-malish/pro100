@@ -29,3 +29,19 @@ A:hover, .link:hover {
     z-index:999;
     background:rgba(0,0,0,0.8);
 }
+#up {
+    width: 85px;
+    border:rgba(3,109,3,.8) 2px solid;;
+    border-radius: 4px;
+    background: #d3ddd4;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 17px;
+    right: 17px;
+    cursor: pointer;
+    display: none;
+    color: #333;
+    font-size: 90%;
+    z-index:50;
+}

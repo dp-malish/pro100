@@ -140,7 +140,6 @@ class User{
         //$this->u_id=11;//4955
         //$this->pass='03c64b48f1aa3670c3a1ccc36aa07415';
 
-
         //Сделать редирект
 
     }

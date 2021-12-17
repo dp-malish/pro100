@@ -14,7 +14,7 @@
 
 
 
-    <link rel="stylesheet" href="/css/common.css">
+    <!--<link rel="stylesheet" href="/css/common.css">-->
     <link rel="stylesheet" href="/css/cab/common_cab.css">
 
 

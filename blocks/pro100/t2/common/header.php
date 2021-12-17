@@ -10,7 +10,9 @@
 
 
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
-            <span class="l1_menu_adm_can_line_br">Уровень</span>
+            <span class="l1_menu_adm_can_line_br">Уровень
+
+            </span>
         </div>
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
             <span class="l1_menu_adm_can_line_br">Визитов: 0</span>
@@ -19,23 +21,18 @@
             <span class="l1_menu_adm_can_line_br">Баланс: $100</span>
         </div>
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
-            <span class="l1_menu_adm_can_line_br">Рефссылка</span>
+            <span class="l1_menu_adm_can_line_br"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?></span>
         </div>
         <div class="l1_menu_adm_can_line"></div>
         <div class="l1_menu_adm_can_line">
             <a href="#">Профиль</a>
-
         </div>
         <div class="l1_menu_adm_can_line">
-            <a href="#">Выход</a>
+            <a href="/exit">Exit</a>
         </div>
     </div>
 
-    <div id="l1_logo">
-
-        <img src="/img/logo.png" alt="logo">
-
-    </div>
+    <div id="l1_logo"><a href="/"><img src="/img/logo.png" alt="logo"></a></div>
     <div id="l1_logo_back"></div>
 
     <!--pc version-->
@@ -46,35 +43,59 @@
         <script type="text/javascript">
             document.getElementById('menu_admin').onclick=function(){
                 document.getElementById('shadow').style.display='block';
-                document.getElementById('l1_menu_admin_can').style.display='block';
-
-                //alert('Клик!');
-            };
+                document.getElementById('l1_menu_admin_can').style.display='block';};
             document.getElementById('menu_admin_cl').onclick=function(){
                 document.getElementById('shadow').style.display='none';
-                document.getElementById('l1_menu_admin_can').style.display='none';
-            }
+                document.getElementById('l1_menu_admin_can').style.display='none';}
         </script>
 
-        <div id="l1_ref_link_pc" class="l1_pc_cell">
+        <div id="l1_ref_link_pc" class="l1_pc_cell" data-ref="<?=\incl\pro100\User\User::$arrDBUser['log'];?>">
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
-            Рефссылка
+            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?>
+            <div class="l1_pc_cell_ext">7</div>
         </div>
-        <div id="l1_balance_pc" class="l1_pc_cell">
+        <script type="text/javascript">
+            if (navigator.clipboard) {
+                // поддержка имеется, включить соответствующую функцию проекта.
+                alert(1);
+                const textToCopy = 'Hello there!';
+
+                window.navigator.clipboard.writeText(textToCopy).then(() => { alert(`Copied!`) })
+                    .catch((error) => { alert(`Copy failed! ${error}`) })
+
+            } else {
+                // поддержки нет. Придётся пользоваться execCommand или не включать эту функцию.
+                //alert(0);
+
+            }
+            document.getElementById("l1_ref_link_pc").onclick=function(){
+                /*var copy=document.getElementById("l1_ref_link_pc").dataset.ref;
+                alert(copy);*/
+
+                //alert(67);
+            }
+
+
+//https://habr.com/ru/post/256027/
+            //https://webdesign.tutsplus.com/ru/tutorials/css-tooltip-magic--cms-28082
+            //https://sitehere.ru/ne-slozhnaya-vsplyvayushhaya-podskazka-na-css
+        </script>
+        <div id="l1_balance_pc" class="l1_pc_cell" >
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
-            Баланс: 100$
+            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['balance'].':$'.\incl\pro100\User\User::$arrDBUser['bal'];?>
+            <!--допилить!!!!'За весь период работы Ваш заработок составляет $'profit-->
         </div>
         <div id="l1_visit_pc" class="l1_pc_cell">
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
-            Визитов: 0
+            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['visit'].':'.\incl\pro100\User\User::$arrDBUser['hits'];?>
         </div>
         <div id="l1_level_pc" class="l1_pc_cell">
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
-            Уровень: 0
+            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['level'].':'.\incl\pro100\User\User::$arrDBUser['level'];?>
         </div>
     </div>
     <!--mob version dwfce-->
@@ -86,7 +107,7 @@
                 <div class="l1_mob_cell_">Визитов: 0</div>
             </div>
             <div class="l1_mob_cell">
-                <div class="l1_mob_cell_">Рефссылка</div>
+                <div class="l1_mob_cell_"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?></div>
                 <div class="l1_mob_cell_">Баланс: 100$</div>
             </div>
             <!--
