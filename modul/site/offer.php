@@ -14,7 +14,7 @@ Opt::$main_content.='<main>
     <div class="maxw">
         <div class="maxw8">
         <section>
-        <h2>PUBLIC OFFER</h2>
+        <h2>USER AGREEMENT</h2>
         <p>This agreement stipulates the rules of participation and establishes the relationship between the participants of the community. It is concluded by joining the new participants after completing the registration procedure on the '.Opt::$site.'. The terms of this agreement are accepted by the participants in full and without any reservations by joining It as it is set out on the '.Opt::$site.' website.</p></section>
         </div>
     </div>

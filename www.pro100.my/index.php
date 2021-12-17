@@ -10,7 +10,7 @@ User\User::$selfUser=new User\User();//первый вход не в кабин�
 
 Cache_File::$cash=new Cache_File(['pro100'],true);
 
-Opt::$lang='en';
+//Opt::$lang='en';
 
 if($_SERVER['REQUEST_URI']!='/'){
     if(Route::requestURI(3)){
@@ -71,7 +71,11 @@ if($Opt::$template==1){
     include '../blocks/pro100/t1/common/body.php';
     include '../blocks/pro100/t1/common/foot.php';
 }else{
-    echo 'template';
+    include '../blocks/pro100/t2/common/head.php';
+    include '../blocks/pro100/t2/common/header.php';
+    include '../blocks/pro100/t2/common/l_menu.php';
+    include '../blocks/pro100/t2/common/body.php';
+    include '../blocks/pro100/t2/common/foot.php';
 }
 
 

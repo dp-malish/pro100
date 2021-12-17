@@ -43,7 +43,8 @@ $(document).ready(function(){
         var login = $('#reg_login').val();
         var pass = $('#reg_pass').val();
         var mail = $('#reg_email').val();
-        $.ajax({
+        alert(oferta+" "+login+" "+pass+" "+mail);
+        /*$.ajax({
             type: 'POST',
             url: '/actions/reg.php',
             data: {'oferta': oferta, 'login': login, 'pass': pass, 'mail': mail, 'token': '456'},
@@ -111,6 +112,6 @@ $(document).ready(function(){
                 }
             }
         });
-        return false;
+        return false;*/
     });
 });

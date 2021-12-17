@@ -17,6 +17,8 @@ Opt::$main_content.='<br><br><a href="/cabinet/cashout">Кабинет cashout</
 
 if(Opt::$live_user!=0){
 
+    Opt::$template=2;
+
     if(!empty(Route::$uri_parts[1])){
 
     switch(Route::$uri_parts[1]){
@@ -31,6 +33,7 @@ if(Opt::$live_user!=0){
     }
     }else{
         //просто кабинет
-        echo 'cabinet';
+        //echo 'cabinet';
+        Opt::$main_content.='просто кабинет';
     }
 } else echo '<br>Надо зайти';

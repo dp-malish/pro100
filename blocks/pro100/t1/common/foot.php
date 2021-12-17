@@ -3,11 +3,7 @@
         <div id="shadow"></div><div id="up">Up</div>
 </div></footer><?php
 if(!\lib\Def\Opt::$live_user){
-//<!--------------------form login------------------->
-//<!--------------------form login------------------->
-//<!--------------------form login------------------->
 echo'<div id="shadowForm" class="shadow"></div>
-
 <div id="formReset" class="form">
     <div class="form_header">
         <span id="closeFormReset" class="close"></span>
@@ -23,14 +19,14 @@ echo'<div id="shadowForm" class="shadow"></div>
         <div id="formResetBtn" class="form_login_res">Send password</div>
     </div>
 </div>
-
+<!--------------------form login------------------->
 <div id="formLogin" class="form">
     <div class="form_header">
         <span id="closeFormLogin" class="close"></span>
         <h3>Authorization</h3>
     </div>
     <div class="form_label">
-        <span>Username</span>
+        <span>Login</span>
     </div>
     <div class="form_row">
         <input type="text" id="log_login" placeholder="Enter your Login">
@@ -50,39 +46,37 @@ echo'<div id="shadowForm" class="shadow"></div>
     </div>
 </div>
 <!--------------------form reg------------------->
-<!--------------------form reg------------------->
-<!--------------------form reg------------------->
 <div id="formReg" class="form">
     <div class="form_header">
         <span id="closeFormReg" class="close"></span>
-        <h3>РЕГИСТРАЦИЯ</h3>
+        <h3>Registration</h3>
     </div>
     <div class="form_label">
-        <span>Логин</span>
+        <span>Login</span>
     </div>
     <div class="form_row">
-        <input type="text" id="reg_login" placeholder="Введите логин">
+        <input type="text" id="reg_login" placeholder="Enter your Login">
     </div>
     <div class="form_label">
         <span>E-mail</span>
     </div>
     <div class="form_row">
-        <input type="email" id="reg_email" placeholder="Введите e-mail">
+        <input type="email" id="reg_email" placeholder="Enter your E-mail">
     </div>
     <div class="form_label">
-        <span>Пароль</span>
+        <span>Password</span>
     </div>
     <div class="form_row">
-        <input type="text" id="reg_pass" placeholder="Введите пароль">
+        <input type="password" id="reg_pass" placeholder="Enter your Password">
     </div>
     <div class="form_row rel">
         <input type="checkbox" id="formRegCheck">
         <label for="formRegCheck">
-            <span class="check_box_reg"><a target="_blank" href="/offer">Принимаю условия Соглашения</a></span>
+            <span class="check_box_reg"><a target="_blank" href="/offer">I agree to the User agreement</a></span>
         </label>
     </div>
     <div class="form_row rel">
-        <div id="formRegBtn" class="form_login_reg">Регистрация</div>
+        <div id="formRegBtn" class="form_login_reg">Sing Up</div>
     </div>
 </div><script src="/j/m_login_form.js"></script>';}?>
 </body></html>
