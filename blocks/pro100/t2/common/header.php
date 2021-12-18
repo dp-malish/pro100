@@ -64,7 +64,7 @@
                 window.navigator.clipboard.writeText(textToCopy).then(() => { alert(`Copied!`) })
                     .catch((error) => { alert(`Copy failed! ${error}`) })
 
-            } else {
+            }else{
                 // поддержки нет. Придётся пользоваться execCommand или не включать эту функцию.
                 //alert(0);
 
