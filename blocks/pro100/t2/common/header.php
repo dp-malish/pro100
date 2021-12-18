@@ -56,7 +56,7 @@
             <div class="l1_pc_cell_ext">7</div>
         </div>
         <script type="text/javascript">
-            if (navigator.clipboard) {
+            if (navigator.clipboard){
                 // поддержка имеется, включить соответствующую функцию проекта.
                 alert(1);
                 const textToCopy = 'Hello there!';
