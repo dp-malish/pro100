@@ -33,7 +33,7 @@ if(Opt::$live_user!=0){
     }
     }else{
         //просто кабинет
-        //echo 'cabinet';
-        Opt::$main_content.='просто кабинет';
+         //Opt::$main_content.='просто кабинет';
+         include'../modul/cabinet/index.php';
     }
 } else echo '<br>Надо зайти';

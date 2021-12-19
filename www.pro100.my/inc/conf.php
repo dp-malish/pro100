@@ -1,13 +1,13 @@
 <?php
 //ob_start();
 
-/*//����������� � ���� ������
+//����������� � ���� ������
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root'); // ��� ������������
 define('DB_PASS', 'root'); // ������
 define('DB_BASE', 'pro100'); // ��� ���� ������*/
 
-/*$admin_uid = 4955;*/
+/*$admin_uid = 4955;
 
 $ref_on_line = 3; //������� �� �����
 

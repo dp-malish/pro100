@@ -25,7 +25,7 @@
         </div>
         <div class="l1_menu_adm_can_line"></div>
         <div class="l1_menu_adm_can_line">
-            <a href="#">Профиль</a>
+            <a href="/cabinet/">Профиль</a>
         </div>
         <div class="l1_menu_adm_can_line">
             <a href="/exit">Exit</a>

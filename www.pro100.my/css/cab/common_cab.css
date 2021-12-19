@@ -45,3 +45,10 @@ A:hover, .link:hover {
     font-size: 90%;
     z-index:50;
 }
+
+.h_fon{
+    padding:5px 0 5px 15px;
+    background:#333333;
+    min-height:40px;
+    line-height:38px;
+}
