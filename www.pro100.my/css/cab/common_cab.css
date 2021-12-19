@@ -1,5 +1,13 @@
 *{box-sizing:border-box}
-body{background:#050505}
+html, body {
+    height: 100%;
+    /*font: 15px Verdana, Geneva, sans-serif;*/
+    font: 15px Arial, Helvetica, sans-serif;
+    text-align: justify;
+    cursor: default;
+    background-color: #000000;
+    color: #fcfcfc;
+}
 
 A:link, .link {
     color: #fcfcfc;
@@ -51,4 +59,28 @@ A:hover, .link:hover {
     background:#333333;
     min-height:40px;
     line-height:38px;
+}
+.text_fon{
+    padding:25px 15px;
+    min-height:40px;
+    border:#333333 2px solid;
+}
+
+.cab_btn{
+    margin:23px auto 3px;
+    min-height: 40px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    line-height: 37px;
+    border-radius:5px;
+    cursor: pointer;
+    background:#333333;
+    border:#333333 1px solid;
+}
+
+.cab_btn:hover{
+    color:#4CA5C6;
+    border:#4CA5C6 1px solid;
+
 }

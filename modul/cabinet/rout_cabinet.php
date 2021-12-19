@@ -36,4 +36,4 @@ if(Opt::$live_user!=0){
          //Opt::$main_content.='просто кабинет';
          include'../modul/cabinet/index.php';
     }
-} else echo '<br>Надо зайти';
+}else echo '<br>Надо зайти';

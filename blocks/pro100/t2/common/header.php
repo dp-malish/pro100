@@ -4,28 +4,24 @@
         <div id="menu_admin_cl" class="close_btn">X</div>
         <div class="l1_menu_adm_can_line"></div>
 
-        <div class="l1_menu_adm_can_line ac l1_menu_adm_f1_col l1_menu_adm_bor_bot">
-            Usver
-        </div>
+        <div class="l1_menu_adm_can_line ac l1_menu_adm_f1_col l1_menu_adm_bor_bot"><?=\incl\pro100\User\User::$arrDBUser['log'];?></div>
 
 
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
-            <span class="l1_menu_adm_can_line_br">Уровень
-
-            </span>
+            <span class="l1_menu_adm_can_line_br"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['level'].': '.\incl\pro100\User\User::$arrDBUser['level'];?></span>
         </div>
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
-            <span class="l1_menu_adm_can_line_br">Визитов: 0</span>
+            <span class="l1_menu_adm_can_line_br"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['visit'].': '.\incl\pro100\User\User::$arrDBUser['hits'];?></span>
         </div>
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
-            <span class="l1_menu_adm_can_line_br">Баланс: $100</span>
+            <span class="l1_menu_adm_can_line_br"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['balance'].': $'.\incl\pro100\User\User::$arrDBUser['bal'];?></span>
         </div>
         <div class="l1_menu_adm_can_line l1_menu_adm_bor_bot">
             <span class="l1_menu_adm_can_line_br"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?></span>
         </div>
         <div class="l1_menu_adm_can_line"></div>
         <div class="l1_menu_adm_can_line">
-            <a href="/cabinet/">Профиль</a>
+            <a href="/cabinet/profile"><?=incl\pro100\Def\LangLibCabMain::ARR_ADM_MENU_PC[lib\Def\Opt::$lang]['profile'];?></a>
         </div>
         <div class="l1_menu_adm_can_line">
             <a href="/exit">Exit</a>
@@ -37,9 +33,7 @@
 
     <!--pc version-->
     <div class="l1_r">
-        <div id="menu_admin" class="l1_pc_cell">
-            Admin
-        </div>
+        <div id="menu_admin" class="l1_pc_cell"><?=\incl\pro100\User\User::$arrDBUser['log'];?></div>
         <script type="text/javascript">
             document.getElementById('menu_admin').onclick=function(){
                 document.getElementById('shadow').style.display='block';
@@ -53,7 +47,7 @@
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
             <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?>
-            <div class="l1_pc_cell_ext">7</div>
+            <!--<div class="l1_pc_cell_ext">7</div>-->
         </div>
         <script type="text/javascript">
             if (navigator.clipboard){
@@ -90,12 +84,12 @@
         <div id="l1_visit_pc" class="l1_pc_cell">
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
-            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['visit'].':'.\incl\pro100\User\User::$arrDBUser['hits'];?>
+            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['visit'].': '.\incl\pro100\User\User::$arrDBUser['hits'];?>
         </div>
         <div id="l1_level_pc" class="l1_pc_cell">
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
-            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['level'].':'.\incl\pro100\User\User::$arrDBUser['level'];?>
+            <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['level'].': '.\incl\pro100\User\User::$arrDBUser['level'];?>
         </div>
     </div>
     <!--mob version dwfce-->
