@@ -21,6 +21,31 @@ class LangLibCabMain{
         ]
     ];
 
+    const ARR_BALANS=[
+        'ru'=>[
+            'name'=>'БАЛАНС',
+            'name_1'=>'Ввод средств',
+            'name_2'=>'Вывод средств',
+
+        ],
+        'en'=>[
+            'name'=>'BALANCE',
+            'name_1'=>'Ввод средств',
+            'name_2'=>'Вывод средств',
+
+        ]
+    ];
+
+
+
+
+
+
+
+
+
+
+
     const ARR_L_MENU_PC=[
         'ru'=>[
             'account'=>'Аккаунт',
@@ -33,6 +58,11 @@ class LangLibCabMain{
             'support'=>'Служба поддержки',
             'promo'=>'Промо материалы',
 
+            'news'=>'Новости',
+            'exit'=>'Выход'
+
+
+
         ],
         'en'=>[
             'account'=>'Account',
@@ -44,15 +74,20 @@ class LangLibCabMain{
 
             'support'=>'Support service',
             'promo'=>'Promo materials',
+
+            'news'=>'News',
+            'exit'=>'Exit'
         ]
     ];
 
     const ARR_ADM_MENU_PC=[
         'ru'=>[
             'profile'=>'Профиль',
+            'exit'=>'Выход'
         ],
         'en'=>[
             'profile'=>'Profile',
+            'exit'=>'Exit'
         ]
     ];
 

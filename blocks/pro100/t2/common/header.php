@@ -24,7 +24,7 @@
             <a href="/cabinet/profile"><?=incl\pro100\Def\LangLibCabMain::ARR_ADM_MENU_PC[lib\Def\Opt::$lang]['profile'];?></a>
         </div>
         <div class="l1_menu_adm_can_line">
-            <a href="/exit">Exit</a>
+            <a href="/exit"><?=incl\pro100\Def\LangLibCabMain::ARR_ADM_MENU_PC[lib\Def\Opt::$lang]['exit'];?></a>
         </div>
     </div>
 

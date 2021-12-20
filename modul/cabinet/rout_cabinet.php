@@ -22,6 +22,7 @@ if(Opt::$live_user!=0){
     if(!empty(Route::$uri_parts[1])){
 
     switch(Route::$uri_parts[1]){
+        case 'balance':include'../modul/cabinet/pay/balance.php';break;//главная баланс
         case'cashadd':include'../modul/cabinet/pay/cashadd.php';break;//пополнить $
         case'cashout':include'../modul/cabinet/pay/cashout.php';break;//вывести $
         case'cashin':include'../modul/cabinet/pay/cashin.php';break;//пополняшка пересылка на кошелёк
@@ -32,8 +33,6 @@ if(Opt::$live_user!=0){
         default:Route::$module404=1;
     }
     }else{
-        //просто кабинет
-         //Opt::$main_content.='просто кабинет';
-         include'../modul/cabinet/index.php';
+        include'../modul/cabinet/index.php';//просто кабинет
     }
-}else echo '<br>Надо зайти';
+}//else echo '<br>Надо зайти';

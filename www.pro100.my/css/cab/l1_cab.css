@@ -65,7 +65,7 @@
     border:#4CA5C6 solid 2px;
     text-align:center;
     line-height:70px;
-    color:#ffffcc;
+    color:#fcfcfc;
     display:inline-block;
 }
 .l1_pc_cell:first-child{
@@ -307,7 +307,7 @@
 .l1_menu_adm_can_line{
     width:100%;
     height:33px;
-    color: #ffffcc;
+    color: #fcfcfc;
     /*background-color: #0a2a3a;*/
     margin-top: 5px;
     line-height:28px;
@@ -330,18 +330,18 @@
 .l1_menu_adm_can_line a{
 
     text-align: center;
-    color: #1b6d85;
+    color:#77e0ff;
     display: block;
     text-decoration: none;
 }
 .l1_menu_adm_can_line a:active{
-    color: #1b6d85;
+    color:#77e0ff;
 }
 .l1_menu_adm_can_line a:visited{
-    color: #1b6d85;
+    color:#77e0ff;
 }
 .l1_menu_adm_can_line a:hover{
-    color: #ffffcc;
+    color:#16d57a;
 }
 
 

@@ -16,7 +16,7 @@
     overflow:hidden;
     background:#050505 url("../../img/cab/menu_left.jpg") no-repeat;
     background-size: 100% 100%;
-    color: #ffffcc;
+    color: #fcfcfc;
 }
 @media screen and (max-width:475px){
     #l_col{display: none;}
@@ -28,7 +28,7 @@
     overflow-y:auto;
     overflow-x:hidden;
     background-color:#202020;
-    color: #ffffcc;
+    color: #fcfcfc;
 }
 @media screen and (max-width:475px){
     #m_col{
@@ -95,15 +95,15 @@
 .lc_menu_line a{
     height:33px;
     background-size: 32px 32px;
-    color: #1b6d85;
+    color:#77e0ff;
     display: block;
     text-decoration: none;
 }
 .lc_menu_line a:active{
-    color: #1b6d85;
+    color:#77e0ff;
 }
 .lc_menu_line a:visited{
-    color: #1b6d85;
+    color:#77e0ff;
 }
 .lc_menu_line a:hover{
     color:#16d57a;

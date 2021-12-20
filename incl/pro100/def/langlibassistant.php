@@ -4,7 +4,6 @@ namespace incl\pro100\Def;
 
 
 class LangLibAssistant{
-
     const ARR_ASSISTANT=[
         'ru'=>[
             'name'=>'ПОМОЩНИК',
@@ -23,8 +22,6 @@ class LangLibAssistant{
             'les3'=>'<b>Шаг 3.</b> После перевода уровень будет повышен автоматически.',
             'les4'=>'<b>Шаг 4.</b> Теперь Вы можете приглашать партнёров по своей реферальной ссылке и получать денежные подарки.',
             'les5'=>'Вы освоились на проекте и поняли принцип работы. Приглашайте партнёров, заполняйте линии и не забывайте вовремя повышать свой уровень. Удачной работы!',
-            'les6'=>'!!!!!!!!!',
-            'les7'=>'!!!!!!!!!',
         ],
         'en'=>[
             'les0'=>'Hello, welcome to the project. I\'ll help You with the system, there\'s nothing complicated about it.',
@@ -33,8 +30,6 @@ class LangLibAssistant{
             'les3'=>'<b>Step 3.</b> The level will be raised automatically after transfer.',
             'les4'=>'<b>Step 4.</b> Now You can  invite partners using Your referral link and receive cash gifts.',
             'les5'=>'You have mastered the project and understand the principle of work. Invite partners, fill in the lines, and don\'t forget to raise your level in time. Have a great job!',
-            'les6'=>'!!!!!!!!!'
         ]
     ];
-
 }

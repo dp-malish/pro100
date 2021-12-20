@@ -14,9 +14,19 @@ class LangLibCabBtn{
         'ru'=>[
             'next'=>'Дальше',
 
+            'bal_hist_in'=>'История ввода',
+            'bal_hist_out'=>'История вывода',
+            'bal_cash_in'=>'Ввод денег',
+            'bal_cash_out'=>'Вывод денег',
+
         ],
         'en'=>[
             'next'=>'Next',
+
+            'bal_hist_in'=>'История ввода',
+            'bal_hist_out'=>'История вывода',
+            'bal_cash_in'=>'Ввод денег',
+            'bal_cash_out'=>'Вывод денег',
 
         ]
     ];

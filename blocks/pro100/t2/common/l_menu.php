@@ -13,7 +13,7 @@
 
             </div>
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/cabinet/balance">
                     <div class="lc_menu_ico">
                     </div>
                     <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></div>
@@ -38,7 +38,7 @@
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t">rttgjhgjhfkjg</div>
+                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['level_up'];?></div>
                 </a>
 
             </div>
@@ -49,7 +49,7 @@
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t">rtg</div>
+                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['support'];?></div>
                 </a>
 
             </div>
@@ -60,7 +60,7 @@
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t">rtg</div>
+                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['promo'];?></div>
                 </a>
 
             </div>
@@ -68,20 +68,20 @@
             <div class="lc_menu_line"></div>
 
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/news">
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t">rtg</div>
+                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['news'];?></div>
                 </a>
 
             </div>
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/exit">
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t">rtg</div>
+                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['exit'];?></div>
                 </a>
 
             </div>
