@@ -55,7 +55,7 @@ class LangLibCabMain{
             'tabl_in_sum'=>'Amount',
             'tabl_in_kind'=>'Admission type',
             'tabl_in_date'=>'Admission date',
-            'tabl_in_null'=>'The Admission history is empty.',
+            'tabl_in_null'=>'The admission history is empty.',
         ]
     ];
 

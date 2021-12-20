@@ -10,12 +10,15 @@ class viewTransaction{
         $DB=new Def\SQLi();
         $res=$DB->arrSQL('SELECT id,sum,ps,dt FROM `t_out` WHERE usr = '.$DB->realEscapeStr(User\User::$u_id).' ORDER BY id DESC');
         if($res){
-            $answer='<table><thead><tr align="center"><th>Сумма</th><th>Платёжная система</th><th>Дата выплаты</th></tr></thead><tbody>';
+            $answer='<div class="cab_table"><div>                
+                <div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_sum'].'</div>
+                <div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_pay_system'].'</div>
+                <div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_date'].'</div></div>';
             foreach($res as $k=>$v){
-                $answer.='<tr><td>'.$v["sum"].' $ </td><td>'.Def100\OptCab::paysSystems($v["ps"]).'</td><td>'.date("d.m.Y в H:i",$v["dt"]).'</td></tr>';
+                $answer.='<div><div>'.$v["sum"].' $ </div><div>'.Def100\OptCab::paysSystems($v["ps"]).'</div><div>'.date("d.m.Y в H:i",$v["dt"]).'</div></div>';
             }
-            $answer.='</tbody></table>';
-        }else $answer='<div>История выплат пуста.</div>';;
+            $answer.='</div>';
+        }else $answer='<div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_null'].'</div>';
         return $answer;
     }
 

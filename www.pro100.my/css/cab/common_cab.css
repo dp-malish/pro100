@@ -61,7 +61,7 @@ A:hover, .link:hover {
     line-height:38px;
 }
 .h_fon_min{
-    padding:5px;
+    padding:5px 15px;
     background:#333333;
     min-height:33px;
     line-height:30px;
@@ -93,6 +93,35 @@ A:hover, .link:hover {
 
 /*таблицу сделать*/
 
+.cab_table{
+    margin:13px auto;
+    display:table;
+    border-spacing:3px 11px;;
+    /*border:solid 2px red;*/
+    /*background-color: #000000;
+    box-shadow: 0 4px 10px 2px rgba(76, 165, 198,.4);*/
+    width:50%;
+}
+@media screen and (min-width:651px) and (max-width:1000px){
+    .cab_table{width:70%;}
+}
+@media screen and (min-width:541px) and (max-width:650px){
+    .cab_table{width:80%;}
+}
+@media screen and (max-width:540px){
+    .cab_table{width:100%;}
+}
+.cab_table > div:first-child{
+  font-weight: bold;
+}
 
+.cab_table > div {display:table-row;}
 
-
+.cab_table > div div{
+    display:table-cell;
+    border:solid 1px #4CA5C6;
+    padding: 5px 3px;
+    text-align: center;
+    color:#fcfcfc;
+    background:#333333;
+}
