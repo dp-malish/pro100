@@ -27,14 +27,35 @@ class LangLibCabMain{
             'name_1'=>'Пополнение средств',
             'name_2'=>'Вывод средств',
 
-            'his'
+            'bal_hist_out'=>'История вывода',
+            'tabl_out_sum'=>'Сумма',
+            'tabl_out_pay_system'=>'Платёжная система',
+            'tabl_out_date'=>'Дата выплаты',
+            'tabl_out_null'=>'История выплат пуста.',
 
+
+            'bal_hist_in'=>'История пополнения',
+            'tabl_in_sum'=>'Сумма',
+            'tabl_in_kind'=>'Тип зачисления',
+            'tabl_in_date'=>'Дата зачисления',
+            'tabl_in_null'=>'История зачислений пуста.',
         ],
         'en'=>[
             'name'=>'BALANCE',
-            'name_1'=>'Пополнение средств',
-            'name_2'=>'Вывод средств',
+            'name_1'=>'Money add',
+            'name_2'=>'Money out',
 
+            'bal_hist_out'=>'Withdrawal history',
+            'tabl_out_sum'=>'Amount',
+            'tabl_out_pay_system'=>'Payment system',
+            'tabl_out_date'=>'Payment date',
+            'tabl_out_null'=>'The payment history is empty.',
+
+            'bal_hist_in'=>'Replenishment history',
+            'tabl_in_sum'=>'Amount',
+            'tabl_in_kind'=>'Admission type',
+            'tabl_in_date'=>'Admission date',
+            'tabl_in_null'=>'The Admission history is empty.',
         ]
     ];
 

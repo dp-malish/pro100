@@ -16,7 +16,8 @@ $cash=new Pay\viewTransaction();
 
 
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name'].'</h3>
+<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['bal_hist_out'].'</h4>
 '.$cash->getTransactionOut().
 
-    '</div>';
+    '</div></div>';
 

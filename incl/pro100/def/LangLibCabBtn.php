@@ -23,10 +23,10 @@ class LangLibCabBtn{
         'en'=>[
             'next'=>'Next',
 
-            'bal_hist_in'=>'История пополнения',
-            'bal_hist_out'=>'История вывода',
-            'bal_cash_in'=>'Пополнить',
-            'bal_cash_out'=>'Вывести',
+            'bal_hist_in'=>'Replenishment history',
+            'bal_hist_out'=>'Withdrawal history',
+            'bal_cash_in'=>'Money add',
+            'bal_cash_out'=>'Money out',
 
         ]
     ];
