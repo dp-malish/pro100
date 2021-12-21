@@ -149,7 +149,5 @@
         <div class="l1_burger_line">
             <a href="#4"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
         </div>
-    </div>
-    <div class="cl"></div>
-
+    </div><div class="cl"></div>
 </div>

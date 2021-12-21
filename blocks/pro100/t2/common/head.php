@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="/css/cab/body_cab.css">
 
 
+    <link rel="stylesheet" href="/css/cab/promo.css">
+
+
     <script src="/j/lib/m_jq.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/all_jGrowl.css">
     <script src="/j/lib/all_jGrowl.js"></script>

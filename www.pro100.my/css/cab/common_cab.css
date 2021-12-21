@@ -73,6 +73,9 @@ A:hover, .link:hover {
     min-height:40px;
     border:#333333 2px solid;
 }
+@media screen and (max-width:740px){
+    .text_fon{padding:15px 0}
+}
 
 .cab_btn{
     margin:23px auto 3px;
