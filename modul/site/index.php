@@ -10,8 +10,8 @@ Opt::$css.='<link rel="stylesheet" href="/css/index/in1.css">
 //Opt::$jscript.='';
 
 
-Opt::$title='SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
-Opt::$description='SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
+Opt::$title='SOCIAL NETWORK OF FINANCIAL MUTUAL SUPPORT';
+Opt::$description='SocHelping is an alliance of like-minded people, giving everyone the opportunity to create Their own international business with a minimum financial investment of over $450,000. By following simple steps and developing Your business structure, we help each other to achieve quick and profitable results.';
 
 
 

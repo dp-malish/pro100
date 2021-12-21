@@ -87,7 +87,7 @@
 .lc_menu_link_t::before{
     content: "\00a0\00a0\00a0";
 }
-.lc_menu_line a:hover .lc_menu_link_t{
+.lc_menu_line a:hover .lc_menu_link_t,.lc_menu_check{
     background:#000 url("../../img/cab/menu_left_board.png") no-repeat;
     background-size:100% 100%;
 }

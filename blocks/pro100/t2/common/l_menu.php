@@ -8,7 +8,7 @@
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['account'];?></div>
+                    <div class="lc_menu_link_t<?=(empty(\lib\Def\Route::$uri_parts[1])?' lc_menu_check':'');?>"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['account'];?></div>
                 </a>
 
             </div>
@@ -16,51 +16,51 @@
                 <a href="/cabinet/balance">
                     <div class="lc_menu_ico">
                     </div>
-                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></div>
+                    <div class="lc_menu_link_t<?=(!empty(\lib\Def\Route::$uri_parts[1])&&\lib\Def\Route::$uri_parts[1]=='balance'?' lc_menu_check':'');?>"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></div>
                 </a>
 
             </div>
 
 
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/cabinet/partners">
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['partners'];?></div>
+                    <div class="lc_menu_link_t<?=(!empty(\lib\Def\Route::$uri_parts[1])&&\lib\Def\Route::$uri_parts[1]=='partners'?' lc_menu_check':'');?>"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['partners'];?></div>
                 </a>
 
             </div>
 
 
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/cabinet/level-up">
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['level_up'];?></div>
+                    <div class="lc_menu_link_t<?=(!empty(\lib\Def\Route::$uri_parts[1])&&\lib\Def\Route::$uri_parts[1]=='level-up'?' lc_menu_check':'');?>"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['level_up'];?></div>
                 </a>
 
             </div>
 
 
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/cabinet/support">
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['support'];?></div>
+                    <div class="lc_menu_link_t<?=(!empty(\lib\Def\Route::$uri_parts[1])&&\lib\Def\Route::$uri_parts[1]=='support'?' lc_menu_check':'');?>"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['support'];?></div>
                 </a>
 
             </div>
 
 
             <div class="lc_menu_line">
-                <a href="#2">
+                <a href="/cabinet/promo">
                     <div class="lc_menu_ico">
                         <!--<img src="img/cab/ico/analytics.png"/>-->
                     </div>
-                    <div class="lc_menu_link_t"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['promo'];?></div>
+                    <div class="lc_menu_link_t<?=(!empty(\lib\Def\Route::$uri_parts[1])&&\lib\Def\Route::$uri_parts[1]=='promo'?' lc_menu_check':'');?>"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['promo'];?></div>
                 </a>
 
             </div>

@@ -8,6 +8,8 @@ html, body {
     background-color: #000000;
     color: #fcfcfc;
 }
+p,ul{margin:5px;color:#fcfcfc;}
+ul li{list-style-type: none}
 
 A:link, .link {
     color: #fcfcfc;

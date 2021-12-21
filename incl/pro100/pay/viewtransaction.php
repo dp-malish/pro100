@@ -10,15 +10,12 @@ class viewTransaction{
         $DB=new Def\SQLi();
         $res=$DB->arrSQL('SELECT id,sum,ps,dt FROM `t_out` WHERE usr = '.$DB->realEscapeStr(User\User::$u_id).' ORDER BY id DESC');
         if($res){
-            $answer='<div class="cab_table"><div>                
-                <div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_sum'].'</div>
-                <div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_pay_system'].'</div>
-                <div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_date'].'</div></div>';
+            $answer='<div class="cab_table"><div><div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_sum'].'</div><div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_pay_system'].'</div><div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_date'].'</div></div>';
             foreach($res as $k=>$v){
-                $answer.='<div><div>'.$v["sum"].' $ </div><div>'.Def100\OptCab::paysSystems($v["ps"]).'</div><div>'.date("d.m.Y в H:i",$v["dt"]).'</div></div>';
+                $answer.='<div><div>'.$v["sum"].' $ </div><div>'.Def100\OptCab::paysSystems($v["ps"]).'</div><div>'.date("d.m.Y   H:i",$v["dt"]).'</div></div>';
             }
             $answer.='</div>';
-        }else $answer='<div>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_null'].'</div>';
+        }else $answer='<div class="five_"><p>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_out_null'].'</p></div>';
         return $answer;
     }
 
