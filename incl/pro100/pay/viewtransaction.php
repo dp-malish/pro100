@@ -35,7 +35,7 @@ class viewTransaction{
                 $answer.='<td>'.date("d.m.Y в H:i",$v["dt"]).'</td></tr>';
             }
             $answer.='</tbody></table>';
-        }else $answer='<div>История зачислений пуста.</div>';;
+        }else $answer='<div class="five_"><p>'.Def100\LangLibCabMain::ARR_BALANS[Def\Opt::$lang]['tabl_in_null'].'</p></div>';
         return $answer;
     }
 }
