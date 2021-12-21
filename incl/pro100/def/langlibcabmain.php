@@ -39,6 +39,8 @@ class LangLibCabMain{
             'tabl_in_kind'=>'Тип зачисления',
             'tabl_in_date'=>'Дата зачисления',
             'tabl_in_null'=>'История зачислений пуста.',
+            'tabl_in_kind_rep'=>'Пополнение баланса',
+            'tabl_in_kind_ref'=>'Партнёрские начисления',
         ],
         'en'=>[
             'name'=>'BALANCE',
@@ -56,15 +58,65 @@ class LangLibCabMain{
             'tabl_in_kind'=>'Admission type',
             'tabl_in_date'=>'Admission date',
             'tabl_in_null'=>'The admission history is empty.',
+            'tabl_in_kind_rep'=>'Balance replenishment',
+            'tabl_in_kind_ref'=>'Partner accruals',
         ]
     ];
 
+    const ARR_PARTNERS=[
+        'ru'=>[
+            'name'=>'ПАРТНЁРЫ',
 
+        ],
+        'en'=>[
+            'name'=>'PARTNERS',
 
+        ]
+    ];
 
+    const ARR_LEVEL_UP=[
+        'ru'=>[
+            'name'=>'ПОВЫСИТЬ УРОВЕНЬ',
 
+        ],
+        'en'=>[
+            'name'=>'LEVEL UP',
 
+        ]
+    ];
 
+    const ARR_SUPPORT=[
+        'ru'=>[
+            'name'=>'СЛУЖБА ПОДДЕРЖКИ',
+
+        ],
+        'en'=>[
+            'name'=>'SUPPORT SERVICE',
+
+        ]
+    ];
+
+    const ARR_PROMO=[
+        'ru'=>[
+            'name'=>'ПРОМО МАТЕРИАЛЫ',
+
+        ],
+        'en'=>[
+            'name'=>'PROMO MATERIALS',
+
+        ]
+    ];
+
+    const ARR_PROFILE=[
+        'ru'=>[
+            'name'=>'Профиль',
+
+        ],
+        'en'=>[
+            'name'=>'PROFILE',
+
+        ]
+    ];
 
 
 

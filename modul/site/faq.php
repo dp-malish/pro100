@@ -6,8 +6,8 @@ Opt::$css.='';
 //Opt::$jscript.='';
 
 
-Opt::$title='FAQ SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
-Opt::$description='FAQ SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
+Opt::$title='SOCHELPING FAQ';
+Opt::$description='This section allows each member to get answers to the most relevant questions that can help them understand how Sochelping works. You can always contact User support if you didn`t  found your question at the list.';
 
 
 Opt::$main_content.='<main><div class="d_defs b_fon">

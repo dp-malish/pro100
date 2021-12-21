@@ -2,7 +2,7 @@
 namespace lib\Def;
 
 use incl\pro100\Def as Def100;
-use incl\pro100\User as User;
+//use incl\pro100\User as User;
 
 Opt::$title='Balance';
 
@@ -34,6 +34,4 @@ document.getElementById("bal_cash_out_btn").addEventListener("click",function(){
 document.getElementById("bal_hist_out").addEventListener("click",function(){
     location.href="/cabinet/history-out";  
 });
-</script>
-
-';
+</script>';

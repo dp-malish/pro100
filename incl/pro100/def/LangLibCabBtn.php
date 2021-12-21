@@ -13,6 +13,7 @@ class LangLibCabBtn{
     const ARR_BTN=[
         'ru'=>[
             'next'=>'Дальше',
+            'back'=>'Назад',
 
             'bal_hist_in'=>'История пополнения',
             'bal_hist_out'=>'История вывода',
@@ -22,6 +23,7 @@ class LangLibCabBtn{
         ],
         'en'=>[
             'next'=>'Next',
+            'back'=>'Back',
 
             'bal_hist_in'=>'Replenishment history',
             'bal_hist_out'=>'Withdrawal history',

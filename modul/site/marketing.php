@@ -8,8 +8,8 @@ Opt::$css.='<link rel="stylesheet" href="/css/marketing/m1.css">
 //Opt::$jscript.='';
 
 
-Opt::$title='SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
-Opt::$description='SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
+Opt::$title='SOCHELPING MARKETING PLAN - SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
+Opt::$description='Marketing of the Sochelping project is built in such a way that each participant activates his/her account with a one-time cost of $100, thus opening access to building his/her own highly profitable online business.';
 
 
 
@@ -23,13 +23,10 @@ Opt::$main_content.='<main>
     <div id="m1_l2"></div>
     <div class="maxw">
         <div id="m1_l3">
-
             <p>SocHelping.com is an alliance of like-minded people, giving everyone the opportunity to create Their own international business with a minimum financial investment of over $450,000. By following simple steps and developing Your business structure, we help each other to achieve quick and profitable results.</p>
         </div>
     </div>
 </div>
-
-
 <div id="m2">
     <div id="m2_l1"><h2>INTRODUCTION TO MARKETING</h2></div>
     <div class="maxw">
@@ -50,9 +47,6 @@ Opt::$main_content.='<main>
     </div>
 
 </div>
-
-
-
 <div id="m3">
     <div id="m3_l1">
         <h2>Your Profit are fixed from each line:</h2>

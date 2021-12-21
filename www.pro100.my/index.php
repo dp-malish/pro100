@@ -61,7 +61,6 @@ if($_SERVER['REQUEST_URI']!='/'){
     }
 }else{Route::$index=1;}if(Route::$module404){Route::modul404();}
 if(Route::$index){
-    //new \incl\burger\Index\IndexContent();
     include'../modul/site/index.php';
 }
 
@@ -77,10 +76,3 @@ if($Opt::$template==1){
     include '../blocks/pro100/t2/common/body.php';
     include '../blocks/pro100/t2/common/foot.php';
 }
-
-
-
-/*require '../blocks/burger/common/head.php';
-require '../blocks/burger/common/header.php';
-require '../blocks/burger/common/body.php';
-require '../blocks/burger/common/foot.php';*/

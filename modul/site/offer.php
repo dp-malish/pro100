@@ -4,8 +4,8 @@ namespace lib\Def;
 //Opt::$css.='';
 //Opt::$jscript.='';
 
-Opt::$title='Offer SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
-Opt::$description='Offer SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
+Opt::$title='USER AGREEMENT OF SOCHELPING ';
+Opt::$description='User agreement stipulates the rules of participation and establishes the relationship between the participants of the community. It is concluded by joining the new participants after completing the registration procedure at the '.Opt::$site.'.';
 
 
 Opt::$main_content.='<main>
