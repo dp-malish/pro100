@@ -69,22 +69,30 @@ class LangLibCabMain{
     const ARR_PARTNERS=[
         'ru'=>[
             'name'=>'ПАРТНЁРЫ',
-
+            'l1'=>'ПЕРВАЯ ЛИНИЯ',
+            'l2'=>'ВТОРАЯ ЛИНИЯ',
+            'l3'=>'ТРЕТЬЯ ЛИНИЯ',
+            'l4'=>'ЧЕТВЁРТАЯ ЛИНИЯ',
+            'l0'=>'НЕАКТИВНЫЕ',
+            'ref_map'=>'КАРТА РЕФЕРАЛОВ'
         ],
         'en'=>[
             'name'=>'PARTNERS',
-
+            'l1'=>'FIRST LINE',
+            'l2'=>'SECOND LINE',
+            'l3'=>'THIRD LINE',
+            'l4'=>'FORTH LINE',
+            'l0'=>'INACTIVE',
+            'ref_map'=>'REFERRAL MAP'
         ]
     ];
 
     const ARR_LEVEL_UP=[
         'ru'=>[
             'name'=>'ПОВЫСИТЬ УРОВЕНЬ',
-
         ],
         'en'=>[
             'name'=>'LEVEL UP',
-
         ]
     ];
 

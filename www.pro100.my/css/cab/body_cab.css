@@ -1,13 +1,8 @@
 #m_body{
    height:calc(100vh - 80px);
-    background-color: #befffc;
+    background-color:#befffc;
 }
-@media screen and (max-width:475px){
-    #m_body{
-        height:calc(100vh - 127px);
-        /*height:unset;*/
-    }
-}
+@media screen and (max-width:475px){#m_body{height:calc(100vh - 127px)}}
 #l_col{
     float:left;
     width:340px;
@@ -16,7 +11,7 @@
     overflow:hidden;
     background:#050505 url("../../img/cab/menu_left.jpg") no-repeat;
     background-size: 100% 100%;
-    color: #fcfcfc;
+    color:#fcfcfc;
 }
 @media screen and (max-width:475px){
     #l_col{display: none;}
@@ -42,7 +37,6 @@
 /********************************************************/
 /********************************************************/
 /***********************Left menu*********************************/
-
 #lc_menu{
     position: relative;
     /*background-color: #a8a8a8;*/
@@ -62,17 +56,18 @@
     left:57px;
     width:33px;
     height:100%;
-    background:#000 url("../../img/cab/ico/analytics.png") no-repeat;
-    background-size:contain;
     overflow: hidden;
     text-align: right;
 }
 
+.i_cab{background:#000 url("../../img/cab/ico/network.png") no-repeat;background-size:contain}
+.i_bal{background:#000 url("../../img/cab/ico/mission.png") no-repeat;background-size:contain}
+.i_partn{background:#000 url("../../img/cab/ico/communication.png") no-repeat;background-size:contain}
+.i_l-up{background:#000 url("../../img/cab/ico/target.png") no-repeat;background-size:contain}
+.i_sup{background:#000 url("../../img/cab/ico/digital_marketing.png") no-repeat;background-size:contain}
+.i_promo{background:#000 url("../../img/cab/ico/analytics_2.png") no-repeat;background-size:contain}
+
 /*тут все имена каждой полоске меню*/
-/*background:#000 url("../../img/cab/ico/analytics.png") no-repeat;*/
-
-
-
 
 
 .lc_menu_link_t{
@@ -94,20 +89,27 @@
 
 .lc_menu_line a{
     height:33px;
-    background-size: 32px 32px;
+    background-size:32px 32px;
     color:#77e0ff;
-    display: block;
-    text-decoration: none;
+    display:block;
+    text-decoration:none
 }
-.lc_menu_line a:active{
-    color:#77e0ff;
-}
-.lc_menu_line a:visited{
-    color:#77e0ff;
-}
-.lc_menu_line a:hover{
-    color:#16d57a;
-}
+.lc_menu_line a:active{color:#77e0ff}
+.lc_menu_line a:visited{color:#77e0ff}
+.lc_menu_line a:hover{color:#16d57a}
+/**************************partners***********************************************/
+/**************************partners***********************************************/
+/**************************partners***********************************************/
+
+
+
+
+
+
+/**************************partners end***********************************************/
+/**************************partners end***********************************************/
+/**************************partners end***********************************************/
+
 
 /***********************Left menu end*********************************/
 /***********************Promo*********************************/

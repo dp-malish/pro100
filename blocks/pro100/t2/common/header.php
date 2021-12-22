@@ -104,8 +104,6 @@
                 <div class="l1_mob_cell_"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?></div>
                 <div class="l1_mob_cell_">Баланс: 100$</div>
             </div>
-            <!--
-                        <div class="l1_mob_cell">4</div>-->
         </div>
         <div id="l1_mob_burger">
             <div class="l1_mob_burg_line"></div>
@@ -126,28 +124,36 @@
             document.getElementById('l1_burger_close_btn').onclick=function(){
                 document.getElementById('l1_mob_burger_can').style.display='none';}
         </script>
-        <div id="l1_burger_f1" class="l1_burger_line">
-            Usver
-        </div>
+        <div id="l1_burger_f1" class="l1_burger_line"><?=\incl\pro100\User\User::$arrDBUser['log'];?></div>
 
         <div class="l1_burger_line">
-            <a href="#1"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
+            <a href="/cabinet/"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['account'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="#2"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
+            <a href="/cabinet/balance"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="#3"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
+            <a href="/cabinet/partners"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['partners'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="#4"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
+            <a href="/cabinet/level-up"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['level_up'];?></span></a>
+        </div>
+        <div class="l1_burger_line">
+            <a href="/cabinet/support"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['support'];?></span></a>
+        </div>
+        <div class="l1_burger_line">
+            <a href="/cabinet/promo"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['promo'];?></span></a>
         </div>
         <div class="l1_burger_line"></div>
         <div class="l1_burger_line">
-            <a href="#4"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
+            <a href="/news"><span class="l1_ico_burg"></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['news'];?></span></a>
+        </div>
+        <div class="l1_burger_line"></div>
+        <div class="l1_burger_line">
+            <a href="/cabinet/profile"><span class="l1_ico_burg"></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_ADM_MENU_PC[lib\Def\Opt::$lang]['profile'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="#4"><span class="l1_ico_burg">ico</span><span class="l1_link_burg">link</span></a>
+            <a href="/exit"><span class="l1_ico_burg"></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_ADM_MENU_PC[lib\Def\Opt::$lang]['exit'];?></span></a>
         </div>
     </div><div class="cl"></div>
 </div>

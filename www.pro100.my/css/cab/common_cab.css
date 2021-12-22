@@ -62,12 +62,7 @@ A:hover, .link:hover {
     min-height:40px;
     line-height:38px;
 }
-.h_fon_min{
-    padding:5px 15px;
-    background:#333333;
-    min-height:33px;
-    line-height:30px;
-}
+
 .text_fon{
     padding:25px 15px;
     min-height:40px;
@@ -75,6 +70,19 @@ A:hover, .link:hover {
 }
 @media screen and (max-width:740px){
     .text_fon{padding:15px 0}
+}
+.h_fon_min{
+    padding:5px 15px;
+    background:#333333;
+    min-height:33px;
+    line-height:30px;
+}
+.h_fon_field{
+    display:none;
+    min-height:50px;
+    width:100%;
+    border-radius:0 0 7px 7px;
+    border:#333333 1px solid;
 }
 
 .cab_btn{
