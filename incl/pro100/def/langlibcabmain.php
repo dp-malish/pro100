@@ -15,12 +15,27 @@ class LangLibCabMain{
             'info_index'=>'ИНФОРМАЦИЯ ОБ АККАУНТЕ',
             'general'=>'Общие',
             'contact'=>'Контактные данные',
+            'payment'=>'Платёжные данные',
+
+
+            'gen_l1'=>'Уровень: ',
+            'gen_l2'=>'Партнёрская ссылка: ',
+            'gen_l3'=>'станет доступна по достижению первого уровня.',
+            'gen_l4'=>'Повысить уровень...',
+
 
         ],
         'en'=>[
             'info_index'=>'ACCOUNT INFORMATION',
             'general'=>'General',
             'contact'=>'Contact info',
+            'payment'=>'Payment details',
+
+
+            'gen_l1'=>'Level: ',
+            'gen_l2'=>'Партнёрская ссылка: ',
+            'gen_l3'=>'станет доступна по достижению первого уровня.',
+            'gen_l4'=>'Повысить уровень...',
         ]
     ];
 
@@ -74,7 +89,9 @@ class LangLibCabMain{
             'l3'=>'ТРЕТЬЯ ЛИНИЯ',
             'l4'=>'ЧЕТВЁРТАЯ ЛИНИЯ',
             'l0'=>'НЕАКТИВНЫЕ',
-            'ref_map'=>'КАРТА РЕФЕРАЛОВ'
+            'ref_map'=>'КАРТА РЕФЕРАЛОВ',
+            'ref_no'=>'Партнёры отсутствуют'
+
         ],
         'en'=>[
             'name'=>'PARTNERS',
@@ -83,7 +100,8 @@ class LangLibCabMain{
             'l3'=>'THIRD LINE',
             'l4'=>'FORTH LINE',
             'l0'=>'INACTIVE',
-            'ref_map'=>'REFERRAL MAP'
+            'ref_map'=>'REFERRAL MAP',
+            'ref_no'=>'No partners'
         ]
     ];
 

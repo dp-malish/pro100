@@ -32,23 +32,29 @@ Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_INDEX[O
 
 <div class="text_fon">
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['general'].'</h4>
-
-
-
+<div class="h_fon_field">
+<p>'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l1'].User\User::$arrDBUser['level'].'</p>
+<p>'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l2'];
+if(User\User::$arrDBUser['level']>0)Opt::$main_content.=Opt::$protocol.Opt::$site.'/p/'.User\User::$arrDBUser['log'];
+else Opt::$main_content.=Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l3'].' <a href="/cabinet/level-up">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l4'].'</a>';
+Opt::$main_content.='</p></div>
 </div>
 
 
 <div class="text_fon">
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['contact'].'</h4>
-
+<div class="h_fon_field">
 '.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
 
-</div>
+</div></div>
 
 
 <div class="text_fon">
-<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['general'].'</h4>
+<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['payment'].'</h4>
+<div class="h_fon_field">
+'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
 
+</div></div>
 
 
 </div>

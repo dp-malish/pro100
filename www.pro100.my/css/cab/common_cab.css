@@ -12,20 +12,20 @@ p,ul{margin:5px;color:#fcfcfc;}
 ul li{list-style-type: none}
 
 A:link, .link {
-    color: #fcfcfc;
-    text-decoration: underline
+    color:#fcfcfc;
+    text-decoration:underline
 }
 
 A:active {
-    color: #1A5EC9
+    color:#4CA5C6
 }
 
 A:visited {
-    color: #1A5EC9
+    color:#fcfcfc
 }
 
 A:hover, .link:hover {
-    color: #1A5EC9;
+    color:#4CA5C6;
     text-decoration: blink
 }
 
@@ -77,13 +77,14 @@ A:hover, .link:hover {
     min-height:33px;
     line-height:30px;
 }
-.h_fon_field{
-    display:none;
+.h_fon_field,.h_fon_field_h{
+    padding:7px;
     min-height:50px;
     width:100%;
     border-radius:0 0 7px 7px;
     border:#333333 1px solid;
 }
+.h_fon_field_h{display:none}
 
 .cab_btn{
     margin:23px auto 3px;

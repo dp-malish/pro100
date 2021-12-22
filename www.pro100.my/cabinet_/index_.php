@@ -5,10 +5,11 @@ use \incl\pro100\User as User;
 set_include_path(get_include_path().PATH_SEPARATOR.'../../');spl_autoload_register();
 $Opt=new Opt('pro100');//Def opt
 
-$user=new User\User(true);
+User\User::$selfUser=new User\User();
+User\User::$selfUser->validPassCookie();
 
 
-$u_id=$user->u_id;
+$u_id=User\User::$selfUser::$u_id;
 
 include('../inc/conf.php');
 

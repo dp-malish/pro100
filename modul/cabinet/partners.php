@@ -8,23 +8,23 @@ use incl\pro100\Def as Def100;
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['name'].'</h3></div>
 
 <div class="text_fon"><h4 id="l1_part_btn" class="h_fon_min cp">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l1'].'</h4>
-<div id="l1_cont" class="h_fon_field"></div>
+<div id="l1_cont" class="h_fon_field_h"></div>
 </div>
 
 <div class="text_fon"><h4 id="l2_part_btn" class="h_fon_min cp">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l2'].'</h4>
-<div id="l2_cont" class="h_fon_field"></div>
+<div id="l2_cont" class="h_fon_field_h"></div>
 </div>
 
 <div class="text_fon"><h4 id="l3_part_btn" class="h_fon_min cp">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l3'].'</h4>
-<div id="l3_cont" class="h_fon_field"></div>
+<div id="l3_cont" class="h_fon_field_h"></div>
 </div>
 
 <div class="text_fon"><h4 id="l4_part_btn" class="h_fon_min cp">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l4'].'</h4>
-<div id="l4_cont" class="h_fon_field"></div>
+<div id="l4_cont" class="h_fon_field_h"></div>
 </div>
 
 <div class="text_fon"><h4 id="l0_part_btn" class="h_fon_min cp">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l0'].'</h4>
-<div id="l0_cont" class="h_fon_field"></div>
+<div id="l0_cont" class="h_fon_field_h"></div>
 </div>
 
 <script type="text/javascript">
