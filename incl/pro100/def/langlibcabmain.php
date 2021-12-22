@@ -99,10 +99,14 @@ class LangLibCabMain{
     const ARR_PROMO=[
         'ru'=>[
             'name'=>'ПРОМО МАТЕРИАЛЫ',
+            'size_baner_start'=>'HTML-код для вставки баннера ',
+            'size_baner_end'=>'',
 
         ],
         'en'=>[
             'name'=>'PROMO MATERIALS',
+            'size_baner_start'=>'HTML code for inserting a ',
+            'size_baner_end'=>' banner',
 
         ]
     ];
