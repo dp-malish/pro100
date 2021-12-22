@@ -110,3 +110,42 @@
 }
 
 /***********************Left menu end*********************************/
+/***********************Promo*********************************/
+/***********************Promo start*********************************/
+.d_promo{
+    text-align:center;
+    padding: 13px 0;
+}
+.d_promo img{height:100%;}
+.d_promo_txt{
+    position:relative;
+    text-align: center;
+    min-height:13px;
+    padding: 13px 5px;
+    border-radius: 7px;
+    border:#333333 1px solid;
+    overflow-wrap:break-word;
+    width:80%;
+    margin:15px auto;
+    color:#fcfcfc;
+}@media screen and (max-width:900px){.d_promo_txt{width:100%;}}
+textarea.d_promo_code {
+    font-size:1%;
+    position:absolute;
+    left:0;
+    top:0;
+    text-align: center;
+    height:100%;
+    width:100%;
+    display:block;
+    padding:13px 5px;
+    border-radius:7px;
+    border: #333333 1px solid;
+    overflow-wrap:break-word;
+    overflow:hidden;
+    resize:none;
+    color:transparent;
+    opacity:1%;
+}
+/***********************Promo end*********************************/
+/***********************Promo end*********************************/

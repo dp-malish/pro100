@@ -8,8 +8,6 @@ Opt::$title='Cabinet';
 
 
 
-
-
 //ASSISTANT start
 Opt::$main_content.='
 <div><h3 class="h_fon">'.Def100\LangLibAssistant::ARR_ASSISTANT[Opt::$lang]['name'].'</h3>
@@ -30,13 +28,31 @@ Opt::$main_content.='
 </div>';
 //ASSISTANT end
 
-Opt::$main_content.='<div>
-<h3 class="h_fon">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'</h3>
+Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'</h3></div>
 
 <div class="text_fon">
-'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
+<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['general'].'</h4>
+
+
+
 </div>
 
 
-</div>';
+<div class="text_fon">
+<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['contact'].'</h4>
+
+'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
+
+</div>
+
+
+<div class="text_fon">
+<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['general'].'</h4>
+
+
+
+</div>
+
+
+';
 

@@ -1,19 +1,7 @@
 <?php
 namespace lib\Def;
-
 use incl\pro100\Def as Def100;
 use incl\pro100\User as User;
-/*
- *
-728x90
-468x60
-300x250
-160x600
- *
- *
- *
-* */
-
 $arr_img_promo=[
     [
         'img_name'=>'sochelping.jpg',
@@ -33,7 +21,6 @@ $arr_img_promo=[
         'img_w'=>'161'
     ]
 ];
-
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PROMO[Opt::$lang]['name'].'</h3></div>';
 foreach ($arr_img_promo as $v){
 Opt::$main_content.='
@@ -49,14 +36,4 @@ Opt::$main_content.='
         </div>
 </div>';
 }
-
-Opt::$main_content.='
-<script type="text/javascript">
-var promoTxt = document.getElementsByClassName("d_promo_code");
-function copyPromoCode(){
-$(this).focus();
-$(this).select();
-document.execCommand("copy");
- $.jGrowl("Copied to clipboard",{theme:"growl-error",life:3000});
-};
-for(var i=0;i<promoTxt.length;i++){promoTxt[i].addEventListener("click", copyPromoCode, false);}</script>';
+Opt::$main_content.='<script type="text/javascript">var promoTxt=document.getElementsByClassName("d_promo_code");function copyPromoCode(){$(this).focus();$(this).select();document.execCommand("copy");$.jGrowl("Copied to clipboard",{theme:"growl-error",life:3000});};for(var i=0;i<promoTxt.length;i++){promoTxt[i].addEventListener("click", copyPromoCode, false);}</script>';

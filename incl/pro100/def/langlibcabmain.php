@@ -13,11 +13,14 @@ class LangLibCabMain{
     const ARR_INDEX=[
         'ru'=>[
             'info_index'=>'ИНФОРМАЦИЯ ОБ АККАУНТЕ',
+            'general'=>'Общие',
+            'contact'=>'Контактные данные',
 
         ],
         'en'=>[
             'info_index'=>'ACCOUNT INFORMATION',
-
+            'general'=>'General',
+            'contact'=>'Contact info',
         ]
     ];
 
@@ -100,15 +103,11 @@ class LangLibCabMain{
         'ru'=>[
             'name'=>'ПРОМО МАТЕРИАЛЫ',
             'size_baner_start'=>'HTML-код для вставки баннера ',
-            'size_baner_end'=>'',
-
-        ],
+            'size_baner_end'=>''],
         'en'=>[
             'name'=>'PROMO MATERIALS',
             'size_baner_start'=>'HTML code for inserting a ',
-            'size_baner_end'=>' banner',
-
-        ]
+            'size_baner_end'=>' banner']
     ];
 
     const ARR_PROFILE=[
