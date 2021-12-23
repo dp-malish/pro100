@@ -20,6 +20,8 @@ class LangLibCabBtn{
             'bal_cash_in'=>'Пополнить',
             'bal_cash_out'=>'Вывести',
 
+            'level_up'=>'Повысить уровень',
+
         ],
         'en'=>[
             'next'=>'Next',
@@ -29,6 +31,8 @@ class LangLibCabBtn{
             'bal_hist_out'=>'Withdrawal history',
             'bal_cash_in'=>'Money add',
             'bal_cash_out'=>'Money out',
+
+            'level_up'=>'Level up',
 
         ]
     ];

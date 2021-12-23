@@ -25,6 +25,12 @@ class OptCab{
 
     static $arr_sanction_list=[];
 
+    const  LEVEL_COST=[
+        '1' => '100',
+        '2' => '200',
+        '3' => '1000',
+        '4' => '7000'];
+
     static function paysSystems($id) {
         switch($id){
             case'1':$x='Perfect Money';break;

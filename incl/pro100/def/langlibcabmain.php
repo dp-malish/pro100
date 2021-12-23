@@ -33,9 +33,9 @@ class LangLibCabMain{
 
 
             'gen_l1'=>'Level: ',
-            'gen_l2'=>'Партнёрская ссылка: ',
-            'gen_l3'=>'станет доступна по достижению первого уровня.',
-            'gen_l4'=>'Повысить уровень...',
+            'gen_l2'=>'Partner link: ',
+            'gen_l3'=>'will become available when the first line is reached.',
+            'gen_l4'=>'Level up...',
         ]
     ];
 
@@ -108,9 +108,20 @@ class LangLibCabMain{
     const ARR_LEVEL_UP=[
         'ru'=>[
             'name'=>'ПОВЫСИТЬ УРОВЕНЬ',
+            'current_level'=>'Ваш текущий уровень: ',
+            'next_level'=>'Ваш следующий уровень: ',
+            'max_level'=>'Вы достигли максимального уровня!',
+            'level_note'=>'Для повышения уровня пополните баланс аккаунта на необходимую сумму и нажмите на кнопку "Повысить уровень".',
+            'level_cost'=>'Стоимость уровня: $'
+
         ],
         'en'=>[
             'name'=>'LEVEL UP',
+            'current_level'=>'Your current level: ',
+            'next_level'=>'Your next level: ',
+            'max_level'=>'You have reached the maximum level!',
+            'level_note'=>'To level up, top up Your account with the required amount and click on the "Level up\' button".',
+            'level_cost'=>'Level cost: $'
         ]
     ];
 
