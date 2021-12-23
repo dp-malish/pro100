@@ -61,7 +61,7 @@ if($next_level == 1) {
 
         if (!$q){
             return;
-        }else        {
+        }else        {$arr=$q;
             $users_d = mysqli_num_rows(mysqli_query($connect_db, "SELECT uid FROM t_users WHERE ref='$arr[uid]' LIMIT 4"));
             if ($arr['level'] > 0) { $tree[$arr['uid']] = $users_d; }
             tree_view($arr['uid']);
