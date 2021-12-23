@@ -26,7 +26,9 @@ var levelUp=true;
     }else  alert("level-up");
     });
     
-    
+function formCallLevelUp(arr){
+    $.jGrowl(arr.answer,{theme:"growl-error",life:3000});
+}    
     
     
 </script>';

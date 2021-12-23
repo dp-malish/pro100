@@ -52,7 +52,10 @@ if (empty($tree_end_usr)) { $tree_end_usr = $ref_pay; }
 mysqli_query($connect_db, "UPDATE `t_users` SET `ref` = '$tree_end_usr' WHERE uid = '$u_id' LIMIT 1");
 $ref_pay = $tree_end_usr;
 }
-
+//*******************************************************************************
+//*******************************************************************************
+//*******************************************************************************
+//*******************************************************************************
 //Lvl 2
 if ($next_level == 2) {
 $f_ref_pre_1 = mysqli_fetch_assoc(mysqli_query($connect_db, "SELECT uid,ref FROM t_users WHERE uid='$u_id' LIMIT 1"));

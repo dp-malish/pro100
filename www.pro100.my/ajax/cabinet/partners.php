@@ -10,7 +10,7 @@ Opt::$lang='en';
 
 if(Post\Post::issetPostArr()){
     User\User::$selfUser=new User\User();//первый вход без пароля!!!! важно
-    if(isset($_POST['ref'])){
+    if(isset($_POST['ref']) && Opt::$live_user==1){
         if(isset($_POST['l1'])){
             echo json_encode(['err'=>false,'answer'=>'<p>Fuck You!!! '.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l1'].'</p>','l'=>1]);
         }elseif(isset($_POST['l2'])){
@@ -23,8 +23,10 @@ if(Post\Post::issetPostArr()){
             echo json_encode(['err'=>false,'answer'=>'<p>Fuck You!!! '.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l0'].'</p>','l'=>0]);
         }
 
-    }else{
-        //
-        echo 1;
+    }elseif(isset($_POST['level-up']) && Opt::$live_user==1){
+        if(User\User::$selfUser->validPassCookie()){
+            new User\LevelUp();
+            //$u->firstLine();
+        }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null']]);
     }
 }else echo'1';

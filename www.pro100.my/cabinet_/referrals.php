@@ -203,7 +203,7 @@ if (empty($row['av'])) { $ref_av = wu_noavatar($row['log']); } else { $ref_av = 
 <td><a href="/cabinet/user/<?php echo $row['log']; ?>" target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Смотреть профиль"><i class="fa fa-user"></i></a></td>
 <td><a href="/cabinet/messages/<?php echo $row['log']; ?>" target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="Написать сообщение"><i class="fa fa-envelope-o"></i></a></td>
 </tr>
-<?php } } else { echo '<tr><td>Рефералов нет</td</tr>'; } ?>
+<?php } } else { echo '<tr><td>Рефералов нет</td></tr>'; } ?>
 </table>
 </div>
 </div>
