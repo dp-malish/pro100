@@ -17,9 +17,18 @@ if(User\User::$arrDBUser['level']>=4){
 
     $btn='<div id="level_up_btn" class="cab_btn">'.Def100\LangLibCabBtn::ARR_BTN[Opt::$lang]['level_up'].'</div>
 <script type="text/javascript">
+var levelUp=true;
     document.getElementById("level_up_btn").addEventListener("click",function(){
-        alert("level-up");
+        //alert("level-up +++++++++++++++++++++++");
+    if(levelUp){
+        ajaxPostSend("level-up=1",formCallLevelUp,true,true,"/ajax/cabinet/partners.php");
+        levelUp=false;
+    }else  alert("level-up");
     });
+    
+    
+    
+    
 </script>';
 $note='<div class="d_promo_txt">'.Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['level_note'].'</div>';
 }

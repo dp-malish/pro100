@@ -217,4 +217,4 @@ if (empty($row['av'])) { $ref_av = wu_noavatar($row['log']); } else { $ref_av = 
 </a>
 
 <!-- /Контент -->
-<?php include('../inc/bottom_menu.php'); ?>
+include('../inc/bottom_menu.php')
