@@ -1,6 +1,7 @@
 <?php
 namespace lib\Def;
 
+use \incl\pro100\Def as Def100;
 use \incl\pro100\User as User;
 //Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',0);
 set_include_path(get_include_path().PATH_SEPARATOR.'../');spl_autoload_register();
@@ -13,74 +14,108 @@ Cache_File::$cash=new Cache_File(['pro100'],true);
 $DB=new SQLi();
 //Opt::$lang='en';
 
+$refs_all=0;
 
-
-
-//*************************
-//$next_level = $nowusr['level']+1;
 $next_level=User\User::$arrDBUser['level']+1;
-echo '<br>Тестовый вывод $next_level  - '.$next_level.'<br>';
-//Lvl 1
-if ($next_level == 1) {// $ref_pay надо понять где используют  и зачем if()
-    $ref_pay = User\User::$arrDBUser['ref'];
+
+echo '<br><br><br>Пытаемся активировать уровень: '.$next_level.'<br><br><br>';
+
+//Сделать проверку баланса пользователя
+if(User\User::$arrDBUser['bal']>=Def100\OptCab::LEVEL_COST[$next_level]){
+    echo '<br>текущий баланс '.User\User::$arrDBUser['bal'].' соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
+}else{
+    echo '<br>!!!!!!!!низкий баланс '.User\User::$arrDBUser['bal'].' не соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
 }
 
-echo '<br>Тестовый вывод $ref_pay  - '.$ref_pay.'<br>';
-
-if($next_level == 1) {
-
-    //почему лимит 2 - не понятно
-
-    $users_z=$DB->arrSQL('SELECT uid FROM t_users WHERE ref='.$ref_pay.' AND level > 0 LIMIT 2');
+echo '<br><br>';
 
 
-    echo '<br>Тестовый вывод $users_z - почему лимит 2 - не понятно???<br>';
-    var_dump($users_z);
+echo '<br><br><br>если реферер (папа) имеет левел 0 то кидать админу<br>';
 
-    if ($users_z >= 3) {//тут всегда да
-        echo '<br>Тестовый вывод $users_z true<br>';
+$papa=$DB->strSQL('SELECT * FROM t_users WHERE uid='.User\User::$arrDBUser['ref'].' LIMIT 1');
+    if($papa['level']>0){
+        $arrPapa=$papa;
 
-//************************************************************************
-//************************************************************************
-        //Построение дерева
-        $tree =[];
+        echo '<br>реферер (папа) имеет левел '.$papa['level'];
+
+    }else{
+        if($DB->boolSQL('UPDATE `t_users` SET `ref` = '.Def100\OptCab::ID_ADMIN.' WHERE uid = '.
+            User\User::$arrDBUser['uid'].' LIMIT 1')){
+            //изменил реф на админа
+            echo '<br>изменил реф на админа<br>';
+            User\User::$arrDBUser['ref']=Def100\OptCab::ID_ADMIN;
+            echo User\User::$arrDBUser['ref'];
+            echo '<br>и зарегать человека первой линией от админа !!!!!!!!!!!!!!!!!!!!!!!!<br>';
+            regUser();
+        }
+    }
+
+echo '<br>***************************************************************';
+echo '<br>***************************************************************';
 
 
-        //тут понять функцию function tree_view($index)
+if($next_level==1){
 
-        //global $tree;
-        //global $connect_db; - это не надо мне
-        //напоминает поиск места у реферала в его дереве
+    echo '<br><br>Если $next_level='.$next_level;
 
-        //Temp
-        $index=$ref_pay;
-        //типа все рефы этого папы $ref_pay реферала тут 5 шт даже с левел 0
-        $q = $DB->arrSQL("SELECT uid,level FROM t_users WHERE ref='$index'");
 
-        var_dump($q);
+    echo '<br><br>сначала если папа имеет меньше 3 рефералов';
+    $res=$DB->arrSQL('SELECT uid FROM t_users WHERE ref='.$papa['uid'].' AND `level`>0 LIMIT 3');
 
-        if (!$q){
-            return;
-        }else        {$arr=$q;
-            $users_d = mysqli_num_rows(mysqli_query($connect_db, "SELECT uid FROM t_users WHERE ref='$arr[uid]' LIMIT 4"));
-            if ($arr['level'] > 0) { $tree[$arr['uid']] = $users_d; }
-            tree_view($arr['uid']);
+    echo '<pre>';
+    var_dump($res);
+    echo '</pre>';
+
+    if(count($res)<3){
+        echo 'регистрируем человека - просто спивав с него деньги, а папе зачислили';
+        regUser();
+    }else{
+
+        echo 'начинаем следующий поиск по дереву';
+        $reflist_1 = '';
+        foreach ($res as $k =>$val) {
+            $reflist_1 .= $val['uid'].', ';
+            $refs_all++;
+        }$reflist_1 = substr($reflist_1,0,-2);//Отрезать запятую
+
+        echo '<br>$refs_all - '.$refs_all.'<br>'.'<br>$reflist_1 - '.$reflist_1.'******************************************************<br>';
+
+        $res=$DB->arrSQL('SELECT uid,log,ref,dt FROM t_users WHERE ref IN ('.$reflist_1.') AND level >0');
+
+        echo '<pre>';
+        var_dump($res);
+        echo '</pre>';
+
+        if(count($res)<9){
+
+
+
         }
 
 
 
 
 
+    }
 
 
 
 
 
-    }else echo '<br>Тестовый вывод $users_z false<br>';
 
+
+
+    echo '<br><br>';
 }
 
 
+
+
+function regUser(){
+
+    echo '<br><br>регаем человека с №'.User\User::$arrDBUser['uid'].' и раскидуем по всем таблицам<br>';
+
+}
 
 
 
