@@ -15,14 +15,17 @@ class LevelUp{
 
             //Сделать проверку баланса пользователя
             if(User::$arrDBUser['bal']>=Def100\OptCab::LEVEL_COST[$this->next_level]){
+                //баланс соответствует
 
-                echo '<br>текущий баланс '.User\User::$arrDBUser['bal'].' соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
 
-            }else{
-                echo '<br>!!!!!!!!низкий баланс '.User\User::$arrDBUser['bal'].' не соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
+
+
+
+            }else{//низкий баланс
+                echo Def100\LangLibCabMain::ARR_LEVEL_UP[Def\Opt::$lang]['low_balance'].': $'.User::$arrDBUser['bal'];
             }
 
-            if($this->next_level==1)$this->firstLine();
+            //if($this->next_level==1)$this->firstLine();
 
 
 

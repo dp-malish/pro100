@@ -21,11 +21,11 @@ $next_level=User\User::$arrDBUser['level']+1;
 echo '<br><br><br>Пытаемся активировать уровень: '.$next_level.'<br><br><br>';
 
 //Сделать проверку баланса пользователя
-if(User\User::$arrDBUser['bal']>=Def100\OptCab::LEVEL_COST[$next_level]){
+/*if(User\User::$arrDBUser['bal']>=Def100\OptCab::LEVEL_COST[$next_level]){
     echo '<br>текущий баланс '.User\User::$arrDBUser['bal'].' соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
 }else{
     echo '<br>!!!!!!!!низкий баланс '.User\User::$arrDBUser['bal'].' не соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
-}
+}*/
 
 echo '<br><br>';
 
