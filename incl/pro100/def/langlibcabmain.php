@@ -113,7 +113,9 @@ class LangLibCabMain{
             'max_level'=>'Вы достигли максимального уровня!',
             'level_note'=>'Для повышения уровня пополните баланс аккаунта на необходимую сумму и нажмите на кнопку "Повысить уровень".',
             'level_cost'=>'Стоимость уровня: $',
-            'live_user_null'=>'Необходима авторизация'
+            'live_user_null'=>'Необходима авторизация',
+//ошибки в классе
+            'low_balance'=>'Низкий баланс',
 
         ],
         'en'=>[
@@ -123,7 +125,9 @@ class LangLibCabMain{
             'max_level'=>'You have reached the maximum level!',
             'level_note'=>'To level up, top up Your account with the required amount and click on the "Level up\' button".',
             'level_cost'=>'Level cost: $',
-            'live_user_null'=>'Authorization required'
+            'live_user_null'=>'Authorization required',
+
+            'low_balance'=>'Низкий баланс',
         ]
     ];
 
