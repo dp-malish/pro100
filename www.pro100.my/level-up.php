@@ -73,8 +73,10 @@ if($next_level==1){
 
         echo 'начинаем следующий поиск по дереву';
         $reflist_1 = '';
+        $arrIdLine1=[];
         foreach ($res as $k =>$val) {
             $reflist_1 .= $val['uid'].', ';
+            array_push($arrIdLine1,$val['uid']);
             $refs_all++;
         }$reflist_1 = substr($reflist_1,0,-2);//Отрезать запятую
 
@@ -85,10 +87,18 @@ if($next_level==1){
         echo '<pre>';
         var_dump($res);
         echo '</pre>';
+        echo '<pre>';
+        var_dump($arrIdLine1);
+        echo '</pre>';
 
         if(count($res)<9){
+            foreach ($res as $k =>$val) {
+                echo '<br>'.$val['uid'].'<br>';
+                if($val['ref']=)
 
+            }
 
+        echo '<br>fe<br>';
 
         }
 
