@@ -23,6 +23,7 @@ if(Post::issetPostArr()){
 
     }elseif(isset($_POST['reg'])){//Регистрация на сайте
         //echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN['ru']['banned'],'code'=>2]);
+        User\User::$selfUser=new User\User();
         new User\Reg();
     }
     elseif(!empty($_POST['reset'])){//Вход на сайт

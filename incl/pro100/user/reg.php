@@ -12,41 +12,36 @@ class Reg{
             echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['post_null'],'code'=>2]);
         }else{
             //Довести проверку регистрации $_REQUEST на $_POST
-            //echo 'Level 1 ';
             //Проверить куку mob
-            if(!Def\Validator::issetCookie('mob')){
+            if(!Def\Validator::issetCookie('mob')){$err=1;
                 echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['bad_data'],'code'=>2]);
-            }elseif(Post::issetPostKey(['login','pass','mail','offer'])){
-
-                $login=Def\Validator::html_cod($_POST['login']);//Проверку с класса пост брать
-                //echo 'Level 3 ';
-                $pass=Def\Validator::html_cod($_POST['pass']);//Проверку с класса пост брать
-                //echo 'Level 4 ';
+            }
+            if(Post::issetPostKey(['reglog','pass','mail','offer']) && !$err){
+                $login=Def\Validator::html_cod($_POST['reglog']);
+                $pass=Def\Validator::html_cod($_POST['pass']);
                 $mail=Def\Validator::html_cod($_POST['mail']);
-                //echo 'Level 5 ';
                 $oferta=Def\Validator::html_cod($_POST['offer']);
-                //echo 'Level 6 '.$oferta.'<br>';
 
 
 
-                if(strlen($login)<'4'){
+                if(strlen($login)<'4'){$err=1;
                     echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['login_small'],'code'=>2]);
-                    $err=1;
-                }elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$login)){
+                }elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$login)){ $err=1;
                     echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['login_err'],'code'=>2]);
-                    $err=1;
                 }
-                if(strlen($pass)<'8' && !$err){echo 'psmall';$err=1;}
-                elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$pass) && !$err){
-                    echo 'nopass';$err=1;}
+                if(strlen($pass)<'8' && !$err){$err=1;
+                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['pass_small'],'code'=>2]);
+                }elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$pass) && !$err){$err=1;
+                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['pass_err'],'code'=>2]);}
+                if(!$this->is_email($mail) && !$err){$err=1;
+                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['mail_err'],'code'=>2]);}
+                if(!$oferta && !$err){$err=1;
+                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['offer'],'code'=>2]);
+                }
 
-                if(!$this->is_email($mail) && !$err){echo 'mail';$err=1;}
-
-                //echo '<br>'.$login.'<br>'.$pass.'<br>'.$mail.'<br>Офёрта '.$oferta;
-                if(!$oferta && !$err){echo'offer';$err=1;}
+                //if(!$err)echo json_encode(['err'=>false,'answer'=>'Test'.$pass,'code'=>2]);
 
                 if(!$err){
-                    //echo $oferta.' тут ошибок:'.$err.'<br>';
                     $DB=new Def\SQLi();
                     //Логин и E-MAIL уникален должен быть
                     //$ulq = mysqli_query($connect_db, "SELECT uid FROM t_users WHERE log ='admin' OR em='zelejoy@ya.ru' LIMIT 2");
@@ -55,11 +50,13 @@ class Reg{
                         //Логини E-MAIL проверка на уникальность
                         if(count($res)>1){
                             //Можно не проверять мыло и юзер заняты
-                            echo 'usrmail';
+                            echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['usrmail'],'code'=>2]);
                         }else{
                             foreach($res as $k =>$val){
-                                if($val['log']==$login){echo'regged';}
-                                elseif($val['em']==$mail){echo'usrmail';}
+                                if($val['log']==$login){
+                                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['usr_reg'],'code'=>2]);}
+                                elseif($val['em']==$mail){
+                                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['mail_reg'],'code'=>2]);}
                             }
                         }
                     }else{
@@ -82,8 +79,11 @@ class Reg{
                         $this->insertUser($login,$pass,$ref_id,$mail);
                     }
                 }//нет ошибок
+
+                //delete temp echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['pass_err'],'code'=>2]);
             }//else{echo'error';}
         }
+
     }
 
     private function is_email($email){
@@ -93,20 +93,24 @@ class Reg{
         if(!DefCab\OptCab::$neo_tree){
             $DB=new Def\SQLi();
             //Определение следующего на очереди
-            $res=$DB->arrSQL('SELECT uid AS `druid`, (SELECT COUNT(`uid`) FROM t_users WHERE ref = druid AND level > 0) as cnt FROM t_users WHERE level > 0 AND uid > '.DefCab\OptCab::MAX_PROMO.' ORDER BY uid ASC');
+            $res=$DB->arrSQL('SELECT uid AS `druid`, (SELECT COUNT(`uid`) FROM t_users WHERE ref = druid AND level >= 0) as cnt FROM t_users WHERE level > 0 AND uid > '.DefCab\OptCab::MAX_PROMO.' ORDER BY uid ASC');
             //var_dump($res);
             foreach($res as $k =>$val){if($val['cnt']<3){$ref_id=$val['druid'];break;}}
             return $ref_id;
         }else return DefCab\OptCab::$neo_tree;
     }
-    private function insertUser($login,$pass,$ref_id,$mail){
+    private function insertUser($login,$pass,$ref_id=DefCab\OptCab::ID_ADMIN,$mail){
         $DB=new Def\SQLi();
         $pass=md5(md5($pass));
         $ip=Def\Validator::getIp();
         $sql='INSERT INTO t_users (log,pas,ref,dt,ip,lastip,last,em,multi) VALUES (?,?,?,'.time().',?,?,'.time().',?,0)';
         $sql=$DB->realEscape($sql,[$login,$pass,$ref_id,$ip,$ip,$mail]);
         $res=$DB->boolSQL($sql);
-        echo ($res?1:'error');
-        //echo $ref_id.'e4w'.$sql;
+        if($res){
+            echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['user_reg'],'code'=>1]);
+        }else{
+            echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['post_null'],'code'=>2]);
+            //echo json_encode(['err'=>false,'answer'=>$sql,'code'=>7]);
+        }
     }
 }

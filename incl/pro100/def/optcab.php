@@ -23,7 +23,7 @@ class OptCab{
 
     static $neo_tree = false;
 
-    static $arr_sanction_list=[];
+    static $arr_sanction_list=[];//Login
 
     const  LEVEL_COST=[
         '1' => '100',

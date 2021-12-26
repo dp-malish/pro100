@@ -55,12 +55,15 @@ $(document).ready(function(){
             document.getElementById("reg_pass").focus();
         }else if(offer==false){
             $.jGrowl("License not accepted...",{theme:'growl-error',life:3000});
-        }else ajaxPostSend("reg=1&"+login+"&pass="+pass+"&offer="+offer+"token="+token,formCallBackReg);
-
+        }else ajaxPostSend("reg=1&reglog="+login+"&pass="+pass+"&offer="+offer+"&token="+token+"&mail="+mail,formCallBackReg);
+//alert("reg=1&login="+login+"&pass="+pass+"&offer="+offer+"&token="+token+"&mail="+mail);
 
     });
     function formCallBackReg(arr){
-        $.jGrowl(arr.answer, { theme: 'growl-error',life:3000});
-        //if(arr.code==1)location.href="/cabinet/";
+        $.jGrowl(arr.answer, { theme: 'growl-error',life:4000});
+        if(arr.code==1){
+            document.getElementById('formReg').style.display="none";
+            document.getElementById('shadowForm').style.display="none";
+        }
     }/***********************************************/
 });

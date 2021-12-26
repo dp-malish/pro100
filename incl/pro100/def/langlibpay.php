@@ -59,7 +59,12 @@ class LangLibPay{
             'login_err'=>'Поле логин имеет запрещённые символы',
             'mail_err'=>'Не верно заполненно поле E-mail',
             'pass_err'=>'Поле пароль имеет запрещённые символы',
-
+            'pass_small'=>'Короткий пароль',
+            'offer'=>'Офёрта не принята',
+            'usrmail'=>'Логин и E-mail заняты',
+            'usr_reg'=>'Логин заняты',
+            'mail_reg'=>'Данный E-mail уже зарегистрирован',
+            'user_reg'=>'Пользователь зарегистрирован, войдите в кабинет используя логин и пароль...'
         ],
         'en'=>[
             'post_null'=>'Unknown error',
@@ -67,10 +72,16 @@ class LangLibPay{
             'login'=>'You are logged in',
             'bad_data'=>'Incorrect login or password',
             'connect_err'=>'Connection error',
-            'login_small'=>'Короткий логин',
-            'login_err'=>'Поле логин имеет запрещённые символы',
-            'mail_err'=>'Не верно заполненно поле E-mail',
-            'pass_err'=>'Поле пароль имеет запрещённые символы',
+            'login_small'=>'The shot login',
+            'login_err'=>'Login field has unlegal characters',
+            'mail_err'=>'E-mail field is not filled in correctly',
+            'pass_err'=>'Password field has unlegal characters',
+            'pass_small'=>'The shot password',
+            'offer'=>'Offer not accepted',
+            'usrmail'=>'Login and e-mail are busy',
+            'usr_reg'=>'Login is busy',
+            'mail_reg'=>'E-mail details already registered',
+            'user_reg'=>'User is logged in, log in using your username and password...'
         ]
     ];
 
