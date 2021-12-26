@@ -12,11 +12,13 @@ User\User::$selfUser->validPassCookie();
 
 Cache_File::$cash=new Cache_File(['pro100'],true);
 $DB=new SQLi();
-//Opt::$lang='en';
+Opt::$lang='en';
 
-$refs_all=0;
+//$refs_all=0;
 
 $next_level=User\User::$arrDBUser['level']+1;
+
+$LU=new User\LevelUp();
 
 echo '<br><br><br>Пытаемся активировать уровень: '.$next_level.'<br><br><br>';
 
@@ -26,7 +28,7 @@ echo '<br><br><br>Пытаемся активировать уровень: '.$n
 }else{
     echo '<br>!!!!!!!!низкий баланс '.User\User::$arrDBUser['bal'].' не соответствует уровню '.Def100\OptCab::LEVEL_COST[$next_level].'<br>';
 }*/
-
+/*
 echo '<br><br>';
 
 
@@ -51,7 +53,7 @@ $papa=$DB->strSQL('SELECT * FROM t_users WHERE uid='.User\User::$arrDBUser['ref'
     }
 
 echo '<br>***************************************************************';
-echo '<br>***************************************************************';
+echo '<br>***************************************************************';*/
 
 
 if($next_level==1){
@@ -70,7 +72,7 @@ if($next_level==1){
         echo 'регистрируем человека - просто спивав с него деньги, а папе зачислили';
         regUser();
     }else{
-
+        $refs_all=0;
         echo 'начинаем следующий поиск по дереву';
         $reflist_1 = '';
         $arrIdLine1=[];
@@ -94,7 +96,7 @@ if($next_level==1){
         if(count($res)<9){
             foreach ($res as $k =>$val) {
                 echo '<br>'.$val['uid'].'<br>';
-                if($val['ref']=)
+                //if($val['ref']=)
 
             }
 

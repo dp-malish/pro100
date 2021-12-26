@@ -23,5 +23,7 @@ if(Opt::$live_user!=0){Opt::$template=2;
 //******************************************
         default:Route::$module404=1;
     }
-    }else include'../modul/cabinet/index.php';//просто кабинет
+    }else
+        //echo 'Кабинет';
+        include'../modul/cabinet/index.php';//просто кабинет
 }//else echo 'Надо зайти';

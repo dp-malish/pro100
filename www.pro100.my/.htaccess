@@ -10,12 +10,3 @@ Options +FollowSymlinks
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*) /?%{QUERY_STRING}
-#RewriteRule ^cabinet/user\/(.*?)$ cabinet/user.php?login=$1 [L,QSA]
-#RewriteRule ^cabinet/messages\/(.*?)$ cabinet/messages.php?login=$1 [L,QSA]
-#RewriteRule ^cabinet/support\/(.*?)$ cabinet/support.php?id=$1 [L,QSA]
-#RewriteRule ^cabinet/messages\/(.*?)$ cabinet/messages.php?usr=$1 [L,QSA]
-#RewriteRule ^m_admin/user\/(.*?)$ m_admin/user.php?login=$1 [L,QSA]
-#RewriteRule ^m_admin/support\/(.*?)$ m_admin/support.php?id=$1 [L,QSA]
-#RewriteRule ^p\/(.*?)$ p.php?ref=$1 [L,QSA]
-#RewriteCond %{HTTPS_HOST} ^www\.(.+) [NC]
-#RewriteRule .* http://%1/$0 [L,R=301]

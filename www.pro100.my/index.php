@@ -2,7 +2,7 @@
 namespace lib\Def;
 
 use \incl\pro100\User as User;
-//Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',0);
+Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',0);
 set_include_path(get_include_path().PATH_SEPARATOR.'../');spl_autoload_register();
 $Opt=new Opt('pro100');//Def opt
 

@@ -127,7 +127,7 @@ class LangLibCabMain{
             'level_cost'=>'Level cost: $',
             'live_user_null'=>'Authorization required',
 
-            'low_balance'=>'Низкий баланс',
+            'low_balance'=>'Low balance',
         ]
     ];
 

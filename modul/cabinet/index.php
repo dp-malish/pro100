@@ -58,7 +58,5 @@ Opt::$main_content.='</p></div>
 
 
 </div>
-
-
 ';
 
