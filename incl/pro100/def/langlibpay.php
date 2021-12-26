@@ -48,6 +48,39 @@ class LangLibPay{
         ]
     ];
 
+    const ARR_ERR_REG=[
+        'ru'=>[
+            'post_null'=>'Неизвестная ошибка',
+            'banned'=>'Пользователь забанен',
+            'login'=>'Вы вошли',
+            'bad_data'=>'Не верный логин или пароль',
+            'connect_err'=>'Ошибка соединения',
+            'login_small'=>'Короткий логин',
+            'login_err'=>'Поле логин имеет запрещённые символы',
+            'mail_err'=>'Не верно заполненно поле E-mail',
+            'pass_err'=>'Поле пароль имеет запрещённые символы',
+
+        ],
+        'en'=>[
+            'post_null'=>'Unknown error',
+            'banned'=>'User is banned',
+            'login'=>'You are logged in',
+            'bad_data'=>'Incorrect login or password',
+            'connect_err'=>'Connection error',
+            'login_small'=>'Короткий логин',
+            'login_err'=>'Поле логин имеет запрещённые символы',
+            'mail_err'=>'Не верно заполненно поле E-mail',
+            'pass_err'=>'Поле пароль имеет запрещённые символы',
+        ]
+    ];
+
+
+
+
+
+
+
+
     const ARR_ERR_RESET_PASS=[
         'ru'=>[
             'post_null'=>'Неизвестная ошибка',

@@ -23,7 +23,7 @@ var levelUp=true;
     if(levelUp){
         ajaxPostSend("level-up=1",formCallLevelUp,true,true,"/ajax/cabinet/partners.php");
         levelUp=false;
-    }else  alert("level-up");
+    }//else  alert("level-up");
     });
     
 function formCallLevelUp(arr){

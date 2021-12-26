@@ -28,9 +28,9 @@ if($_SERVER['REQUEST_URI']!='/'){
             //case'logdown':User\User::$selfUser->loginUser();break;//отключить платежи
 
 
-            case'login':User\User::$selfUser->loginUser();break;//Вход в акаунт
+            //case'login':User\User::$selfUser->loginUser();break;//Вход в акаунт
             case'exit':User\User::exitLogin();break;//Выход из акаунта
-            case'reg':new User\Reg();break;//регистрация
+            //case'reg':new User\Reg();break;//регистрация
 
             case'cabinet':include'../modul/cabinet/rout_cabinet.php';break;//главный кабинет
             case'perfect':

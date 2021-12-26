@@ -1,34 +1,41 @@
 <?php
 namespace incl\pro100\User;
 use lib\Def as Def;
+use lib\Post\Post as Post;
 use incl\pro100\Def as DefCab;
 
 class Reg{
     function __construct(){
         $err=0;
-        if(Def\Opt::$live_user!=0){echo'live_user';
+        if(Def\Opt::$live_user!=0){//echo'live_user';
             User::exitLogin();//Надо выйти из сессии
+            echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['post_null'],'code'=>2]);
         }else{
             //Довести проверку регистрации $_REQUEST на $_POST
             //echo 'Level 1 ';
-
             //Проверить куку mob
-            if(isset($_REQUEST['login'])&&isset($_REQUEST['pass'])&& isset($_REQUEST['mail'])&&isset($_REQUEST['oferta'])){
-                //echo 'Level 2 ';
-                $login=Def\Validator::html_cod($_REQUEST['login']);//Проверку с класса пост брать
+            if(!Def\Validator::issetCookie('mob')){
+                echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_LOGIN[Def\Opt::$lang]['bad_data'],'code'=>2]);
+            }elseif(Post::issetPostKey(['login','pass','mail','offer'])){
+
+                $login=Def\Validator::html_cod($_POST['login']);//Проверку с класса пост брать
                 //echo 'Level 3 ';
-                $pass=Def\Validator::html_cod($_REQUEST['pass']);//Проверку с класса пост брать
+                $pass=Def\Validator::html_cod($_POST['pass']);//Проверку с класса пост брать
                 //echo 'Level 4 ';
-                $mail=Def\Validator::html_cod($_REQUEST['mail']);
+                $mail=Def\Validator::html_cod($_POST['mail']);
                 //echo 'Level 5 ';
-                $oferta=Def\Validator::html_cod($_REQUEST['oferta']);
+                $oferta=Def\Validator::html_cod($_POST['offer']);
                 //echo 'Level 6 '.$oferta.'<br>';
 
 
 
-                if(strlen($login)<'5'){echo 'lsmall';$err=1;}
-                elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$login)){
-                    echo 'nologin';$err=1;}
+                if(strlen($login)<'4'){
+                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['login_small'],'code'=>2]);
+                    $err=1;
+                }elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$login)){
+                    echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['login_err'],'code'=>2]);
+                    $err=1;
+                }
                 if(strlen($pass)<'8' && !$err){echo 'psmall';$err=1;}
                 elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$pass) && !$err){
                     echo 'nopass';$err=1;}
@@ -75,7 +82,7 @@ class Reg{
                         $this->insertUser($login,$pass,$ref_id,$mail);
                     }
                 }//нет ошибок
-            }else{echo'error';}
+            }//else{echo'error';}
         }
     }
 

@@ -26,7 +26,6 @@ if(Post\Post::issetPostArr()){
     }elseif(isset($_POST['level-up']) && Opt::$live_user==1){
         if(User\User::$selfUser->validPassCookie()){
             new User\LevelUp();
-            //$u->firstLine();
         }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null']]);
     }
 }else echo'1';

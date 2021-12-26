@@ -15,13 +15,17 @@ if(Post::issetPostArr()){
 
     if(!empty($_POST['feedback'])){//стандартный релиз
         if(Feedback::feedback()){
-            echo json_encode(['err'=>false,'answer'=>'Спасибо! Ваше сообщение отправлено...']);
+            echo json_encode(['err'=>false,'answer'=>'SMS...']);
         }else{Post::answerErrJson();}
     }elseif(!empty($_POST['login'])){//Вход на сайт
         User\User::$selfUser=new User\User();
         User\User::$selfUser->loginUser();
+
+    }elseif(isset($_POST['reg'])){//Регистрация на сайте
         //echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_LOGIN['ru']['banned'],'code'=>2]);
-    }elseif(!empty($_POST['reset'])){//Вход на сайт
+        new User\Reg();
+    }
+    elseif(!empty($_POST['reset'])){//Вход на сайт
         //сделать класс рассылки
         new User\ResetPass();
     }
