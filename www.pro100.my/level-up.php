@@ -20,7 +20,7 @@ $next_level=User\User::$arrDBUser['level']+1;
 
 $LU=new User\LevelUp();
 
-echo '<br><br><br>Пытаемся активировать уровень: '.$next_level.'<br><br><br>';
+//echo '<br><br><br>Пытаемся активировать уровень: '.$next_level.'<br><br><br>';
 
 //Сделать проверку баланса пользователя
 /*if(User\User::$arrDBUser['bal']>=Def100\OptCab::LEVEL_COST[$next_level]){
@@ -58,7 +58,7 @@ echo '<br>***************************************************************';*/
 
 if($next_level==1){
 
-    echo '<br><br>Если $next_level='.$next_level;
+    //echo '<br><br>Если $next_level='.$next_level;
 
 
     echo '<br><br>сначала если папа имеет меньше 3 рефералов';
