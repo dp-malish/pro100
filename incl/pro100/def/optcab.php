@@ -11,13 +11,13 @@ namespace incl\pro100\Def;
 
 class OptCab{
 
-    const MAX_PROMO =2;//300
+    const MAX_PROMO =300;//300
 
     const ID_ADMIN = 300;//300
 
 
     const  MIN_OUT = 10;//Минималка на вывод
-    const  MAX_OUT = 50000;//Максималка на вывод
+    const  MAX_OUT = 10000;//Максималка на вывод
 
     static $Pay_On = 1;
 

@@ -3,29 +3,33 @@ namespace lib\Def;
 
 use \incl\pro100\User as User;
 
+use \incl\pro100\Def as Def100;
 use \incl\pro100\Pay as Pay;
 
 $cash=new Pay\viewTransaction();
+Opt::$title='Balance';
 
+Opt::$main_content.='
+<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name_1'].'</h3></div>
+<div class="text_fon">
+<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['form_add_bal'].'</h4>
 
-Opt::$main_content.='<h3>Тут форма для ввода суммы пополнения и можно выбрать платёжную систему</h3>
-
+<div class="h_fon_field">
 <form action="/cabinet/cashin" method="post" target="_blank">
-<div class="modal-header">
 
-<h4 class="modal-title" id="balance_out_label">Пополнение баланса аккаунта</h4>
-</div>
-
-<label for="t_msg">Сумма</label>
-<input type="text" id="n_sum" name="sum" placeholder="Сумма к пополнению">
+<label for="t_msg">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['tabl_out_sum'].'</label>
+<input type="text" id="n_sum" name="sum" placeholder="'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['sum_add'].'">
 
 <div class="modal-footer m-t-20">
-<button type="button">Отменить</button>
-<button id="t_submit">Пополнить</button>
+
+<button id="t_submit">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name_1'].'</button>
 </div>
-</form>';
+</form>
+
+</div>
+</div>';
 
 
-    Opt::$main_content.='<br><br><br><h2>add cash</h2><br>'.$cash->getTransactionIn();
+    //Opt::$main_content.='<br><br><br><h2>add cash</h2><br>'.$cash->getTransactionIn();
 
 

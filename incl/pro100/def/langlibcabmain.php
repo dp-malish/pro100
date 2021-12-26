@@ -59,6 +59,10 @@ class LangLibCabMain{
             'tabl_in_null'=>'История зачислений пуста.',
             'tabl_in_kind_rep'=>'Пополнение баланса',
             'tabl_in_kind_ref'=>'Партнёрские начисления',
+
+
+            'form_add_bal'=>'Форма пополнения баланса',
+            'sum_add'=>'Сумма к пополнению',
         ],
         'en'=>[
             'name'=>'BALANCE',
@@ -78,6 +82,10 @@ class LangLibCabMain{
             'tabl_in_null'=>'The admission history is empty.',
             'tabl_in_kind_rep'=>'Balance replenishment',
             'tabl_in_kind_ref'=>'Partner accruals',
+
+
+            'form_add_bal'=>'Deposit form',
+            'sum_add'=>'Deposit amount',
         ]
     ];
 
