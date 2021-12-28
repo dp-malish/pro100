@@ -40,7 +40,6 @@ else Opt::$main_content.=Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l3'].
 Opt::$main_content.='</p></div>
 </div>
 
-
 <div class="text_fon">
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['contact'].'</h4>
 <div class="h_fon_field">
@@ -48,15 +47,11 @@ Opt::$main_content.='</p></div>
 
 </div></div>
 
-
 <div class="text_fon">
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['payment'].'</h4>
 <div class="h_fon_field">
 '.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
-
 </div></div>
 
-
-</div>
-';
+</div>';
 
