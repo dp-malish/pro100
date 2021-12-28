@@ -20,7 +20,7 @@ Opt::$description='SocHelping is an alliance of like-minded people, giving every
 Opt::$main_content.='<main>
 <div id="in1">
     <div id="in1_l1">
-        <h1>SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT</h1>
+        <h1>SOCIAL NETWORK OF FINANCIAL MUTUAL SUPPORT</h1>
     </div>
     <div id="in1_l2">Profit is over $450 000</div>
 
