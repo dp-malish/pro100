@@ -49,32 +49,6 @@
             <?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?>
             <!--<div class="l1_pc_cell_ext">7</div>-->
         </div>
-        <script type="text/javascript">
-            if (navigator.clipboard){
-                // поддержка имеется, включить соответствующую функцию проекта.
-                alert(1);
-                const textToCopy = 'Hello there!';
-
-                window.navigator.clipboard.writeText(textToCopy).then(() => { alert(`Copied!`) })
-                    .catch((error) => { alert(`Copy failed! ${error}`) })
-
-            }else{
-                // поддержки нет. Придётся пользоваться execCommand или не включать эту функцию.
-                //alert(0);
-
-            }
-            document.getElementById("l1_ref_link_pc").onclick=function(){
-                /*var copy=document.getElementById("l1_ref_link_pc").dataset.ref;
-                alert(copy);*/
-
-                //alert(67);
-            }
-
-
-//https://habr.com/ru/post/256027/
-            //https://webdesign.tutsplus.com/ru/tutorials/css-tooltip-magic--cms-28082
-            //https://sitehere.ru/ne-slozhnaya-vsplyvayushhaya-podskazka-na-css
-        </script>
         <div id="l1_balance_pc" class="l1_pc_cell" >
             <div class="l1_triangle_pc"></div>
             <div class="l1_triangle_pc_"></div>
