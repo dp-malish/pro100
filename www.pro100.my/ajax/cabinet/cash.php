@@ -14,7 +14,7 @@ if(Post\Post::issetPostArr()){
         if(User\User::$selfUser->validPassCookie()){
 
 
-            echo json_encode(['err'=>false,'answer'=>'<p>'.Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['next_level'].'</p>','l'=>1]);
+            echo json_encode(['err'=>false,'answer'=>'<p>'.Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['next_level'].'</p>','l'=>2]);
 
 
         }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null'],'l'=>1]);
