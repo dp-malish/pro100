@@ -29,18 +29,9 @@ Opt::$main_content.='<div id="aj_p">
     </div>
 </div>';
 
-
 Opt::$main_content.='<script type="text/javascript">
 
-
-
-
-
-
-
 document.getElementById("bal_cash_in_btn").addEventListener("click",function(){
-    
-    
 
 var sum=document.getElementById("bal_sum").value;
 ajaxPostSend("cash-in=1&sum="+sum,formCallLine,true,true,"/ajax/cabinet/cash.php");
@@ -49,7 +40,7 @@ ajaxPostSend("cash-in=1&sum="+sum,formCallLine,true,true,"/ajax/cabinet/cash.php
 
 function formCallLine(arr){
     if(arr.l==1){
-        document.getElementById("d_answ").innerHTML=arr.answer;
+        document.getElementById("d_answ").innerHTML="<p>"+arr.answer+"</p>";
     }else{
         document.getElementById("aj_p").innerHTML=arr.answer;
     }

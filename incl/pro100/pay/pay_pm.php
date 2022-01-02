@@ -8,14 +8,13 @@ use incl\pro100\Def as Def100;
 use incl\pro100\User as User;
 
 class Pay_PM{
-
+    //выплаты
     public $valid_post_request=false;
-
+    //выплаты
     public $arrPM=[];
 
+
     //выплаты
-
-
     function payOut(){
         if(Post\Post::issetPostKey(['sum'])){
             $sum=Def\Validator::html_cod($_POST['sum']);
@@ -28,7 +27,7 @@ class Pay_PM{
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_max']]);
             }else{
                 $sum = number_format($sum, 2, '.', '');
-                $nbal=User\User::$arrDBUser['bal'];  //начальный баланс;
+                $nbal=User\User::$arrDBUser['bal']; //начальный баланс;
                 $pm_wallet =User\User::$arrDBUser['pay_pm'];//perfect money wallet
                 $sum_w_commis =$sum+($sum/100*Def100\OptCab::PM_COMMISSION);//сумма с комиссией
 
@@ -98,7 +97,73 @@ class Pay_PM{
         }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null']]);
     }
 
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
+    //*************************************************
     //Получение платежа
+    //платежи в систему
+
+    function fillFormPM(){//заполнить форму perfectMoney
+        if(Post\Post::issetPostKey(['sum'])){
+           $sum=Def\Validator::html_cod($_POST['sum']);
+           if(preg_match("/^[0-9\.\,]+$/u",$sum)){
+                $sum=str_replace(',','.',$sum);
+                $dot=substr_count($sum,'.');
+                if($dot<=1){
+                    $sum=(float)$sum;
+                    $dt=time();
+                    $m_orderid =User\User::$u_id.'_'.$dt.rand(10,99);
+                    $m_amount = number_format($sum, 2, '.', '');
+                    $DB=new Def\SQLi();
+                    $res=$DB->boolSQL($DB->realEscape('INSERT INTO t_in (usr,sum,ty,ba,st,dt) VALUES (?,?,0,?,0,?)',[User\User::$u_id,$m_amount,$m_orderid,$dt]));
+//echo json_encode(['err'=>false,'answer'=>$sql,'l'=>1]);
+
+                    if($res){
+                        Def\Opt::$main_content.='<p>Форма тут!</p>
+<form id="pm-send" name="perfect_form" action="https://perfectmoney.is/api/step1.asp" method="post">
+<input type="hidden" name="PAYEE_ACCOUNT" value="'.Def100\OptCab::PM_NUMBER.'">';
+//<!--PAYEE_NAME Имя, которое продавец желает отобразить в качестве получателя платежа -->
+Def\Opt::$main_content.='<input type="hidden" name="PAYEE_NAME" value="'.User\User::$arrDBUser['log'].'">
+<input type="hidden" name="PAYMENT_UNITS" value="USD">';
+//<!--Идентификатора счета-фактуры делается самостоятельно-->
+Def\Opt::$main_content.='<input type="hidden" name="PAYMENT_ID" value="'.$m_orderid.'">';
+//<!--обработчик на моей стороне-->
+Def\Opt::$main_content.='<input type="hidden" name="STATUS_URL" value="'.Def\Opt::$protocol.Def\Opt::$site.'/perfect.php">';
+//<!--Это нормальный путь возврата покупателя в систему корзины покупок продавца-->
+Def\Opt::$main_content.='<input type="hidden" name="PAYMENT_URL" value="'.Def\Opt::$protocol.Def\Opt::$site.'/cabinet">';
+//<!--как используется значение поля PAYMENT_URL-->
+Def\Opt::$main_content.='<input type="hidden" name="PAYMENT_URL_METHOD" value="LINK">
+<input type="hidden" name="NOPAYMENT_URL" value="'.Def\Opt::$protocol.Def\Opt::$site.'/cabinet/cash-add">
+<input type="hidden" name="NOPAYMENT_URL_METHOD" value="LINK">';
+//<!-- baggage fields -->
+Def\Opt::$main_content.='<input type="hidden" name="IDENT" value="'.User\User::$arrDBUser['log'].'">
+<input type="hidden" name="BAGGAGE_FIELDS"  value="IDENT">
+<input type="hidden" name="INTERFACE_LANGUAGE" value="'.Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['interface_lang'].'">
+<input type="hidden" name="PAYMENT_AMOUNT" value="'.$m_amount.'">
+</form><script type="text/javascript">
+alert(1);
+//document.forms["pm-send"].submit();
+alert(2);
+</script>';
+                        echo json_encode(['err'=>false,'answer'=>Def\Opt::$main_content,'l'=>1]);
+                    }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
+                }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
+           }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
+        }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
+    }
+
+
 
     private function validRequestPM(){//Приём платежей перфект мани (проверка запроса от сервера PM)
 

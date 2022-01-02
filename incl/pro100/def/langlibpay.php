@@ -18,6 +18,8 @@ class LangLibPay{
             'low_balance'=>'Низкий баланс кашелька',
             'low_balance_w_commis'=>'Низкий баланс кашелька c учётом комисси',
 
+            'interface_lang'=>'ru_RU'//из таблицы API Perfect Money
+
         ],
         'en'=>[
             'openning_url_null'=>'Payment system error. Please try again later...',
@@ -29,6 +31,8 @@ class LangLibPay{
             'wallet_null'=>'No wallet number',
             'low_balance'=>'Low wallet balance',
             'low_balance_w_commis'=>'Low wallet balance including commission',
+
+            'interface_lang'=>'en_US'//из таблицы API Perfect Money
         ]
     ];
 
