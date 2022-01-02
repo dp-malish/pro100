@@ -22,7 +22,7 @@ Opt::$main_content.='<main>
     <div id="in1_l1">
         <h1>SOCIAL NETWORK OF FINANCIAL MUTUAL SUPPORT</h1>
     </div>
-    <div id="in1_l2">Profit is over $450 000</div>
+    <div id="in1_l2">PROFIT IS OVER $450 000</div>
 
     <div id="in1_l3"></div>
     <div id="in1_l4">
