@@ -130,9 +130,7 @@ class Pay_PM{
 //echo json_encode(['err'=>false,'answer'=>$sql,'l'=>1]);
 
                     if($res){
-                        Def\Opt::$main_content.='<p>Форма тут!</p>
-<form id="pm-send" name="perfect_form" action="https://perfectmoney.is/api/step1.asp" method="post">
-<input type="hidden" name="PAYEE_ACCOUNT" value="'.Def100\OptCab::PM_NUMBER.'">';
+                        Def\Opt::$main_content.='<form id="pm-send" name="perfect_form" action="https://perfectmoney.is/api/step1.asp" method="post"><input type="hidden" name="PAYEE_ACCOUNT" value="'.Def100\OptCab::PM_NUMBER.'">';
 //<!--PAYEE_NAME Имя, которое продавец желает отобразить в качестве получателя платежа -->
 Def\Opt::$main_content.='<input type="hidden" name="PAYEE_NAME" value="'.User\User::$arrDBUser['log'].'">
 <input type="hidden" name="PAYMENT_UNITS" value="USD">';
@@ -207,7 +205,7 @@ document.forms["pm-send"].submit();
         }
     }
 
-    function processPayment(){//Приём платежей перфект мани
+    function processPayment(){//Приём платежей перфект мани от системы
         $this->validRequestPM();
         if($this->valid_post_request){
             $DB=new Def\SQLi();

@@ -107,7 +107,7 @@
     position:absolute;
     left:0;
     top:195px;
-    min-height:69px;
+    min-height:75px;
     width:100%;
     overflow: hidden;
     padding:5px 0;
@@ -121,15 +121,20 @@
     min-height:75px;
     background:#1b6d85;
     margin:0 155px;
-    padding:7px;
+    padding:20px 7px;
     border-radius:15px;
     background: rgba(2,2,17,.6);
     box-shadow: 0 4px 9px 2px rgb(100 149 255);
 }
-@media screen and (max-width:570px){
+@media screen and (max-width:840px){
     .in1_l5_flax_t{
         margin:0 3px;
         width:45%;
+    }
+}
+@media screen and (max-width:470px){
+    .in1_l5_flax_t{
+        padding:7px;
     }
 }
 
@@ -142,7 +147,7 @@
     height:98px;
     overflow: hidden;
     color:#fcfcfc;
-    padding: 7px 0;
+    padding:5px 0;
 }
 
 #in1_l6 .in1_l5_flax_t{
