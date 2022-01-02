@@ -15,5 +15,10 @@ if(Post\Post::issetPostArr()){
             $pm=new \incl\pro100\Pay\Pay_PM();
             $pm->fillFormPM();
         }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null'],'l'=>1]);
+    }elseif(isset($_POST['cash-out']) && Opt::$live_user==1){
+        if(User\User::$selfUser->validPassCookie()){
+            $pm=new \incl\pro100\Pay\Pay_PM();
+            $pm->payOut();
+        }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null'],'l'=>1]);
     }
 }else echo 1;

@@ -63,6 +63,11 @@ class LangLibCabMain{
 
             'form_add_bal'=>'Форма пополнения баланса',
             'sum_add'=>'Сумма к пополнению',
+
+            'form_out_bal'=>'Форма вывода средств',
+            'sum_out'=>'Сумма к выводу',
+
+
         ],
         'en'=>[
             'name'=>'BALANCE',
@@ -86,6 +91,9 @@ class LangLibCabMain{
 
             'form_add_bal'=>'Deposit form',
             'sum_add'=>'Deposit amount',
+
+            'form_out_bal'=>'Withdrawal form',
+            'sum_out'=>'Withdrawal amount',
         ]
     ];
 

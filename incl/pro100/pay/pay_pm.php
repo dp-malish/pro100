@@ -20,81 +20,98 @@ class Pay_PM{
             $sum=Def\Validator::html_cod($_POST['sum']);
             //провверка цифры
             if(!Def\Validator::paternInt($sum)){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_null']]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_null'],'l'=>2]);
             }elseif($sum<Def100\OptCab::MIN_OUT){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_min']]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_min'],'l'=>2]);
             }elseif($sum>Def100\OptCab::MAX_OUT){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_max']]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['sum_max'],'l'=>2]);
             }else{
-                $sum = number_format($sum, 2, '.', '');
-                $nbal=User\User::$arrDBUser['bal']; //начальный баланс;
-                $pm_wallet =User\User::$arrDBUser['pay_pm'];//perfect money wallet
-                $sum_w_commis =$sum+($sum/100*Def100\OptCab::PM_COMMISSION);//сумма с комиссией
+                //Вывод по уровням добавить ограничения
+                if($this->levelRestrictions($sum)){
 
-                if($pm_wallet==''){
-                    echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['wallet_null']]);
-                }elseif($sum>$nbal){
-                    echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['low_balance'].'-'.$sum.'-'.$nbal]);
-                }elseif($nbal<$sum_w_commis){
-                    //тут с комиссией системы сравнить
-                    echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['low_balance_w_commis']]);
-                }else{
-                    $dt=time();
-                    $payment_id=Def\Opt::$live_user_id.'_'.$dt.rand(10,99);
-                    //DB тут делать
-                    //Def\Opt::$live_user_id;
-                    $str='https://perfectmoney.is/acct/confirm.asp?AccountID='.Def100\OptCab::PM_ID.'&PassPhrase='.Def100\OptCab::PM_PASS.'&Payer_Account='.Def100\OptCab::PM_NUMBER.'&Payee_Account='.$pm_wallet.'&Amount='.$sum.'&PAY_IN=1&PAYMENT_ID='.$payment_id;
-                    //$f=false;
+                    $sum = number_format($sum, 2, '.', '');
+                    $nbal = User\User::$arrDBUser['bal']; //начальный баланс;
+                    $pm_wallet = User\User::$arrDBUser['pay_pm'];//perfect money wallet
+                    $sum_w_commis = $sum + ($sum / 100 * Def100\OptCab::PM_COMMISSION);//сумма с комиссией
 
-                    $f=fopen('https://perfectmoney.is/acct/confirm.asp?AccountID='.Def100\OptCab::PM_ID.'&PassPhrase='.Def100\OptCab::PM_PASS.'&Payer_Account='.Def100\OptCab::PM_NUMBER.'&Payee_Account='.$pm_wallet.'&Amount='.$sum.'&PAY_IN=1&PAYMENT_ID='.$payment_id,'rb');
-
-                    if($f===false){//echo 'error openning url';
-                        echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['openning_url_null']]);
+                    if($pm_wallet==''){
+                        echo json_encode(['err' => false, 'answer' => Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['wallet_null'],'l'=>1]);
+                    }elseif($sum>$nbal){
+                        echo json_encode(['err' => false, 'answer' => Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['low_balance'] . '-' . $sum . '-' . $nbal,'l'=>2]);
+                    }elseif($nbal<$sum_w_commis){
+                        //тут с комиссией системы сравнить
+                        echo json_encode(['err' => false, 'answer' => Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['low_balance_w_commis'],'l'=>2]);
                     }else{
-                        $out=[];
-                        while(!feof($f))$out.=fgets($f);//Проверяет, достигнут ли конец файла и Читает строку из файла
-                        //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
-                        //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
-                        //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
-                        //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
-                        //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
-                        //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
-                        file_put_contents('../../../log_pay/'.$payment_id.'.txt', file_get_contents($f));
-                        fclose($f);
-                        //echo json_encode(['err'=>false,'answer'=>$payment_id]);
+                        $dt = time();
+                        $payment_id = Def\Opt::$live_user_id . '_' . $dt . rand(10, 99);
+                        //DB тут делать
+                        //Def\Opt::$live_user_id;
+                        /*$str='https://perfectmoney.is/acct/confirm.asp?AccountID=' . Def100\OptCab::PM_ID . '&PassPhrase=' . Def100\OptCab::PM_PASS . '&Payer_Account=' . Def100\OptCab::PM_NUMBER . '&Payee_Account=' . $pm_wallet . '&Amount=' . $sum . '&PAY_IN=1&PAYMENT_ID=' . $payment_id;
+                        //$f=false;
 
-                        if(!preg_match_all("/<input name='(.*)' type='hidden' value='(.*)'>/", $out,$result,PREG_SET_ORDER)) {
-                            //echo 'Ivalid output';
-                            echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['openning_url_null']]);
-                        }else{
-                            $ar=[];
-                            foreach($result as $item){
-                                $key=$item[1];
-                                $ar[$key]=$item[2];
-                            }
-                            if(empty($ar['ERROR'])){ //$pay_system=1;//Perfect Money
-                                //тут отправить на почту если лажа
+                        $f = fopen('https://perfectmoney.is/acct/confirm.asp?AccountID=' . Def100\OptCab::PM_ID . '&PassPhrase=' . Def100\OptCab::PM_PASS . '&Payer_Account=' . Def100\OptCab::PM_NUMBER . '&Payee_Account=' . $pm_wallet . '&Amount=' . $sum . '&PAY_IN=1&PAYMENT_ID=' . $payment_id, 'rb');
 
-                                $sql='INSERT INTO t_out(usr,sum,ps,dt,st)VALUES('.Def\Opt::$live_user_id.',"'.$sum_w_commis.'",1,'.$dt.',1)';
+                        if ($f === false) {//echo 'error openning url';
+                            echo json_encode(['err' => false, 'answer' => Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['openning_url_null'],'l'=>2]);
+                        } else {
+                            $out = [];
+                            while (!feof($f)) $out .= fgets($f);//Проверяет, достигнут ли конец файла и Читает строку из файла
+                            //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
+                            //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
+                            //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
+                            //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
+                            //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
+                            //log платежей (!!!!!!ПРОВЕРИТЬ!!!!!!!!)
+                            file_put_contents('../../../log_pay/' . $payment_id . '.txt', file_get_contents($f));
+                            fclose($f);
+                            //echo json_encode(['err'=>false,'answer'=>$payment_id]);
 
-                                /*INSERT INTO `t_out` (usr,sum,ps,dt,st) VALUES ('$uid','$sum+$sum/100*2.5','2','$dt','1')");
-                                mysqli_query($connect_db, "UPDATE `t_users` SET `bal` = `bal`-'$sum+$sum/100*2.5' WHERE uid = '$uid' LIMIT 1");*/
-
-
-                                //file_put_contents($payment_id, file_get_contents($f));
-
-                                echo json_encode(['err'=>false,'answer'=>$str.' Спасибо поням!!! '.$nbal.' '.$pm_wallet]);
-
-
+                            if(!preg_match_all("/<input name='(.*)' type='hidden' value='(.*)'>/", $out, $result, PREG_SET_ORDER)){
+                                //echo 'Ivalid output';
+                                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['openning_url_null'],'l'=>2]);
                             }else{
-                                //print_r($ar['ERROR']).'<br />';
-                                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['openning_url_null']]);
+                                $ar=[];
+                                foreach($result as $item){
+                                    $key=$item[1];
+                                    $ar[$key]=$item[2];
+                                }
+                                if(empty($ar['ERROR'])){ //$pay_system=1;//Perfect Money
+                                    //тут отправить на почту если лажа
+
+                                    $sql = 'INSERT INTO t_out(usr,sum,ps,dt,st)VALUES(' . Def\Opt::$live_user_id . ',"' . $sum_w_commis . '",1,' . $dt . ',1)';
+
+                                    //INSERT INTO `t_out` (usr,sum,ps,dt,st) VALUES ('$uid','$sum+$sum/100*2.5','2','$dt','1')");
+                                   //mysqli_query($connect_db, "UPDATE `t_users` SET `bal` = `bal`-'$sum+$sum/100*2.5' WHERE uid = '$uid' LIMIT 1");
+
+
+                                    //file_put_contents($payment_id, file_get_contents($f));
+
+                                    //echo json_encode(['err' => false, 'answer' => $str . ' Спасибо поням!!! ' . $nbal . ' ' . $pm_wallet,'l'=>2]);
+
+
+                                } else {
+                                    //print_r($ar['ERROR']).'<br />';
+                                    echo json_encode(['err' => false, 'answer' => Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['openning_url_null'],'l'=>2]);
+                                }
                             }
-                        }
-                    }
+                        }*/
+                    }//тут сама продседура от else{ начиная
                 }
             }
-        }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null']]);
+        }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>2]);
+    }
+
+    private function levelRestrictions($sum){
+        $l1_max=240;
+
+        if(User\User::$arrDBUser['level']==0){
+            echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['level_0'],'l'=>1]);
+            return false;
+        }elseif(User\User::$arrDBUser['level']==1 && $sum>$l1_max){
+            echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['level_n'].$l1_max,'l'=>1]);
+            return false;
+        }
+        else return true;
     }
 
     //*************************************************

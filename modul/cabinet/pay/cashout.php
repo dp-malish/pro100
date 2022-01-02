@@ -1,88 +1,49 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: WinTeh
- * Date: 21.09.2021
- * Time: 14:23
- */
 namespace lib\Def;
 
-use \incl\pro100\User as User;
+use \incl\pro100\Def as Def100;
 
-use \incl\pro100\Pay as Pay;
+Opt::$title=Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name_2'];
 
-$cash=new Pay\viewTransaction();
-
-
-Opt::$main_content.='<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-
-<h3>Тут форма для вывода суммы и можно выбрать платёжную систему</h3>
-<div>
-    <label for="sum">Сумма</label>
-    <input type="text" id="sum" name="sum" placeholder="Сумма к выводу">
-    <button id="sum_post">Вывести!!!</button>
+Opt::$main_content.='<div id="aj_p"><div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name_2'].'</h3></div>
+    
+    
+    <div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['form_out_bal'].'</h4>
+    <div class="h_fon_field">
+        <div class="d_inp">        
+            <span class="d_inp_l">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['tabl_out_sum'].'</span>
+            <span class="d_inp_r"><input type="number" id="bal_sum" placeholder="'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['sum_out'].'"></span><div class="cl"></div>
+        </div>
+        <div id="bal_cash_in_btn" class="cab_btn">'.Def100\LangLibCabBtn::ARR_BTN[Opt::$lang]['bal_cash_out'].'</div><div id="d_answ"></div>
+    </div>
+    </div>
 </div>
 
-<div id="answer_post"></div>
-
-<script src="/j/lib/m_jq.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/css/all_jGrowl.css" />
-
-<script src="/j/lib/all_jGrowl.js"></script>
-<script src="/j/common_v1_0.js"></script>
-
 <script type="text/javascript">
+var fs_btn=true;
 
-function sendSum(){
-    
-   
-    var sum=document.getElementById("sum").value;
-    var ps = 1;
-    
-    ajaxPostSend("cash_out=1&sum="+sum+"&ps="+ps,callbackUserLogin,true,true,"/ajax/cabinet/cabinet.php");
-alert(35);
+document.getElementById("bal_cash_in_btn").addEventListener("click",function(){
+    var sum=document.getElementById("bal_sum").value;if(sum<1){
+        $.jGrowl("'.Def100\LangLibPay::ARR_ERR_PAY[Opt::$lang]['sum_null'].'",{theme:"growl-error",life:4000});
+    }else{
+        if(fs_btn){
+            fs_btn=false;
+            ajaxPostSend("cash-out=1&sum="+sum,formCallLine,true,true,"/ajax/cabinet/cash.php");
+        }
+    }
+});
+
+
+
+function formCallLine(arr){if(arr.l==1){
+    document.getElementById("d_answ").innerHTML="<p>"+arr.answer+"</p>";
+    fs_btn=true;
+}else if(arr.l==2){
+    $.jGrowl(arr.answer,{theme:"growl-error",life:4000});
+    fs_btn=true;
+}else if(arr.l==3){
+    document.getElementById("d_answ").innerHTML=arr.answer;
 }
-function callbackUserLogin(arr){
-  //alert(arr.answer);
-  document.getElementById("answer_post").innerHTML=arr.answer;
-  
-/*  if(arr.answer==1){
-      modalloadclose();
-      document.getElementById("login_btn").remove();
-      
-  }else modalloadFormAnswer("<p>"+arr.answer+"</p>");*/
-  
 }
-document.getElementById("sum_post").onclick = function(){sendSum()};
 
-
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function (){
-        $("#sum").keyup(function(){
-            var sum=document.getElementById("sum").value;
-            sum=sum.replace(/[^0-9\.]/g,"");
-            document.getElementById("sum").value=sum;
-        });
-
-        
-
-    });
-    
-
-
-</script>
-
-<br><br><br><h2>out cash</h2><br>'.$cash->getTransactionOut().'
-</body>
-</html>';
-
+</script>';

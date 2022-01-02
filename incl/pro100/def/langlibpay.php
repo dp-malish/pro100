@@ -18,6 +18,9 @@ class LangLibPay{
             'low_balance'=>'Низкий баланс кашелька',
             'low_balance_w_commis'=>'Низкий баланс кашелька c учётом комисси',
 
+            'level_0'=>'На Вашем уровне выплаты невозможны',
+            'level_n'=>'На Вашем уровне выплаты ограничены суммой: ',
+
             'interface_lang'=>'ru_RU'//из таблицы API Perfect Money
 
         ],
@@ -31,6 +34,9 @@ class LangLibPay{
             'wallet_null'=>'No wallet number',
             'low_balance'=>'Low wallet balance',
             'low_balance_w_commis'=>'Low wallet balance including commission',
+
+            'level_0'=>'Payouts are not possible at your level',
+            'level_n'=>'The payout is limited to an amount at your level: ',
 
             'interface_lang'=>'en_US'//из таблицы API Perfect Money
         ]

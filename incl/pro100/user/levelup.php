@@ -27,6 +27,8 @@ class LevelUp{
                 //баланс соответствует
                 $this->DB=new Def\SQLi();
                 if($this->next_level==1)$this->firstLine();
+                //Temp
+                else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Def\Opt::$lang]['name']]);
 
 
 
