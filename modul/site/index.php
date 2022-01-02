@@ -42,8 +42,8 @@ Opt::$main_content.='<main>
     </div>
     <div id="in1_l5">
         <div class="in1_l5_flax dwfc">
-        <div class="in1_l5_flax_t">You can get money transfers all over the world</div>
-        <div class="in1_l5_flax_t ar">You can use desktop and mobile devices</div>
+        <div class="in1_l5_flax_t ac">You can get money transfers all over the world</div>
+        <div class="in1_l5_flax_t ac">You can use desktop and mobile devices</div>
         </div>
     </div>
 

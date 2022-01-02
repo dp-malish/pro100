@@ -150,20 +150,16 @@ Def\Opt::$main_content.='<input type="hidden" name="PAYMENT_URL_METHOD" value="L
 Def\Opt::$main_content.='<input type="hidden" name="IDENT" value="'.User\User::$arrDBUser['log'].'">
 <input type="hidden" name="BAGGAGE_FIELDS"  value="IDENT">
 <input type="hidden" name="INTERFACE_LANGUAGE" value="'.Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['interface_lang'].'">
-<input type="hidden" name="PAYMENT_AMOUNT" value="'.$m_amount.'">
-</form><script type="text/javascript">
-alert(1);
-//document.forms["pm-send"].submit();
-alert(2);
-</script>';
-                        echo json_encode(['err'=>false,'answer'=>Def\Opt::$main_content,'l'=>1]);
+<input type="hidden" name="PAYMENT_AMOUNT" value="'.$m_amount.'"></form>';
+/*<script type="text/javascript">
+document.forms["pm-send"].submit();
+</script>*/
+                        echo json_encode(['err'=>false,'answer'=>Def\Opt::$main_content,'l'=>3]);
                     }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
                 }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
            }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
         }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
     }
-
-
 
     private function validRequestPM(){//Приём платежей перфект мани (проверка запроса от сервера PM)
 

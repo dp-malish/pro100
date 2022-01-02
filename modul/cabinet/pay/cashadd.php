@@ -34,15 +34,27 @@ Opt::$main_content.='<script type="text/javascript">
 document.getElementById("bal_cash_in_btn").addEventListener("click",function(){
 
 var sum=document.getElementById("bal_sum").value;
-ajaxPostSend("cash-in=1&sum="+sum,formCallLine,true,true,"/ajax/cabinet/cash.php");
 
+if(sum<1){
+    alert(32432);
+}else {
+ajaxPostSend("cash-in=1&sum="+sum,formCallLine,true,true,"/ajax/cabinet/cash.php");
+}
 });
 
 function formCallLine(arr){
     if(arr.l==1){
         document.getElementById("d_answ").innerHTML="<p>"+arr.answer+"</p>";
-    }else{
+    }else if(arr.l==2){
         document.getElementById("aj_p").innerHTML=arr.answer;
+    }else if(arr.l==3){
+        document.getElementById("d_answ").innerHTML=arr.answer;
+        document.forms["pm-send"].submit();
     }
 }
+
+function formSubmit(el) {
+  document.forms[el].submit();
+}
+
 </script>';
