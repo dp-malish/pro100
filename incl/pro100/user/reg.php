@@ -96,6 +96,7 @@ class Reg{
             $res=$DB->arrSQL('SELECT uid AS `druid`, (SELECT COUNT(`uid`) FROM t_users WHERE ref = druid AND level >= 0) as cnt FROM t_users WHERE level > 0 AND uid > '.DefCab\OptCab::MAX_PROMO.' ORDER BY uid ASC');
             //var_dump($res);
             foreach($res as $k =>$val){if($val['cnt']<3){$ref_id=$val['druid'];break;}}
+            if($ref_id==NULL)$ref_id=DefCab\OptCab::ID_ADMIN;
             return $ref_id;
         }else return DefCab\OptCab::$neo_tree;
     }
@@ -110,7 +111,7 @@ class Reg{
             echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['user_reg'],'code'=>1]);
         }else{
             echo json_encode(['err'=>false,'answer'=>DefCab\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['post_null'],'code'=>2]);
-            //echo json_encode(['err'=>false,'answer'=>$sql,'code'=>7]);
-        }
+
+        } //echo json_encode(['err'=>false,'answer'=>$sql,'code'=>7]);
     }
 }
