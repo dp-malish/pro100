@@ -123,7 +123,7 @@ class LangLibCabMain{
 
     const ARR_LEVEL_UP=[
         'ru'=>[
-            'name'=>'ПОВЫСИТЬ УРОВЕНЬ',
+            'name'=>'УРОВЕНЬ',
             'current_level'=>'Ваш текущий уровень: ',
             'next_level'=>'Ваш следующий уровень: ',
             'max_level'=>'Вы достигли максимального уровня!',
@@ -135,7 +135,7 @@ class LangLibCabMain{
 
         ],
         'en'=>[
-            'name'=>'LEVEL UP',
+            'name'=>'LEVEL',
             'current_level'=>'Your current level: ',
             'next_level'=>'Your next level: ',
             'max_level'=>'You have reached the maximum level!',
@@ -150,11 +150,45 @@ class LangLibCabMain{
     const ARR_SUPPORT=[
         'ru'=>[
             'name'=>'СЛУЖБА ПОДДЕРЖКИ',
+            'support_form'=>'Форма поддержки',
 
-        ],
+
+            'field_1'=>'Тема',
+
+            'theme'=>[
+                'general'=>'Основные вопросы',
+                'technical'=>'Технические вопросы',
+                'marketing'=>'Маркетинг',
+                'deposit'=>'Депозит',
+                'withdraw'=>'Вывод',
+            ],
+
+            'field_2'=>'Вопрос',
+
+            'js_err'=>'Опишите Ваш вопрос подробнее...',
+
+            'answer_good'=>'Ваше сообщение отправлено в службу поддержки. В ближайшее время мы свяжемся с Вами...'
+    ],
         'en'=>[
             'name'=>'SUPPORT SERVICE',
+            'support_form'=>'Support form',
 
+
+            'field_1'=>'Theme',
+
+            'theme'=>[
+                'general'=>'General Questions',
+                'technical'=>'Technical Questions',
+                'marketing'=>'Marketing',
+                'deposit'=>'Deposit',
+                'withdraw'=>'Withdraw',
+            ],
+
+            'field_2'=>'Question',
+
+            'js_err'=>'Describe your question in more detail...',
+
+            'answer_good'=>'Your message has been sent to support. We will contact you shortly...'
         ]
     ];
 

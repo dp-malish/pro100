@@ -66,4 +66,19 @@ CREATE TABLE `t_users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
+CREATE TABLE IF NOT EXISTS support(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  id_user int(11) NOT NULL,
+  log varchar(100) NOT NULL,
+  em varchar(100) DEFAULT NULL COMMENT 'Почта эл.',
+  readed tinyint(1) DEFAULT NULL,
+  theme varchar(130) NOT NULL,
+  text text NOT NULL,
+  ip varchar(50) NOT NULL,
+  data int(11) NOT NULL,
+  PRIMARY KEY (id),
+  KEY id_user(id_user)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+
 
