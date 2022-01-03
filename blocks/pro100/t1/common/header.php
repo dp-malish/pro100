@@ -66,7 +66,7 @@
         <div class="l1_mob_bur_line"><a href="/offer">Offer</a></div>
         <div class="l1_mob_bur_line"></div><?php
         if(\lib\Def\Opt::$live_user){
-            echo'<div class=\"l1_mob_bur_line\"><a href=\"/cabinet\">Cabinet</a></div><div class=\"l1_mob_bur_line\"><a href=\"/exit\">Exit</a></div>';
+            echo'<div class="l1_mob_bur_line"><a href="/cabinet/">Cabinet</a></div><div class="l1_mob_bur_line"><a href="/exit">Exit</a></div>';
         }else{
             echo'<div id="l1_bur_log" class="l1_mob_bur_line">Login</div><div id="l1_bur_reg" class="l1_mob_bur_line">Registration</div><script type="text/javascript">
             document.getElementById("l1_bur_log").onclick=function(){

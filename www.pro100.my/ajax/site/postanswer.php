@@ -14,9 +14,9 @@ if(Post::issetPostArr()){
     $Opt::$lang='en';
 
     if(!empty($_POST['feedback'])){//стандартный релиз
-        if(Feedback::feedback()){
-            echo json_encode(['err'=>false,'answer'=>'SMS...']);
-        }else{Post::answerErrJson();}
+        /*if(Feedback::feedback()){
+            //echo json_encode(['err'=>false,'answer'=>'SMS...']);
+        }else{Post::answerErrJson();}*/
     }elseif(!empty($_POST['login'])){//Вход на сайт
         User\User::$selfUser=new User\User();
         User\User::$selfUser->loginUser();
