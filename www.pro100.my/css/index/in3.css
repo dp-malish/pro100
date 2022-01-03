@@ -2,8 +2,8 @@
     position:relative;
     width:100%;
     min-height:875px;/*100vh;*/
-    background:#050505 url("../../img/index/fone3.jpg") no-repeat;
-    background-size:cover;
+    background:#000000 url("../../img/index/fone3.jpg") no-repeat;
+    background-size:contain;
     background-position-x:50%;
     background-position-y:50%;
     overflow: hidden;

@@ -2,8 +2,10 @@
     position:relative;
     width: 100%;
     min-height:950px;/*100vh;*/
-    background:#050505 url("../../img/index/fone2.jpg") no-repeat;
-    background-size:cover;
+    background:#000000 url("../../img/index/fone2.jpg") no-repeat;
+    /*background-size:100% 100%;
+    background-size:contain;*/
+    background-size:auto;
     background-position-x:50%;
     background-position-y:50%;
     overflow: hidden;

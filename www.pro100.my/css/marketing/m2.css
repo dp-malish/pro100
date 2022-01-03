@@ -1,11 +1,11 @@
 #m2{
     position:relative;
     min-height:410px;
-    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
-/*    background-size:cover;
+    background:#000000 url("../../img/index/fone5.jpg") no-repeat;
+    background-size:contain;
     background-position-x:50%;
-    background-position-y:50%;*/
-    background-size:100%;
+    background-position-y:50%;
+ /*   background-size:100%;*/
 }
 #m2_l1{
     min-height:70px;

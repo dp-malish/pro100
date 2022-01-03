@@ -2,10 +2,7 @@
     position:relative;
     width:100%;
     min-height:205px;/*100vh;*/
-    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
-    background-size:cover;
-    background-position-x:50%;
-    background-position-y:50%;
+    background:#000000;
     overflow: hidden;
 }
 

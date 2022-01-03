@@ -2,11 +2,11 @@
      position:relative;
      /*height:calc(100vh - 80px);*/
      min-height:410px;
-     background:#050505 url("../../img/index/fone2.jpg") no-repeat;
-    /*     background-size:cover;
-  /*     background-position-x:50%;
-         background-position-y:50%;*/
-     background-size: 100%;
+     background:#000000 url("../../img/index/fone2.jpg") no-repeat;
+     background-size:contain;
+     background-position-x:50%;
+     background-position-y:50%;
+    /* background-size: 100%;*/
 
  }
 #m1_l1{

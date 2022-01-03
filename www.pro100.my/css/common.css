@@ -1,7 +1,6 @@
 *{box-sizing:border-box}
 html, body {
     height: 100%;
-    /*font: 15px Verdana, Geneva, sans-serif;*/
     font: 15px Arial, Helvetica, sans-serif;
     text-align: justify;
     cursor: default;
@@ -49,7 +48,7 @@ A:hover, .link:hover {
 .b_fon{
     position:relative;
     min-height:410px;
-    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
+    background:#000000 url("../../img/index/fone5.jpg") repeat-y;
     background-size:100%;
     overflow:hidden;
 }

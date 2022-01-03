@@ -2,14 +2,16 @@
     position:relative;
     width:100%;
     min-height:555px;/*100vh;*/
-    background:#050505 url("../../img/index/fone5.jpg") no-repeat;
-    background-size:100%;
-/*    background-size:cover;
+    background:#000000 url("../../img/index/fone5.jpg") no-repeat;
+/*    background-size:100%;*/
+    background-size:contain;
     background-position-x:50%;
-    background-position-y:50%;*/
+    background-position-y:50%;
     overflow: hidden;
 
 }
+
+
 @media screen and (max-width:540px){
     #in5{min-height:700px;}
 }
