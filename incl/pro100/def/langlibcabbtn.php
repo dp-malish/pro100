@@ -20,10 +20,10 @@ class LangLibCabBtn{
             'next'=>'Next',
             'back'=>'Back',
 
-            'bal_hist_in'=>'Replenishment history',
+            'bal_hist_in'=>'Deposit history',
             'bal_hist_out'=>'Withdrawal history',
-            'bal_cash_in'=>'Money add',
-            'bal_cash_out'=>'Money out',
+            'bal_cash_in'=>'Deposit',
+            'bal_cash_out'=>'Withdraw',
 
             'level_up'=>'Level up',
 

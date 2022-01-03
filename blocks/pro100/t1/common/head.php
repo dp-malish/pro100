@@ -6,16 +6,8 @@
     <link rel="shortcut icon" href="/img/ico.png" type="image/png">
 
     <script async src="/js/scroll.js"></script>
-<!--    <script async src="/js/common.php?v2"></script>
-    <script async src="/js/ya_share.php"></script>
-    <script async src="/js/config.php"></script>
--->
-    <link rel="stylesheet" type="text/css" href="/css/def.css">
-   <!-- <link rel="stylesheet" type="text/css" href="/css.css">?v=0-->
 
-
-    <!--<link rel="stylesheet" href="/css/def.css">-->
-
+    <link rel="stylesheet" type="text/css" href="/css.php?v=0">
 
     <link rel="stylesheet" href="/css/common.css">
 

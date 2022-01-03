@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="/img/ico.png" type="image/png">
 
     <script async src="/js/scroll.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/def.css">
+    <link rel="stylesheet" type="text/css" href="/css.php?v=0">
     <link rel="stylesheet" href="/css/cab/common_cab.css">
 
 

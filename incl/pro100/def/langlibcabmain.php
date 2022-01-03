@@ -71,8 +71,8 @@ class LangLibCabMain{
         ],
         'en'=>[
             'name'=>'BALANCE',
-            'name_1'=>'Money add',
-            'name_2'=>'Money out',
+            'name_1'=>'Deposit',
+            'name_2'=>'Withdraw',
 
             'bal_hist_out'=>'Withdrawal history',
             'tabl_out_sum'=>'Amount',
