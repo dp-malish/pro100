@@ -17,8 +17,4 @@
 
 
     <script src="/j/lib/m_jq.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/all_jGrowl.css">
-    <script src="/j/lib/all_jGrowl.js"></script>
-    <script async src="/js/common_v1_0.js"></script>
-
-    <?=$Opt::$jscript.$Opt::$css.'<meta name="description" content="'.$Opt::$description.'"><title>'.$Opt::$title.'</title>';?></head>
+    <link rel="stylesheet" type="text/css" href="/css/all_jGrowl.css"><script src="/j/lib/all_jGrowl.js"></script><script async src="/js/common_v1_0.js"></script><?=$Opt::$jscript.$Opt::$css.'<meta name="description" content="'.$Opt::$description.'"><title>'.$Opt::$title.'</title>';?></head>

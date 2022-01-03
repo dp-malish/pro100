@@ -41,7 +41,6 @@ document.getElementById("support_btn").addEventListener("click",function(){
     var theme=document.getElementById("theme").value;
     var txt=document.getElementById("theme_txt").value;
     
-    //alert(theme+txt);
     if(txt.length<2){
         $.jGrowl("'.Def100\LangLibCabMain::ARR_SUPPORT[Opt::$lang]['js_err'].'",{theme:"growl-error",life:4000});
     }else{

@@ -135,7 +135,7 @@
     text-align: center;
     float:right;
 }
-.d_inp_r input[type=text],.d_inp_r input[type=number]{
+.d_inp_r input[type=text],.d_inp_r input[type=number],.d_inp_r select{
     margin:0 auto;
     width:80%;
     height:25px;
@@ -156,9 +156,16 @@
         float:none;
     }
 }
+.d_inp_r textarea{
+    margin:0 auto;
+    width:80%;
+    height:200px;
+    resize:none;
+    padding:13px;
+    border-radius:5px;
+}
 
-
-/**************************balance end***********************************************/
+    /**************************balance end***********************************************/
 /**************************balance end***********************************************/
 /**************************balance end***********************************************/
 
