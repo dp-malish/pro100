@@ -71,12 +71,12 @@
 
         <div class="dwfse l1_r_mob_">
             <div class="l1_mob_cell">
-                <div class="l1_mob_cell_">Уровень: 0</div>
-                <div class="l1_mob_cell_">Визитов: 0</div>
+                <div class="l1_mob_cell_"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['level'].': '.\incl\pro100\User\User::$arrDBUser['level'];?></div>
+                <div class="l1_mob_cell_"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['visit'].': '.\incl\pro100\User\User::$arrDBUser['hits'];?></div>
             </div>
             <div class="l1_mob_cell">
                 <div class="l1_mob_cell_"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['reflink'];?></div>
-                <div class="l1_mob_cell_">Баланс: 100$</div>
+                <div class="l1_mob_cell_"><?=\incl\pro100\Def\LangLibTemplCab::ARR_CAB_TOP[lib\Def\Opt::$lang]['balance'].': $'.\incl\pro100\User\User::$arrDBUser['bal'];?></div>
             </div>
         </div>
         <div id="l1_mob_burger">
@@ -101,7 +101,11 @@
         <div id="l1_burger_f1" class="l1_burger_line"><?=\incl\pro100\User\User::$arrDBUser['log'];?></div>
 
         <div class="l1_burger_line">
-            <a href="/cabinet/"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['account'];?></span></a>
+            <a href="/cabinet/">
+                <span class="l1_ico_burg">
+                    <span class="l1_menu_ico i_cab"></span>
+                </span>
+                <span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['account'];?></span></a>
         </div>
         <div class="l1_burger_line">
             <a href="/cabinet/balance"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></span></a>

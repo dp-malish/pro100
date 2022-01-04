@@ -251,22 +251,31 @@
     text-align: center;
 }
 .l1_burger_line .l1_ico_burg{
-/*    position: absolute;
-    right:0;
-    top:0;*/
+    position:relative;
+
     text-align:right;
     padding:0 4px 0 0;
     display:inline-block;
-    width:30%;
-    height:100%;
+    width:29%;
+    height:32px;
     /*background-color:#0ab59f;*/
 
 }
+.l1_menu_ico{
+    position:absolute;
+    top:0;
+    right:0;
+    width:32px;
+    height:32px;
+    overflow: hidden;
+    text-align: right;
+}
+
 .l1_link_burg{
-    display: inline-block;
-    width:70%;
+    display:inline-block;
+    width:69%;
     height:100%;
-   /* background-color: #0a2a3a;*/
+    line-height:31px;
     padding:0 0 0 5px;
 }
 
@@ -284,6 +293,11 @@
 .l1_burger_line a:hover{
     color: #ffffcc;
 }
+
+
+
+
+
 /*****mob version end******/
 /***burger mob*****************************************************************/
 /********************************************************************/
