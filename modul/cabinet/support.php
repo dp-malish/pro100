@@ -41,11 +41,12 @@ document.getElementById("support_btn").addEventListener("click",function(){
     var theme=document.getElementById("theme").value;
     var txt=document.getElementById("theme_txt").value;
     
-    if(txt.length<2){
+    if(txt.length<=15){
         $.jGrowl("'.Def100\LangLibCabMain::ARR_SUPPORT[Opt::$lang]['js_err'].'",{theme:"growl-error",life:4000});
     }else{
         if(fs_btn){
             ajaxPostSend("support=1&theme="+theme+"&txt="+txt,formSupport,true,true,"/ajax/cabinet/support.php");
+            fs_btn=false;
         }
         else alert(34);
     }

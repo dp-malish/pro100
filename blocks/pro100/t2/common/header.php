@@ -108,19 +108,19 @@
                 <span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['account'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="/cabinet/balance"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></span></a>
+            <a href="/cabinet/balance"><span class="l1_ico_burg"><span class="l1_menu_ico i_bal"></span></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['balance'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="/cabinet/partners"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['partners'];?></span></a>
+            <a href="/cabinet/partners"><span class="l1_ico_burg"><span class="l1_menu_ico i_partn"></span></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['partners'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="/cabinet/level-up"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['level_up'];?></span></a>
+            <a href="/cabinet/level-up"><span class="l1_ico_burg"><span class="l1_menu_ico i_l-up"></span></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['level_up'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="/cabinet/support"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['support'];?></span></a>
+            <a href="/cabinet/support"><span class="l1_ico_burg"><span class="l1_menu_ico i_sup"></span></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['support'];?></span></a>
         </div>
         <div class="l1_burger_line">
-            <a href="/cabinet/promo"><span class="l1_ico_burg">ico</span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['promo'];?></span></a>
+            <a href="/cabinet/promo"><span class="l1_ico_burg"><span class="l1_menu_ico i_promo"></span></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_L_MENU_PC[lib\Def\Opt::$lang]['promo'];?></span></a>
         </div>
         <div class="l1_burger_line"></div>
         <div class="l1_burger_line">

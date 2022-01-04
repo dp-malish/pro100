@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: WinTeh
- * Date: 22.10.2021
- * Time: 10:30
- */
-
 namespace incl\pro100\Def;
 
 use lib\Def as Def;
