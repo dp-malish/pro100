@@ -3,6 +3,8 @@ namespace incl\pro100\Def;
 
 class OptCab{
 
+    const MAIL_WARNING='winipuh@gmail.com';
+
     const MAX_PROMO =300;//300
 
     const ID_ADMIN = 300;//300
