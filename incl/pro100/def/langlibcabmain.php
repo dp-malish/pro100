@@ -114,7 +114,7 @@ class LangLibCabMain{
             'l1'=>'FIRST LINE',
             'l2'=>'SECOND LINE',
             'l3'=>'THIRD LINE',
-            'l4'=>'FORTH LINE',
+            'l4'=>'FOURTH LINE',
             'l0'=>'INACTIVE',
             'ref_map'=>'REFERRAL MAP',
             'ref_no'=>'No partners'

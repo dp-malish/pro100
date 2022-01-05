@@ -1,6 +1,8 @@
 <!doctype html><html lang="<?=\lib\Def\Opt::$lang;?>"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="copyright" lang="<?=\lib\Def\Opt::$lang;?>" content="SOCHELPING">
+    <!--Google Analytics-->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-216261388-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-216261388-1');</script>-->
 
 
     <link rel="shortcut icon" href="/img/ico.png" type="image/png">
