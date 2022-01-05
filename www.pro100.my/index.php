@@ -35,11 +35,12 @@ if($_SERVER['REQUEST_URI']!='/'){
             case'cabinet':include'../modul/cabinet/rout_cabinet.php';break;//главный кабинет
             case'perfect':
                 $pm=new \incl\pro100\Pay\Pay_PM();
-/*                $pm->valid_post_request=true;//temp
+                /*$pm->valid_post_request=true;//temp
                 $pm->arrPM['PAYMENT_ID']='12_156774275079';
                 $pm->arrPM['PAYMENT_AMOUNT']='1';
                 $pm->arrPM['PAYMENT_BATCH_NUM']='7777777';*/
-                $pm->processPayment();
+                //$pm->processPayment();
+                $pm->fileErr();
                 break;//ответ perfect money платёжки кабинет
 
 

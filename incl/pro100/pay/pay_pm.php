@@ -154,7 +154,7 @@ Def\Opt::$main_content.='<input type="hidden" name="PAYEE_NAME" value="'.User\Us
 //<!--Идентификатора счета-фактуры делается самостоятельно-->
 Def\Opt::$main_content.='<input type="hidden" name="PAYMENT_ID" value="'.$m_orderid.'">';
 //<!--обработчик на моей стороне-->
-Def\Opt::$main_content.='<input type="hidden" name="STATUS_URL" value="'.Def\Opt::$protocol.Def\Opt::$site.'/perfect.php">';
+Def\Opt::$main_content.='<input type="hidden" name="STATUS_URL" value="'.Def\Opt::$protocol.Def\Opt::$site.'/perfect">';
 //<!--Это нормальный путь возврата покупателя в систему корзины покупок продавца-->
 Def\Opt::$main_content.='<input type="hidden" name="PAYMENT_URL" value="'.Def\Opt::$protocol.Def\Opt::$site.'/cabinet">';
 //<!--как используется значение поля PAYMENT_URL-->
@@ -178,8 +178,15 @@ document.forms["pm-send"].submit();
 
     private function validRequestPM(){//Приём платежей перфект мани (проверка запроса от сервера PM)
 
+        $this->putErrFile(1,'start');
+
         $alt_phrase=strtoupper(md5(Def100\OptCab::PM_ALT_PHRASE));
+
+        $this->putErrFile(2,$alt_phrase);
+
         if(Post\Post::issetPostArr()){
+
+            $this->putErrFile(3,'issetPostArr');
             /*
              * PAYMENT_ID счета-фактура которую я присвоил
              * PAYEE_ACCOUNT - счет, на который должна быть произведена оплата. Например U9007123.
@@ -191,21 +198,27 @@ document.forms["pm-send"].submit();
              *TIMESTAMPGMT - time() на стороне Perfect Money             *
              * */
             if(Post\Post::issetPostKey(['PAYMENT_ID','PAYEE_ACCOUNT','PAYMENT_AMOUNT','PAYMENT_UNITS','PAYMENT_BATCH_NUM','PAYER_ACCOUNT','TIMESTAMPGMT','V2_HASH'])){
-                $this->arrPM['PAYMENT_ID']=Def\Validator::html_cod('PAYMENT_ID');//БД
-                $this->arrPM['PAYEE_ACCOUNT']=Def\Validator::html_cod('PAYEE_ACCOUNT');//Локально
-                $this->arrPM['PAYMENT_AMOUNT']=Def\Validator::html_cod('PAYMENT_AMOUNT');//БД
-                $this->arrPM['PAYMENT_UNITS']=Def\Validator::html_cod('PAYMENT_UNITS');//Локально
-                $this->arrPM['PAYMENT_BATCH_NUM']=Def\Validator::html_cod('PAYMENT_BATCH_NUM');
-                $this->arrPM['PAYER_ACCOUNT']=Def\Validator::html_cod('PAYER_ACCOUNT');//БД
-                $this->arrPM['TIMESTAMPGMT']=Def\Validator::html_cod('TIMESTAMPGMT');
-                $this->arrPM['V2_HASH']=Def\Validator::html_cod('V2_HASH');
+                $this->arrPM['PAYMENT_ID']=Def\Validator::html_cod($_POST['PAYMENT_ID']);//БД
+                $this->arrPM['PAYEE_ACCOUNT']=Def\Validator::html_cod($_POST['PAYEE_ACCOUNT']);//Локально
+                $this->arrPM['PAYMENT_AMOUNT']=Def\Validator::html_cod($_POST['PAYMENT_AMOUNT']);//БД
+                $this->arrPM['PAYMENT_UNITS']=Def\Validator::html_cod($_POST['PAYMENT_UNITS']);//Локально
+                $this->arrPM['PAYMENT_BATCH_NUM']=Def\Validator::html_cod($_POST['PAYMENT_BATCH_NUM']);
+                $this->arrPM['PAYER_ACCOUNT']=Def\Validator::html_cod($_POST['PAYER_ACCOUNT']);//БД
+                $this->arrPM['TIMESTAMPGMT']=Def\Validator::html_cod($_POST['TIMESTAMPGMT']);
+                $this->arrPM['V2_HASH']=Def\Validator::html_cod($_POST['V2_HASH']);
 
                 if($this->arrPM['PAYEE_ACCOUNT']!=Def100\OptCab::PM_NUMBER){//Локально
                     Def\Opt::$arr_error[]='PAYEE_ACCOUNT error';
+
+                    $this->putErrFile('PAYEE_ACCOUNT',$this->arrPM['PAYEE_ACCOUNT']);
+
                     $this->valid_post_request=true;
                 }
                 if($this->arrPM['PAYMENT_UNITS']!=Def100\OptCab::PM_UNITS){//Локально
                     Def\Opt::$arr_error[]='PAYEE_UNITS error';
+
+                    $this->putErrFile('PAYMENT_UNITS',$this->arrPM['PAYMENT_UNITS']);
+
                     $this->valid_post_request=true;
                 }
                 $hash=$this->arrPM['PAYMENT_ID'].':'.$this->arrPM['PAYEE_ACCOUNT'].':'.
@@ -213,11 +226,15 @@ document.forms["pm-send"].submit();
                     $this->arrPM['PAYMENT_BATCH_NUM'].':'.
                     $this->arrPM['PAYER_ACCOUNT'].':'.$alt_phrase.':'.
                     $this->arrPM['TIMESTAMPGMT'];
+
+                $this->putErrFile('SMALL_HASH',$hash);
+
                 $hash=strtoupper(md5($hash));
+                $this->putErrFile('BIG_HASH',$hash);
                 if($hash==$this->arrPM['V2_HASH'] && empty(Def\Opt::$arr_error)){
                     $this->valid_post_request=true;
                     //echo 'if';
-                }//else echo 'No';
+                }else $this->putErrFile('V2_HASH',$this->arrPM['V2_HASH']);//echo 'No';
             }
         }
     }
@@ -238,6 +255,15 @@ document.forms["pm-send"].submit();
                 }else return false;
             }else return false;
         }else return false;
+    }
+
+
+    function fileErr(){
+        $this->putErrFile('pisiki','super');
+    }
+
+    private function putErrFile($step,$var){
+        file_put_contents('../log_pay/' . $step . '.txt', $var);
     }
     //PAYMENT_BATCH_NUM ложить в базу данных
 }
