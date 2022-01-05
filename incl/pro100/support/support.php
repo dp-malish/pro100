@@ -19,11 +19,11 @@ class Support{
 
                 $res=$DB->boolSQL($sql);
                 if($res){
-                    if(!Mail\Mail::sendMail(Def100\OptCab::MAIL_WARNING,'Autoresponder <support@'.$_SERVER['SERVER_NAME'].'>',$theme,$txt)){
+                    /*if(!Mail\Mail::sendMail(Def100\OptCab::MAIL_WARNING,'Autoresponder <support@'.$_SERVER['SERVER_NAME'].'>',$theme,$txt)){}else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);*/
 
-                        echo json_encode(['err'=>false,'answer'=>$sql,'l'=>1]);
+                        echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_SUPPORT[Def\Opt::$lang]['answer_good'],'l'=>1]);
 
-                    }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
+
                 }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
             }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_PAY[Def\Opt::$lang]['post_null'],'l'=>1]);
         }else echo json_encode(['err'=>false,'answer'=>'1','l'=>1]);
