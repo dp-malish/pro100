@@ -178,15 +178,13 @@ document.forms["pm-send"].submit();
 
     private function validRequestPM(){//Приём платежей перфект мани (проверка запроса от сервера PM)
 
-        $this->putErrFile(1,'start');
+        //$this->putErrFile(1,'start');
 
         $alt_phrase=strtoupper(md5(Def100\OptCab::PM_ALT_PHRASE));
 
-        $this->putErrFile(2,$alt_phrase);
-
         if(Post\Post::issetPostArr()){
 
-            $this->putErrFile(3,'issetPostArr');
+            //$this->putErrFile(3,'issetPostArr');
             /*
              * PAYMENT_ID счета-фактура которую я присвоил
              * PAYEE_ACCOUNT - счет, на который должна быть произведена оплата. Например U9007123.
@@ -235,8 +233,8 @@ document.forms["pm-send"].submit();
                     $this->valid_post_request=true;
                     //echo 'if';
                 }else $this->putErrFile('V2_HASH',$this->arrPM['V2_HASH']);//echo 'No';
-            }
-        }
+            }else Def\Route::$module404=true;
+        }else Def\Route::$module404=true;
     }
 
     function processPayment(){//Приём платежей перфект мани от системы
@@ -258,9 +256,9 @@ document.forms["pm-send"].submit();
     }
 
 
-    function fileErr(){
+/*    function fileErr(){
         $this->putErrFile('pisiki','super');
-    }
+    }*/
 
     private function putErrFile($step,$var){
         file_put_contents('../log_pay/' . $step . '.txt', $var);

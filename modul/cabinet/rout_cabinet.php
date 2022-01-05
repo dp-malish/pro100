@@ -6,6 +6,10 @@ User\User::$selfUser->validPassCookie();
 
 if(Opt::$live_user!=0){Opt::$template=2;
     if(!empty(Route::$uri_parts[1])){
+
+
+
+
     switch(Route::$uri_parts[1]){
         case 'balance':include'../modul/cabinet/pay/balance.php';break;//главная баланс
         case'cash-add':include'../modul/cabinet/pay/cashadd.php';break;//пополнить $

@@ -39,8 +39,8 @@ if($_SERVER['REQUEST_URI']!='/'){
                 $pm->arrPM['PAYMENT_ID']='12_156774275079';
                 $pm->arrPM['PAYMENT_AMOUNT']='1';
                 $pm->arrPM['PAYMENT_BATCH_NUM']='7777777';*/
-                //$pm->processPayment();
-                $pm->fileErr();
+                $pm->processPayment();
+                //$pm->fileErr();//Temp
                 break;//ответ perfect money платёжки кабинет
 
 
@@ -52,15 +52,16 @@ if($_SERVER['REQUEST_URI']!='/'){
 
 
 
-            case'banned':$Opt::$main_content='<br>Заебанен!!!!';break;//Страницу бана сделать при входе
+            case'banned':$Opt::$main_content='<br>!!!!';break;//Страницу бана сделать при входе
 
 
 
-            //default:new \incl\sota\shop\DefShop();
+            default:Route::$module404=true;
             //default:new \incl\burger\Index\IndexContent();;
         }
     }
-}else{Route::$index=1;}if(Route::$module404){Route::modul404();}
+}else{Route::$index=1;}
+if(Route::$module404==true){Route::modul404();}
 if(Route::$index){
     include'../modul/site/index.php';
 }

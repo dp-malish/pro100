@@ -5,6 +5,8 @@ class OptCab{
 
     const MAIL_WARNING='winipuh@gmail.com';
 
+    const ARR_HI_PRIVILEGE=[300,301,302,303];
+
     const MAX_PROMO =300;//300
 
     const ID_ADMIN = 300;//300
