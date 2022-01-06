@@ -206,11 +206,12 @@ class LangLibCabMain{
     const ARR_PROFILE=[
         'ru'=>[
             'name'=>'Профиль',
+            'data_pay_null'=>'Платёжные данные не указаны. Заполнить данные...',
 
         ],
         'en'=>[
             'name'=>'PROFILE',
-
+            'data_pay_null'=>'Платёжные данные не указаны. Заполнить данные...',
         ]
     ];
 
