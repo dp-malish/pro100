@@ -1,14 +1,15 @@
 <?php
 namespace lib\Def;
+use incl\pro100\Def as Def100;
 use \incl\pro100\User as User;
 
 User\User::$selfUser->validPassCookie();
 
 if(Opt::$live_user!=0){Opt::$template=2;
+
+    Def100\OptCab::$hi_privilege=in_array(Opt::$live_user_id,Def100\OptCab::ARR_HI_PRIVILEGE);
+
     if(!empty(Route::$uri_parts[1])){
-
-
-
 
     switch(Route::$uri_parts[1]){
         case 'balance':include'../modul/cabinet/pay/balance.php';break;//главная баланс

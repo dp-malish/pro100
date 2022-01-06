@@ -51,7 +51,12 @@ Opt::$main_content.='</p></div>
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['payment'].'</h4>
 <div class="h_fon_field">
 '.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
-</div></div>
+</div></div>';
 
-</div>';
-
+if(Def100\OptCab::$hi_privilege){
+    Opt::$main_content.='<div class="text_fon">
+<h4 class="h_fon_min">HI PRIVILEGE</h4>
+<div class="h_fon_field">
+    '.\incl\pro100\Support\HiSupport::getCountSupport().'
+    </div></div>';
+}
