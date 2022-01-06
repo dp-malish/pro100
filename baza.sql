@@ -60,8 +60,8 @@ CREATE TABLE `t_users` (
   `cont_sms` varchar(50) DEFAULT NULL,
   `ban` varchar(200) DEFAULT NULL,
   `step` int(2) DEFAULT 0 COMMENT 'Помощник (шаги обучалки)',
-  PRIMARY KEY (`uid`),
-  key (log,ref)
+  PRIMARY KEY(`uid`),
+  KEY (log,ref)
 )ENGINE=MyISAM AUTO_INCREMENT=300 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

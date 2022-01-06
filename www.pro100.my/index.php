@@ -10,7 +10,7 @@ User\User::$selfUser=new User\User();//первый вход не в кабин�
 
 Cache_File::$cash=new Cache_File(['pro100'],true);
 
-Opt::$lang='en';
+//Opt::$lang='en';
 
 if($_SERVER['REQUEST_URI']!='/'){
     if(Route::requestURI(3)){

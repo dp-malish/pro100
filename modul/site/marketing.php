@@ -98,7 +98,7 @@ Opt::$main_content.='<main>
     <div class="maxw">
         <div id="m3_l4">
             <p>Once You get the necessary amount to activate the next line - activate it and continue to fill.</p>
-            <p>The service provides an instant withdrawal of funds using the payment system perfect money (активнаяя ссылка) at a convenient time for You.</p>
+            <p>The service provides an instant withdrawal of funds using the payment system <span id="ps_pm" class="link">Perfect Money</span> at a convenient time for You.</p>
             <p>If You want to continue to develop your structure, You just pay a fixed amount to activate the next line or add the missing amount of usd.</p>
             <h2>The overflow system. Advantages.</h2>
             <p>The system of spill-overs is actively working in the structure. What does it mean?</p>
@@ -109,4 +109,4 @@ Opt::$main_content.='<main>
             <p>If You have any questions, our Customer Service team will be happy to answer You anytime.</p>
         </div>
     </div>
-</div></main>';
+</div></main><script>document.getElementById("ps_pm").onclick=function(){window.location.href="https://perfectmoney.com/?ref=1517385";}</script>';

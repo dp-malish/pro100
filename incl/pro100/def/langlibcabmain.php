@@ -206,12 +206,20 @@ class LangLibCabMain{
     const ARR_PROFILE=[
         'ru'=>[
             'name'=>'Профиль',
-            'data_pay_null'=>'Платёжные данные не указаны. Заполнить данные...',
+            'data_pay_null'=>'Платёжные данные не указаны.',
+            'data_pay_null_link'=>' Заполнить данные...',
+
+            'ps'=>'Платёжная система',
+            'pm_answer_index'=>' Указан кошелёк: ',
 
         ],
         'en'=>[
             'name'=>'PROFILE',
-            'data_pay_null'=>'Платёжные данные не указаны. Заполнить данные...',
+            'data_pay_null'=>'Payment details are not specified.',
+            'data_pay_null_link'=>' Fill in the data...',
+
+            'ps'=>'Payment system',
+            'pm_answer_index'=>' The wallet is indicated: ',
         ]
     ];
 
