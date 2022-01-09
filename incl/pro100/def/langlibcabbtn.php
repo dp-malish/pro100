@@ -32,7 +32,10 @@ class LangLibCabBtn{
 
             'level_up'=>'Level up',
 
-            'send'=>'Send'
+            'send'=>'Send',
+
+            'save'=>'Save',
+            'update'=>'Update',
 
         ]
     ];

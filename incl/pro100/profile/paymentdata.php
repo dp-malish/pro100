@@ -34,7 +34,6 @@ class PaymentData{
         //Для PerfectMoney
         if(User\User::$arrDBUser['pay_pm']!=''){
             $txt='<p>'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['ps'].' '.Def100\OptCab::paysSystems(1).'.'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['pm_answer_index'].User\User::$arrDBUser['pay_pm'].'</p>';
-
         }return $txt;
     }
 

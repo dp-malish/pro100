@@ -1,5 +1,5 @@
 <footer><div id="foot">
-        <div class="ac"><p class="note">&copy; All right reserved. &nbsp;&nbsp;&nbsp; 2021 <?=\lib\Def\Opt::$site;?> |  <a href="/offer">Offer</a></p></div>
+        <div class="ac"><p class="note">&copy; All right reserved. &nbsp;&nbsp;&nbsp; 2022 <?=\lib\Def\Opt::$site;?> |  <a href="/offer">Offer</a></p></div>
         <div id="shadow"></div><div id="up">Up</div>
 </div></footer><?php
 if(!\lib\Def\Opt::$live_user){

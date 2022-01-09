@@ -109,4 +109,4 @@ Opt::$main_content.='<main>
             <p>If You have any questions, our Customer Service team will be happy to answer You anytime.</p>
         </div>
     </div>
-</div></main><script>document.getElementById("ps_pm").onclick=function(){window.location.href="https://perfectmoney.com/?ref=1517385";}</script>';
+</div></main><script>document.getElementById("ps_pm").onclick=function(){window.open("https://perfectmoney.com/?ref=1517385", "_blank");}</script>';
