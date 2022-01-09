@@ -20,7 +20,9 @@ if(Post\Post::issetPostArr()){
         }elseif(isset($_POST['l4'])){
             echo json_encode(['err'=>false,'answer'=>'<p>'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l4'].'</p>','l'=>4]);
         }elseif(isset($_POST['l0'])){
-            echo json_encode(['err'=>false,'answer'=>'<p>'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['l0'].'</p>','l'=>0]);
+            if(User\User::$selfUser->validPassCookie()){
+            new User\GetPartnersInfo(0);
+            }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null'],'l'=>0]);
         }
 
     }elseif(isset($_POST['level-up']) && Opt::$live_user==1){

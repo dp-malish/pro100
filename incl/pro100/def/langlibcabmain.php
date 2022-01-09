@@ -106,7 +106,13 @@ class LangLibCabMain{
             'l4'=>'ЧЕТВЁРТАЯ ЛИНИЯ',
             'l0'=>'НЕАКТИВНЫЕ',
             'ref_map'=>'КАРТА РЕФЕРАЛОВ',
-            'ref_no'=>'Партнёры отсутствуют'
+            'ref_no'=>'Партнёры отсутствуют',
+            'ref_inactive_no'=>'Нет неактивных партнеров...',
+
+            't_f_partners'=>'Партнёры',
+            't_f_level'=>'Уровень',
+            't_f_data'=>'Дата',
+
 
         ],
         'en'=>[
@@ -117,7 +123,12 @@ class LangLibCabMain{
             'l4'=>'FOURTH LINE',
             'l0'=>'INACTIVE',
             'ref_map'=>'REFERRAL MAP',
-            'ref_no'=>'No partners'
+            'ref_no'=>'No partners',
+            'ref_inactive_no'=>'No inactive partners...',
+
+            't_f_partners'=>'Partners',
+            't_f_level'=>'Level',
+            't_f_data'=>'Date',
         ]
     ];
 
