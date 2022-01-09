@@ -31,4 +31,4 @@ if(Opt::$live_user!=0){Opt::$template=2;
     }else
         //echo 'Кабинет';
         include'../modul/cabinet/index.php';//просто кабинет
-}//else echo 'Надо зайти';
+}else Route::location();
