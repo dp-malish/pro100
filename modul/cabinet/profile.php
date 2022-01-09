@@ -14,6 +14,6 @@ Opt::$main_content.='<div class="text_fon">
 
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['ps'].' '.Def100\OptCab::paysSystems(1).'</h4>
 
-<div class="h_fon_field">'.\incl\pro100\Profile\PaymentData::getProfilePerfectInfo().'</div>
+<div id="aj_p_wal" class="h_fon_field">'.\incl\pro100\Profile\PaymentData::getProfilePerfectInfo().'</div>
 
 </div></div>';

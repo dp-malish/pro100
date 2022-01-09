@@ -212,6 +212,12 @@ class LangLibCabMain{
             'ps'=>'Платёжная система',
             'pm_answer_index'=>' Указан кошелёк: ',
 
+            'wallet'=>'Кошелёк',
+            'wallet_err'=>'Кошелёк указан не верно',
+            'wallet_update'=>'Кошелёк изменён',
+
+            'post_null'=>'Неизвестная ошибка',
+
         ],
         'en'=>[
             'name'=>'PROFILE',
@@ -220,6 +226,13 @@ class LangLibCabMain{
 
             'ps'=>'Payment system',
             'pm_answer_index'=>' The wallet is indicated: ',
+
+            'wallet'=>'Wallet',
+            'wallet_err'=>'The wallet is not correct',
+            'wallet_update'=>'Wallet changed',
+
+            'post_null'=>'Unknown error',
+
         ]
     ];
 
