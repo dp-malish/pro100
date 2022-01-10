@@ -53,5 +53,29 @@
 
             </div>
 
+            <div class="lc_menu_line"></div>
+
+            <div class="lc_menu_line dwfc">
+                <style>
+                        .lng_flag{
+                            width: 32px;
+                            height: 16px;
+                            background: #0ab59f;
+                            margin:3px;
+                            cursor:pointer;
+                        }
+                </style>
+                <div id="lng_en" class="lng_flag"></div>
+                <div class="lng_flag"></div>
+                <div class="lng_flag"></div>
+                <div class="lng_flag"></div>
+                <div class="lng_flag"></div>
+                <div class="lng_flag"></div>
+
+                <script src="/js/lng.js"></script>
+
+
+            </div>
+
         </div>
     </div>
