@@ -64,8 +64,13 @@
                             margin:3px;
                             cursor:pointer;
                         }
+                    .fl_ru{
+                        content: ;
+                        width:100%;
+                    }
+
                 </style>
-                <div id="lng_en" class="lng_flag"></div>
+                <div class="lng_flag" onclick=setLng("ru")></div>
                 <div class="lng_flag"></div>
                 <div class="lng_flag"></div>
                 <div class="lng_flag"></div>

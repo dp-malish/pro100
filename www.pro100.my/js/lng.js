@@ -1,28 +1,23 @@
 //lng cab
 
 
-alert(" на " + "  ");
-
-/*function lngSet(lng){
-
-
-    alert(lng);
-    */
+function setLng(lng){
+    alert(" Lng " + lng);
 }
 
+
 window.addEventListener("load", function(){
-    try{}catch(e){
+    try{
         //if(document.cookie.length>4){ }
-            alert('Ready!  7777');
-            //document.getElementsByClassName("lng_flag").addEventListener('click',function (){
-            document.getElementById("lng_en").addEventListener('click',function (){
 
-                {
+            //document.getElementsByClassName("lng_flag").addEventListener('click',function (){}
+            /*document.getElementById("lng_en").addEventListener('click',function (){
+                alert('Ready!  7777');
 
-                    alert(" на " + "  ");
 
-                }});
+            });*/
 
-    }
 
+
+    }catch(e){}
 },true);
