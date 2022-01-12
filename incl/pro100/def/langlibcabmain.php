@@ -13,10 +13,13 @@ class LangLibCabMain{
             'personal'=>'Личные данные',
 
             'name'=>'Имя',
+            'name_place'=>'Ваше имя',
             'name_null'=>'Ваше имя не указано.',
             'surname'=>'Фамилия',
+            'surname_place'=>'Ваша фамилия',
             'surname_null'=>'Ваша фамилия не указана.',
             'sex'=>'Пол',
+            'sex_select'=>'Выбрать пол',
             'sex_null'=>'Ваш пол не указан.',
 
             'sex_db'=>['Женский','Мужской','Другой'],
@@ -42,14 +45,17 @@ class LangLibCabMain{
             'personal'=>'Personal data',
 
             'name'=>'Name',
-            'name_null'=>'Ваше имя не указано.',
+            'name_place'=>'Your name',
+            'name_null'=>'Your name is not specified.',
             'surname'=>'Surname',
-            'surname_null'=>'Ваша фамилия не указана.',
+            'surname_place'=>'Your surname',
+            'surname_null'=>'Your last name is not specified.',
             'sex'=>'Gender',
-            'sex_null'=>'Ваш пол не указан.',
+            'sex_select'=>'Select gender',
+            'sex_null'=>'Your gender is not specified.',
             'sex_db'=>['Female','Male','Other'],
             'birthday'=>'Date of birth',
-            'birthday_null'=>'День рождения не указан.',
+            'birthday_null'=>'Your date of  birthday s not specified.',
 
 
             'gen_l1'=>'Level: ',

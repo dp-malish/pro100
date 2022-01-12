@@ -3,7 +3,7 @@ namespace lib\Def;
 
 use incl\pro100\Def as Def100;
 
-
+Opt::$title=Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['name'];
 
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PARTNERS[Opt::$lang]['name'].'</h3></div>
 

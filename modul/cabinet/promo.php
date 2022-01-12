@@ -21,6 +21,9 @@ $arr_img_promo=[
         'img_w'=>'161'
     ]
 ];
+
+Opt::$title=Def100\LangLibCabMain::ARR_PROMO[Opt::$lang]['name'];
+
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PROMO[Opt::$lang]['name'].'</h3></div>';
 foreach ($arr_img_promo as $v){
 Opt::$main_content.='

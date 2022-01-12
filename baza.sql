@@ -48,7 +48,7 @@ CREATE TABLE `t_users` (
   `prf_name` varchar(100) DEFAULT NULL COMMENT 'Имя',
   `prf_fam` varchar(100) DEFAULT NULL COMMENT 'Фамилия',
 
-  `sex` int(3) DEFAULT NULL COMMENT 'Пол',
+  `sex` int(3) DEFAULT NULL COMMENT 'Пол 0,1,2 NULL',
   `birthday` date DEFAULT NULL COMMENT 'День рождения',
 
 

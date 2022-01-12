@@ -4,6 +4,8 @@ namespace lib\Def;
 use incl\pro100\Def as Def100;
 use incl\pro100\User as User;
 
+Opt::$title=Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['name'];
+
 $btn='';
 $note='';
 $next_level=User\User::$arrDBUser['level']+1;

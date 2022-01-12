@@ -4,7 +4,7 @@ namespace lib\Def;
 use incl\pro100\Def as Def100;
 //use incl\pro100\User as User;
 
-Opt::$title='Balance';
+Opt::$title=Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name'];
 
 Opt::$main_content.='
 <div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_BALANS[Opt::$lang]['name'].'</h3>

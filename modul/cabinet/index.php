@@ -6,7 +6,7 @@ use incl\pro100\User as User;
 
 Opt::$title='Cabinet';
 
-
+Opt::$title=Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'];
 
 //ASSISTANT start
 Opt::$main_content.='
