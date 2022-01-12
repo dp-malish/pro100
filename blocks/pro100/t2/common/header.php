@@ -133,5 +133,16 @@
         <div class="l1_burger_line">
             <a href="/exit"><span class="l1_ico_burg"></span><span class="l1_link_burg"><?=incl\pro100\Def\LangLibCabMain::ARR_ADM_MENU_PC[lib\Def\Opt::$lang]['exit'];?></span></a>
         </div>
+        <div class="l1_burger_line"></div>
+        <div class="l1_burger_line"></div>
+        <div class="l1_burger_line dwfc">
+            <div class="lng_flag fl_en" onclick=setLng("en")></div>
+            <div class="lng_flag fl_de" onclick=setLng("de")></div>
+            <div class="lng_flag fl_fr" onclick=setLng("fr")></div>
+            <div class="lng_flag fl_es" onclick=setLng("es")></div>
+            <div class="lng_flag fl_pt" onclick=setLng("pt")></div>
+            <div class="lng_flag fl_ru" onclick=setLng("ru")></div>
+        </div>
+
     </div><div class="cl"></div>
 </div>

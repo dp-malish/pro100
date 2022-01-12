@@ -17,6 +17,17 @@ class LangLibCabMain{
             'contact'=>'Контактные данные',
             'payment'=>'Платёжные данные',
 
+            'personal'=>'Личные данные',
+
+            'name'=>'Имя',
+            'surname'=>'Фамилия',
+            'sex'=>'Пол',
+
+            'sex_db'=>['Женский','Мужской','Другой'],
+
+            'birthday'=>'Дата рождения',
+
+
 
             'gen_l1'=>'Уровень: ',
             'gen_l2'=>'Партнёрская ссылка: ',
@@ -30,6 +41,14 @@ class LangLibCabMain{
             'general'=>'General',
             'contact'=>'Contact info',
             'payment'=>'Payment details',
+
+            'personal'=>'Personal data',
+
+            'name'=>'First name',
+            'surname'=>'Last name',
+            'sex'=>'Sex',
+            'sex_db'=>['Женский','Мужской','Другой'],
+            'birthday'=>'Birthday',
 
 
             'gen_l1'=>'Level: ',
@@ -229,6 +248,9 @@ class LangLibCabMain{
 
             'post_null'=>'Неизвестная ошибка',
 
+            //personal
+            ''=>''
+
         ],
         'en'=>[
             'name'=>'PROFILE',
@@ -257,7 +279,7 @@ class LangLibCabMain{
             'cash_add'=>'Пополнить',
             'cash_out'=>'Вывести',
             'partners'=>'Партнёры',
-            'level_up'=>'Повысить уровень',
+            'level_up'=>'Уровень',
 
             'support'=>'Служба поддержки',
             'promo'=>'Промо материалы',
@@ -274,7 +296,7 @@ class LangLibCabMain{
             'cash_add'=>'Cash add',
             'cash_out'=>'Cash out',
             'partners'=>'Partners',
-            'level_up'=>'Level up',
+            'level_up'=>'Level',
 
             'support'=>'Support service',
             'promo'=>'Promo materials',

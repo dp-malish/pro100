@@ -63,12 +63,18 @@
     width:130px;
     float:right;
     border:#4CA5C6 solid 2px;
+    border-image: linear-gradient(to right top,#000000, #4CA5C6,#000000);
+    border-image-slice: 1;
+
+
     text-align:center;
     line-height:70px;
     color:#fcfcfc;
     display:inline-block;
 }
 .l1_pc_cell:first-child{
+    border-image:none;
+
     background:none;
     margin-left:55px;
     color:#16d57a;

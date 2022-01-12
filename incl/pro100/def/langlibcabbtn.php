@@ -28,7 +28,7 @@ class LangLibCabBtn{
             'bal_hist_in'=>'Deposit history',
             'bal_hist_out'=>'Withdrawal history',
             'bal_cash_in'=>'Deposit',
-            'bal_cash_out'=>'Withdraw',
+            'bal_cash_out'=>'Withdrawal',
 
             'level_up'=>'Level up',
 

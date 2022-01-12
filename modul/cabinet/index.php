@@ -28,6 +28,9 @@ Opt::$main_content.='
 </div>';
 //ASSISTANT end
 
+
+
+//Общие данные Уровень: 1 и т.д.
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'</h3></div>
 
 <div class="text_fon">
@@ -37,19 +40,31 @@ Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_INDEX[O
 <p>'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l2'];
 if(User\User::$arrDBUser['level']>0)Opt::$main_content.=Opt::$protocol.Opt::$site.'/p/'.User\User::$arrDBUser['log'];
 else Opt::$main_content.=Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l3'].' <a href="/cabinet/level-up">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['gen_l4'].'</a>';
-Opt::$main_content.='</p></div>
-</div>
+Opt::$main_content.='</p></div></div>';
 
-<div class="text_fon">
+
+
+//Личные данные
+Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['personal'].'</h4>
+<div class="h_fon_field">'.\incl\pro100\Profile\PersonalData::getIndexInfo().'</div></div>';
+
+
+//Контактные данные
+/*Opt::$main_content.='<div class="text_fon">
 <h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['contact'].'</h4>
 <div class="h_fon_field">
 '.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'].'
 
-</div></div>
+</div></div>';*/
 
-<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['payment'].'</h4>
+
+
+//Платёжные данные
+Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['payment'].'</h4>
 <div class="h_fon_field">'.\incl\pro100\Profile\PaymentData::getIndexInfo().'</div></div>';
 
+
+//Данные для Админа
 if(Def100\OptCab::$hi_privilege){
     Opt::$main_content.='<div class="text_fon">
 <h4 class="h_fon_min">HI PRIVILEGE</h4>

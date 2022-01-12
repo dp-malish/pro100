@@ -17,3 +17,12 @@ Opt::$main_content.='<div class="text_fon">
 <div id="aj_p_wal" class="h_fon_field">'.\incl\pro100\Profile\PaymentData::getProfilePerfectInfo().'</div>
 
 </div></div>';
+
+Opt::$main_content.='<div class="text_fon">
+<h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['personal'].'</h4>
+
+
+
+
+<div id="aj_p_person" class="h_fon_field">'.'rtgr</div>
+</div>';

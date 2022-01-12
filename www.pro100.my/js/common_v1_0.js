@@ -135,6 +135,13 @@ function modalloadclose(){
         if(modalloadform!==null){modalloadform.parentNode.removeChild(modalloadform);}
     }catch(e){}
 }
+//***************************Lng*****************************
+function setLng(lng){
+    document.cookie="lng="+lng+";domain=."+document.location.host+";path=/; max-age=12678400;";
+    setTimeout(function(){
+        window.location.reload();
+    });
+}
 //*************************AutoLoad**************************
 
 window.addEventListener("load", function(){

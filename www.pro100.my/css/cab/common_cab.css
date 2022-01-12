@@ -139,3 +139,19 @@ A:hover, .link:hover {
     color:#fcfcfc;
     background:#333333;
 }
+/**************flag*******************/
+.lng_flag{
+    width: 32px;
+    height: 32px;
+    margin:5px;
+    cursor:pointer;
+    /*background-size:contain;*/
+}
+
+.fl_en{content:url("../../img/flag/en.png");}
+.fl_de{content:url("../../img/flag/de.png");}
+.fl_fr{content:url("../../img/flag/fr.png");}
+.fl_es{content:url("../../img/flag/es.png");}
+.fl_pt{content:url("../../img/flag/pt.png");}
+.fl_ru{content:url("../../img/flag/ru.png");}
+/**************flag end*****************/

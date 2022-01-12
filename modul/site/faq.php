@@ -101,7 +101,7 @@ Opt::$main_content.='<main><div class="d_defs b_fon">
         <section>
             <details class="five_">
                 <summary class="b">
-                    7. Is there a withdrawal fee?
+                    7. Is there a withdrawal free?
                 </summary>
                 <span class="five_">
                 <p>

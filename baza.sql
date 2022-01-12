@@ -47,6 +47,11 @@ CREATE TABLE `t_users` (
   `multi` int(11) NOT NULL DEFAULT '0' COMMENT 'Мультиакаунт',
   `prf_name` varchar(100) DEFAULT NULL COMMENT 'Имя',
   `prf_fam` varchar(100) DEFAULT NULL COMMENT 'Фамилия',
+
+  `sex` int(3) DEFAULT NULL COMMENT 'Пол',
+  `birthday` date DEFAULT NULL COMMENT 'День рождения',
+
+
   `pay_payeer` varchar(20) DEFAULT NULL,
   `pay_pm` varchar(100) DEFAULT NULL,
   `cont_vk` varchar(100) DEFAULT NULL,

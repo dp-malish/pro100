@@ -56,30 +56,12 @@
             <div class="lc_menu_line"></div>
 
             <div class="lc_menu_line dwfc">
-                <style>
-                        .lng_flag{
-                            width: 32px;
-                            height: 16px;
-                            background: #0ab59f;
-                            margin:3px;
-                            cursor:pointer;
-                        }
-                    .fl_ru{
-                        content: ;
-                        width:100%;
-                    }
-
-                </style>
-                <div class="lng_flag" onclick=setLng("ru")></div>
-                <div class="lng_flag"></div>
-                <div class="lng_flag"></div>
-                <div class="lng_flag"></div>
-                <div class="lng_flag"></div>
-                <div class="lng_flag"></div>
-
-                <script src="/js/lng.js"></script>
-
-
+                <div class="lng_flag fl_en" onclick=setLng("en")></div>
+                <div class="lng_flag fl_de" onclick=setLng("de")></div>
+                <div class="lng_flag fl_fr" onclick=setLng("fr")></div>
+                <div class="lng_flag fl_es" onclick=setLng("es")></div>
+                <div class="lng_flag fl_pt" onclick=setLng("pt")></div>
+                <div class="lng_flag fl_ru" onclick=setLng("ru")></div>
             </div>
 
         </div>
