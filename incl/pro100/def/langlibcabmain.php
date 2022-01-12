@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Дом
- * Date: 19.12.2021
- * Time: 20:22
- */
-
 namespace incl\pro100\Def;
 
 
@@ -20,12 +13,16 @@ class LangLibCabMain{
             'personal'=>'Личные данные',
 
             'name'=>'Имя',
+            'name_null'=>'Ваше имя не указано.',
             'surname'=>'Фамилия',
+            'surname_null'=>'Ваша фамилия не указана.',
             'sex'=>'Пол',
+            'sex_null'=>'Ваш пол не указан.',
 
             'sex_db'=>['Женский','Мужской','Другой'],
 
             'birthday'=>'Дата рождения',
+            'birthday_null'=>'День рождения не указан.',
 
 
 
@@ -44,11 +41,15 @@ class LangLibCabMain{
 
             'personal'=>'Personal data',
 
-            'name'=>'First name',
-            'surname'=>'Last name',
-            'sex'=>'Sex',
-            'sex_db'=>['Женский','Мужской','Другой'],
-            'birthday'=>'Birthday',
+            'name'=>'Name',
+            'name_null'=>'Ваше имя не указано.',
+            'surname'=>'Surname',
+            'surname_null'=>'Ваша фамилия не указана.',
+            'sex'=>'Gender',
+            'sex_null'=>'Ваш пол не указан.',
+            'sex_db'=>['Female','Male','Other'],
+            'birthday'=>'Date of birth',
+            'birthday_null'=>'День рождения не указан.',
 
 
             'gen_l1'=>'Level: ',

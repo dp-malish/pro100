@@ -14,15 +14,32 @@ class PersonalData{
 
         $txt='';
 
-        if(User\User::$arrDBUser['pay_pm']!=''){
+        if(User\User::$arrDBUser['prf_name']!=''){
+            $txt.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['name'].': '.User\User::$arrDBUser['prf_name'].'.</p>';
 
+        }else {
+            $txt.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['name_null'].' <a href="/cabinet/profile">'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['data_pay_null_link'].'</a></p>';
         }
 
-        //if(User\User::$arrDBUser['pay_payeer']=='')$txt='';
-        //Для PerfectMoney
-        if(User\User::$arrDBUser['pay_pm']!=''){
-            $txt='<p>'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['ps'].' '.Def100\OptCab::paysSystems(1).'.'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['pm_answer_index'].User\User::$arrDBUser['pay_pm'].'</p>';
-        }return $txt;
+        if(User\User::$arrDBUser['prf_fam']!=''){
+            $txt.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['name'].'</p>';
+
+        }else {
+            $txt.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['surname_null'].' <a href="/cabinet/profile">'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['data_pay_null_link'].'</a></p>';
+        }
+
+        if(User\User::$arrDBUser['sex']!=''){
+            $txt.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['name'].'</p>';
+
+        }else {
+            $txt.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['sex_null'].' <a href="/cabinet/profile">'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['data_pay_null_link'].'</a></p>';
+        }
+
+
+
+
+
+        return $txt;
     }
 
 }
