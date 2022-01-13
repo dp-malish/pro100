@@ -3,7 +3,7 @@
     min-height:80px;
     width:100%;
     background-color:#050505;
-    border-bottom:#4CA5C6 2px solid;
+    border-bottom:#1e3056 2px solid;
 }
 #l1_logo{
     float:left;
@@ -63,7 +63,7 @@
     width:130px;
     float:right;
     border:#4CA5C6 solid 2px;
-    border-image: linear-gradient(to right top,#000000, #4CA5C6,#000000);
+    border-image: linear-gradient(to right top,#15213c,#0f182a);
     border-image-slice: 1;
 
 
@@ -319,7 +319,7 @@
     position:fixed;
     top:79px;
     right:0;
-    border-left:#4CA5C6 2px solid;
+    border-left:#1e3056 2px solid;
     overflow-y:auto;
 }
 
@@ -350,15 +350,15 @@
 .l1_menu_adm_can_line a{
 
     text-align: center;
-    color:#77e0ff;
+    color:#b9cfff;
     display: block;
     text-decoration: none;
 }
 .l1_menu_adm_can_line a:active{
-    color:#77e0ff;
+    color:#b9cfff;
 }
 .l1_menu_adm_can_line a:visited{
-    color:#77e0ff;
+    color:#b9cfff;
 }
 .l1_menu_adm_can_line a:hover{
     color:#16d57a;

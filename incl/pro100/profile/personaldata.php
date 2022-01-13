@@ -14,6 +14,33 @@ use incl\pro100\User as User;
 class PersonalData{
 
 
+    static function updatePersonal(){
+        if(Post::issetPostKey(['name','surname','gender','birthday'])){
+
+            $name=Def\Validator::html_cod($_POST['name']);
+            $surname=Def\Validator::html_cod($_POST['surname']);
+            $gender=Def\Validator::html_cod($_POST['gender']);
+            $birthday=Def\Validator::html_cod($_POST['birthday']);
+
+            if(Def100\ValidExt::paternSymbol($name)){
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'],'l'=>1]);
+            }elseif(Def100\ValidExt::paternSymbol($surname)){
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'],'l'=>1]);
+            }elseif(!Def\Validator::paternInt($gender) && $gender!=''){
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+            }elseif($gender>2){
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+            }elseif(Def100\ValidExt::paternDateHTMLForm($birthday)){
+                echo json_encode(['err'=>false,'answer'=>$birthday,'l'=>1]);
+                //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+            }else
+
+                //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['wallet_update'],'l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>'---'.$gender,'l'=>1]);
+        }
+    }
+
+
     static function getProfilePersonalInfo(){
         $btn=(User\User::$arrDBUser['prf_name']=='' && User\User::$arrDBUser['prf_fam']=='' && User\User::$arrDBUser['sex']=='' && User\User::$arrDBUser['birthday']==''?'save':'update');
 
@@ -52,14 +79,21 @@ foreach(Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['sex_db'] as $k=>$v){
 <div class="cl"></div>
 </div>
 
-<div id="personal_upd_btn" class="cab_btn">'.Def100\LangLibCabBtn::ARR_BTN[Def\Opt::$lang][$btn].'</div><div id="d_answ"></div>
+<div id="personal_upd_btn" class="cab_btn">'.Def100\LangLibCabBtn::ARR_BTN[Def\Opt::$lang][$btn].'</div>
 <script type="text/javascript">
 var pers_upd_btn=true;
 document.getElementById("personal_upd_btn").addEventListener("click",function(){
-    alert(45);
-/*    var wallet=document.getElementById("wal_pm").value;
+    
+    
+    
+    var name=document.getElementById("name_user").value;
+    var surname=document.getElementById("surname_user").value;
+    var gender=document.getElementById("gender_user").value;
+    var birthday=document.getElementById("birthday_user").value;
+    
+        ajaxPostSend("personal_upd=1&name="+name+"&surname="+surname+"&gender="+gender+"&birthday="+birthday,formPersonalUpdate,true,true,"/ajax/cabinet/profile.php");
         
-    if(wallet.length!=9){
+/*    if(wallet.length!=9){
         $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['wallet_err'].'",{theme:"growl-error",life:4000});
     }else{
         var fb=wallet.substr(0,1);
@@ -75,6 +109,12 @@ document.getElementById("personal_upd_btn").addEventListener("click",function(){
     }*/
 });
 
+function formPersonalUpdate(arr){if(arr.l==1){
+    $.jGrowl(arr.answer,{theme:"growl-error",life:4000});fs_btn=true;
+}else if(arr.l==2){
+    document.getElementById("aj_p_person").innerHTML="<p>"+arr.answer+"</p>";
+}
+}
 
 </script>
 

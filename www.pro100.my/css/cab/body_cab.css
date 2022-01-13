@@ -7,7 +7,7 @@
     float:left;
     width:340px;
     height:calc(100vh - 80px);
-    border-right:#4CA5C6 2px solid;
+    border-right:#1e3056 2px solid;
     overflow:hidden;
     background:#050505 url("../../img/cab/menu_left.jpg") no-repeat;
     background-size: 100% 100%;
@@ -47,7 +47,7 @@
     height:33px;
     /*background-color:#7A7676;*/
     text-align:left;
-    margin:0 0 5px 0;
+    margin:0 0 17px 0;
     line-height:32px;
 }
 .lc_menu_ico{
@@ -60,12 +60,12 @@
     text-align: right;
 }
 
-.i_cab{background:#000 url("../../img/cab/ico/network.png") no-repeat;background-size:contain}
-.i_bal{background:#000 url("../../img/cab/ico/mission.png") no-repeat;background-size:contain}
-.i_partn{background:#000 url("../../img/cab/ico/communication.png") no-repeat;background-size:contain}
-.i_l-up{background:#000 url("../../img/cab/ico/target.png") no-repeat;background-size:contain}
-.i_sup{background:#000 url("../../img/cab/ico/digital_marketing.png") no-repeat;background-size:contain}
-.i_promo{background:#000 url("../../img/cab/ico/analytics_2.png") no-repeat;background-size:contain}
+.i_cab{background: url("../../img/cab/ico/network.png") no-repeat;background-size:contain}
+.i_bal{background: url("../../img/cab/ico/mission.png") no-repeat;background-size:contain}
+.i_partn{background: url("../../img/cab/ico/communication.png") no-repeat;background-size:contain}
+.i_l-up{background: url("../../img/cab/ico/target.png") no-repeat;background-size:contain}
+.i_sup{background: url("../../img/cab/ico/digital_marketing.png") no-repeat;background-size:contain}
+.i_promo{background: url("../../img/cab/ico/analytics_2.png") no-repeat;background-size:contain}
 
 /*тут все имена каждой полоске меню*/
 
@@ -90,12 +90,12 @@
 .lc_menu_line a{
     height:33px;
     background-size:32px 32px;
-    color:#77e0ff;
+    color:#b9cfff;
     display:block;
     text-decoration:none
 }
-.lc_menu_line a:active{color:#77e0ff}
-.lc_menu_line a:visited{color:#77e0ff}
+.lc_menu_line a:active{color:#b9cfff}
+.lc_menu_line a:visited{color:#b9cfff}
 .lc_menu_line a:hover{color:#16d57a}
 
 

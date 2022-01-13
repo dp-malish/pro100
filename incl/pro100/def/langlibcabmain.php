@@ -44,18 +44,18 @@ class LangLibCabMain{
 
             'personal'=>'Personal data',
 
-            'name'=>'Name',
+            'name'=>'First Name',
             'name_place'=>'Your name',
-            'name_null'=>'Your name is not specified.',
-            'surname'=>'Surname',
+            'name_null'=>'Your First  Name is not specified.',
+            'surname'=>'Last Name',
             'surname_place'=>'Your surname',
-            'surname_null'=>'Your last name is not specified.',
+            'surname_null'=>'Your Last Name is not specified.',
             'sex'=>'Gender',
             'sex_select'=>'Select gender',
-            'sex_null'=>'Your gender is not specified.',
+            'sex_null'=>'Your Gender is not specified.',
             'sex_db'=>['Female','Male','Other'],
-            'birthday'=>'Date of birth',
-            'birthday_null'=>'Your date of  birthday s not specified.',
+            'birthday'=>'Date of Birth',
+            'birthday_null'=>'Your Date of  Birth is not specified.',
 
 
             'gen_l1'=>'Level: ',
@@ -256,7 +256,8 @@ class LangLibCabMain{
             'post_null'=>'Неизвестная ошибка',
 
             //personal
-            ''=>''
+            'name_err'=>'Имя пользователя указано не корректно...',
+            'surname_err'=>'Фамилия пользователя указано не корректно...',
 
         ],
         'en'=>[
@@ -272,6 +273,10 @@ class LangLibCabMain{
             'wallet_update'=>'Wallet changed',
 
             'post_null'=>'Unknown error',
+
+            //personal
+            'name_err'=>'The First Name is not correct...',
+            'surname_err'=>'The Last Name is not correct...',
 
         ]
     ];
