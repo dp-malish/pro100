@@ -30,13 +30,17 @@ class PersonalData{
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }elseif($gender>2){
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
-            }elseif(Def100\ValidExt::paternDateHTMLForm($birthday)){
-                echo json_encode(['err'=>false,'answer'=>$birthday,'l'=>1]);
-                //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
-            }else
+            }elseif(!Def100\ValidExt::paternDateHTMLForm($birthday)){
+                //echo json_encode(['err'=>false,'answer'=>$birthday,'l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+            }else{
+
+                $sql='UPDATE `t_users` SET `lastip`="'.User\User::$ip.'",`last`=[value-10],`em`=[value-11],`profit`=[value-12],`av`=[value-13],`hits`=[value-14],`multi`=[value-15],`prf_name`=[value-16],`prf_fam`=[value-17],`sex`=[value-18],`birthday`=[value-19],`pay_payeer`=[value-20],`pay_pm`=[value-21],`cont_vk`=[value-22],`cont_ok`=[value-23],`cont_fb`=[value-24],`cont_wa`=[value-25],`cont_vi`=[value-26],`cont_sk`=[value-27],`cont_te`=[value-28],`cont_icq`=[value-29],`cont_sms`=[value-30],`ban`=[value-31],`step`=[value-32] WHERE 1';
+
 
                 //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['wallet_update'],'l'=>1]);
                 echo json_encode(['err'=>false,'answer'=>'---'.$gender,'l'=>1]);
+            }
         }
     }
 

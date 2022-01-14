@@ -10,7 +10,7 @@ class ValidExt extends \lib\Def\Validator{
         return(preg_match('/[!@#$%\^&*\(\)\+\=:;?\/\`\~]/',$s))?true:false;
     }
     static function paternDateHTMLForm($s){
-        return(preg_match('/[0-9]{4}\-[0-9]{2}\-[0-9]{2}/',$s))?true:false;
+        return(preg_match('/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}/',$s))?true:false;
     }
 
 
