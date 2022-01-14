@@ -310,8 +310,8 @@ class LangLibCabMain{
             'partners'=>'Partners',
             'level_up'=>'Level',
 
-            'support'=>'Support service',
-            'promo'=>'Promo materials',
+            'support'=>'Support',
+            'promo'=>'Promotion',
 
             'news'=>'News',
             'exit'=>'Exit'

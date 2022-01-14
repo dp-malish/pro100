@@ -1,6 +1,7 @@
 <?php
 namespace incl\pro100\Profile;
 
+use incl\pro100\Support\Support;
 use lib\Def as Def;
 use lib\Post\Post as Post;
 use incl\pro100\Def as Def100;
@@ -35,11 +36,21 @@ class PersonalData{
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }else{
 
-                $sql='UPDATE `t_users` SET `lastip`="'.User\User::$ip.'",`last`=[value-10],`em`=[value-11],`profit`=[value-12],`av`=[value-13],`hits`=[value-14],`multi`=[value-15],`prf_name`=[value-16],`prf_fam`=[value-17],`sex`=[value-18],`birthday`=[value-19],`pay_payeer`=[value-20],`pay_pm`=[value-21],`cont_vk`=[value-22],`cont_ok`=[value-23],`cont_fb`=[value-24],`cont_wa`=[value-25],`cont_vi`=[value-26],`cont_sk`=[value-27],`cont_te`=[value-28],`cont_icq`=[value-29],`cont_sms`=[value-30],`ban`=[value-31],`step`=[value-32] WHERE 1';
+                $DB=new Def\SQLi();
+
+                $sql='UPDATE t_users SET lastip='.$DB->realEscapeStr(User\User::$ip).',last='.time();
+                if($name!=User\User::$arrDBUser['prf_name'])$sql.=',prf_name='.$DB->realEscapeStr($name);
+                if($surname!=User\User::$arrDBUser['prf_fam'])$sql.=',prf_fam='.$DB->realEscapeStr($surname);
+                if($gender!=User\User::$arrDBUser['sex'])$sql.=',sex='.$DB->realEscapeStr($gender);
+                if($birthday!=User\User::$arrDBUser['birthday'])$sql.=',birthday='.$DB->realEscapeStr($birthday);
+                $sql.=' WHERE uid='.User\User::$u_id;
+
+
+
 
 
                 //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['wallet_update'],'l'=>1]);
-                echo json_encode(['err'=>false,'answer'=>'---'.$gender,'l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>$sql,'l'=>2]);
             }
         }
     }
