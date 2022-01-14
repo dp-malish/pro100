@@ -5,7 +5,8 @@ Opt::$css.='<link rel="stylesheet" href="/css/index/in1.css">
     <link rel="stylesheet" href="/css/index/in2.css">
     <link rel="stylesheet" href="/css/index/in3.css">
     <link rel="stylesheet" href="/css/index/in4.css">
-    <link rel="stylesheet" href="/css/index/in5.css">';
+    <link rel="stylesheet" href="/css/index/in5.css">
+    <link rel="stylesheet" href="/css/index/particles-js.css">';
 
 //Opt::$jscript.='';
 
@@ -24,7 +25,7 @@ Opt::$main_content.='<main>
     </div>
     <div id="in1_l2">PROFIT IS OVER $450 000</div>
 
-    <div id="in1_l3"></div>
+    <div id="in1_l3"><div id="particles-js"></div></div>
     <div id="in1_l4">
         <div class="dwfce">
         <div id="in1_l4_reg">
@@ -50,7 +51,7 @@ Opt::$main_content.='<main>
     <div id="in1_l6">
         <div class="in1_l5_flax_t ac">Stable profit without risks</div>
     </div>
-
+<script src="/j/lib/particles.min.js"></script><script>$(document).ready(function(){$("#particles-js").appendTo("#rec99999999 .t396__filter");});</script><script>particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#6f7faa"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#7d96d9","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = \'absolute\'; stats.domElement.style.left = \'0px\'; stats.domElement.style.top = \'0px\'; document.body.appendChild(stats.domElement); count_particles = document.querySelector(\'.js-count-particles\'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); };</script>
 </div>
 
 <div id="in2">
@@ -221,36 +222,3 @@ Opt::$main_content.='<main>
 
 
 </div></main>';
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-Opt::$main_content.='<br><br><a href="/cabinet/">Кабинет</a>';
-
-
-Opt::$main_content.='<br><br><br><a href="/addcash/">Добавить деньги</a>';
-
-
-Opt::$main_content.='<br><br><a href="/">Главная</a>';
-Opt::$main_content.='<br><br><a href="/login?login=admin&pass=admin">Вход</a>';
-
-Opt::$main_content.='<br><br><a href="/login?login=proba3&pass=12345678">Вход Proba3</a>';
-
-Opt::$main_content.='<br><br><a href="/exit">Выход</a>';
-Opt::$main_content.='<br> <br><br><br> User#'.\incl\pro100\User\User::$u_id;
-
-
-
-Opt::$main_content.='<br><br><a href="/reg?login=Proba1&pass=12345678&mail=win@ix.ru&oferta=1">Registraciya</a>';
-Opt::$main_content.='<br><br><a href="/reg?login=admin&pass=12345678&mail=zelejoy@ya.ru&oferta=1">Registraciya Есть</a>';
-//Opt::$main_content.='<br>'.$_GET['i'];
-*/

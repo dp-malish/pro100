@@ -23,9 +23,9 @@ class PersonalData{
             $gender=Def\Validator::html_cod($_POST['gender']);
             $birthday=Def\Validator::html_cod($_POST['birthday']);
 
-            if(Def100\ValidExt::paternSymbol($name)){
+            if(Def100\ValidExt::paternSymbol($name)|| mb_strlen($name,'UTF-8')>21){
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'],'l'=>1]);
-            }elseif(Def100\ValidExt::paternSymbol($surname)){
+            }elseif(Def100\ValidExt::paternSymbol($surname)|| mb_strlen($surname,'UTF-8')>26){
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'],'l'=>1]);
             }elseif(!Def\Validator::paternInt($gender) && $gender!=''){
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
@@ -35,22 +35,27 @@ class PersonalData{
                 //echo json_encode(['err'=>false,'answer'=>$birthday,'l'=>1]);
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }else{
-
                 $DB=new Def\SQLi();
+                $good_answer='<p>'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['save_data'].'</p>';
 
                 $sql='UPDATE t_users SET lastip='.$DB->realEscapeStr(User\User::$ip).',last='.time();
-                if($name!=User\User::$arrDBUser['prf_name'])$sql.=',prf_name='.$DB->realEscapeStr($name);
-                if($surname!=User\User::$arrDBUser['prf_fam'])$sql.=',prf_fam='.$DB->realEscapeStr($surname);
-                if($gender!=User\User::$arrDBUser['sex'])$sql.=',sex='.$DB->realEscapeStr($gender);
-                if($birthday!=User\User::$arrDBUser['birthday'])$sql.=',birthday='.$DB->realEscapeStr($birthday);
+                if($name!=User\User::$arrDBUser['prf_name']){$sql.=',prf_name='.$DB->realEscapeStr($name);
+                    $good_answer.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['name'].': '.$name.'.</p>';
+                }
+                if($surname!=User\User::$arrDBUser['prf_fam']){$sql.=',prf_fam='.$DB->realEscapeStr($surname);
+                    $good_answer.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['surname'].': '.$surname.'.</p>';
+                }
+                if($gender!=User\User::$arrDBUser['sex']){$sql.=',sex='.$DB->realEscapeStr($gender);
+                    $good_answer.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['sex'].': '.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['sex_db'][$gender].'.</p>';
+                }
+                if($birthday!=User\User::$arrDBUser['birthday']){$sql.=',birthday='.$DB->realEscapeStr($birthday);
+                    $good_answer.='<p>'.Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['birthday'].': '.$birthday.'.</p>';
+                }
                 $sql.=' WHERE uid='.User\User::$u_id;
 
-
-
-
-
-                //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['wallet_update'],'l'=>1]);
-                echo json_encode(['err'=>false,'answer'=>$sql,'l'=>2]);
+                if($DB->boolSQL($sql)){//'<p>'.$sql.'</p>'.
+                    echo json_encode(['err'=>false,'answer'=>$good_answer,'l'=>2]);
+                }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }
         }
     }
@@ -106,11 +111,22 @@ document.getElementById("personal_upd_btn").addEventListener("click",function(){
     var gender=document.getElementById("gender_user").value;
     var birthday=document.getElementById("birthday_user").value;
     
-        ajaxPostSend("personal_upd=1&name="+name+"&surname="+surname+"&gender="+gender+"&birthday="+birthday,formPersonalUpdate,true,true,"/ajax/cabinet/profile.php");
+    
+    if(name.length<2 || name.length>20){
+        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'].'",{theme:"growl-error",life:4000});
+    }else if(surname.length<2 || surname.length>25){
+        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'].'",{theme:"growl-error",life:4000});
+    }
+    
+    
+        //ajaxPostSend("personal_upd=1&name="+name+"&surname="+surname+"&gender="+gender+"&birthday="+birthday,formPersonalUpdate,true,true,"/ajax/cabinet/profile.php");
         
 /*    if(wallet.length!=9){
-        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['wallet_err'].'",{theme:"growl-error",life:4000});
-    }else{
+        
+    }
+    
+    
+    else{
         var fb=wallet.substr(0,1);
         fb=fb.toUpperCase();
         if(fb!="U"){            
@@ -118,7 +134,7 @@ document.getElementById("personal_upd_btn").addEventListener("click",function(){
         }else if(fs_btn){
             fb=wallet.substr(1,8);
             //alert(fb);
-            ajaxPostSend("pm_wal_upd=1&wallet="+fb,formWalletUpdate,true,true,"/ajax/cabinet/profile.php");
+            ajaxPostSend("personal_upd=1&name="+name+"&surname="+surname+"&gender="+gender+"&birthday="+birthday,formPersonalUpdate,true,true,"/ajax/cabinet/profile.php");
             fs_btn=false;
         }
     }*/

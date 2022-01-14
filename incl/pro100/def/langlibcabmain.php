@@ -259,6 +259,9 @@ class LangLibCabMain{
             'name_err'=>'Имя пользователя указано не корректно...',
             'surname_err'=>'Фамилия пользователя указано не корректно...',
 
+            'save_data'=>'Данные сохранены.',
+
+
         ],
         'en'=>[
             'name'=>'PROFILE',
@@ -277,6 +280,8 @@ class LangLibCabMain{
             //personal
             'name_err'=>'The First Name is not correct...',
             'surname_err'=>'The Last Name is not correct...',
+
+            'save_data'=>'Data saved.',
 
         ]
     ];
