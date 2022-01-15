@@ -28,7 +28,7 @@ A:hover, .link:hover {
     color:#4CA5C6;
     text-decoration: blink
 }
-
+.required::after{content: " *";}
 #shadow{
     display:none;
     position:fixed;

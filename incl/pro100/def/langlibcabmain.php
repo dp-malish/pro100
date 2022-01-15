@@ -261,6 +261,8 @@ class LangLibCabMain{
 
             'save_data'=>'Данные сохранены.',
 
+            'star'=>'Поля, обозначенные звездочкой, обязательны для заполнения, остальные поля заполняются по желанию.'
+
 
         ],
         'en'=>[
@@ -282,6 +284,8 @@ class LangLibCabMain{
             'surname_err'=>'The Last Name is not correct...',
 
             'save_data'=>'Data saved.',
+
+            'star'=>'The fields indicated with an asterisk are required to complete this transaction; other fields are optional.'
 
         ]
     ];
