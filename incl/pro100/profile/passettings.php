@@ -8,45 +8,32 @@ use incl\pro100\User as User;
 
 class PasSettings{
 
-
     static function updatePas(){
-
-        if(Post::issetPostKey(['old_pas','new_pas'])){
-            $err=0;
-
-            $old = Def\Validator::html_cod($_POST['old_pas']);
-            $pass = Def\Validator::html_cod($_POST['new_pas']);
-
-            if(md5(md5($old))!=User\User::$arrDBUser['pas']){
-                $err=1;
+        if(Post::issetPostKey(['old_pas','new_pas'])){$err=0;
+            $old=Def\Validator::html_cod($_POST['old_pas']);
+            $pass=Def\Validator::html_cod($_POST['new_pas']);
+            $l_old_pas=strlen($old);
+            $l_new_pas=strlen($pass);
+            if($l_old_pas>Def100\OptCab::MAX_PASS || $l_old_pas<Def100\OptCab::MIN_PASS){$err=1;
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas_bad'],'l'=>1]);
+            }elseif(md5(md5($old))!=User\User::$arrDBUser['pas']){$err=1;
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas_bad'],'l'=>1]);
+            }elseif($l_new_pas<Def100\OptCab::MIN_PASS){$err=1;
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['pass_small'],'l'=>1]);
+            }elseif($l_new_pas>Def100\OptCab::MAX_PASS){$err=1;
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+            }elseif(!Def100\ValidExt::paternPass($pass)){$err=1;
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['new_pas_bad'],'l'=>1]);}
+            if(!$err){$DB=new Def\SQLi();$pass=md5(md5($pass));
+                if($DB->boolSQL('UPDATE t_users SET pas='.$DB->realEscapeStr($pass).' WHERE uid='.Def\Opt::$live_user_id.' LIMIT 1')){
+                    Def\Cookie::setCookie(User\User::$cookie_name['pass_md5'],User\User::cryptCookieValue($pass),84000);
+                echo json_encode(['err' => false,'answer' => Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['pas_good'], 'l' =>2]);
+                }else echo json_encode(['err' => false,'answer' => Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'], 'l' =>1]);
             }
-
-/*
-
-            if(strlen($pass)<'8' && !$err){
-                $err=1;
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['pass_small'],'code'=>1]);
-            }elseif(!preg_match("#^[aA-zZ0-9\-_]+$#",$pass) && !$err){
-                $err=1;
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibPay::ARR_ERR_REG[Def\Opt::$lang]['pass_err'],'code'=>1]);}
-
-
-
-            if(!$err){
-                //$DB = new Def\SQLi();
-                echo json_encode(['err' => false, 'answer' => Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['pas_good'], 'l' =>2]);
-            }*/
         }//нет ошибок
-        else echo json_encode(['err' => false, 'answer' => Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['pas_good'], 'l' =>2]);
     }
 
-
     static function getProfilePasInfo(){
-
-
-
-
 
         $txt='<div class="d_inp">
 <span class="d_inp_l required">'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas'].'</span>

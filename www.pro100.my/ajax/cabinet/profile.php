@@ -18,9 +18,7 @@ if(Post\Post::issetPostArr()){
     }elseif(isset($_POST['personal_upd']) && Opt::$live_user==1){
         if(User\User::$selfUser->validPassCookie()){
             Prof\PersonalData::updatePersonal();
-            //echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['wallet_update'],'l'=>2]);
         }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_LEVEL_UP[Opt::$lang]['live_user_null'],'l'=>1]);
-
     }elseif(isset($_POST['pas_upd']) && Opt::$live_user==1){
         if(User\User::$selfUser->validPassCookie()){
             Prof\PasSettings::updatePas();

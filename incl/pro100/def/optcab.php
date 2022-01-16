@@ -12,6 +12,9 @@ class OptCab{
 
     const ID_ADMIN = 300;//300
 
+    const MIN_PASS = 5;//ДЛИНА
+    const MAX_PASS = 30;
+
 
     const  MIN_OUT = 10;//Минималка на вывод
     const  MAX_OUT = 10000;//Максималка на вывод

@@ -12,7 +12,5 @@ class ValidExt extends \lib\Def\Validator{
     static function paternDateHTMLForm($s){
         return(preg_match('/^[0-9]{4}\-[0-9]{2}\-[0-9]{2}/',$s))?true:false;
     }
-
-
-
+    static function paternPass($s){return(preg_match("/^[0-9a-zA-Z_\-]+$/u",$s))?true:false;}
 }

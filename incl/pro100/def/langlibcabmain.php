@@ -275,6 +275,7 @@ class LangLibCabMain{
 
             'pas_good'=>'Пароль изменён...',
             'old_pas_bad'=>'Не верный пароль...',
+            'new_pas_bad'=>'Новый пароль содержит запрещённые символы...',
 
 
         ],
@@ -312,6 +313,7 @@ class LangLibCabMain{
 
             'pas_good'=>'Password changed...',
             'old_pas_bad'=>'Invalid password...',
+            'new_pas_bad'=>'The new password contains invalid characters...',
 
         ]
     ];
