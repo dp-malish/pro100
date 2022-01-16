@@ -261,7 +261,20 @@ class LangLibCabMain{
 
             'save_data'=>'Данные сохранены.',
 
-            'star'=>'Поля, обозначенные звездочкой, обязательны для заполнения, остальные поля заполняются по желанию.'
+            'star'=>'Поля, обозначенные звездочкой, обязательны для заполнения, остальные поля заполняются по желанию.',
+
+            'settings'=>'Настройки',
+            'upd_pas'=>'Сменить пароль',
+
+            'old_pas'=>'Старый пароль',
+            'old_pas_plac'=>'Старый пароль',
+            'new_pas'=>'Новый пароль',
+            'new_pas_plac'=>'Новый пароль',
+            'confirm_pas'=>'Подтверждение пароля',
+            'confirm_pas_plac'=>'Подтверждение пароля',
+
+            'pas_good'=>'Пароль изменён...',
+            'old_pas_bad'=>'Не верный пароль...',
 
 
         ],
@@ -285,7 +298,20 @@ class LangLibCabMain{
 
             'save_data'=>'Data saved.',
 
-            'star'=>'The fields indicated with an asterisk are required to complete this transaction; other fields are optional.'
+            'star'=>'The fields indicated with an asterisk are required to complete this transaction; other fields are optional.',
+
+            'settings'=>'Settings',
+            'upd_pas'=>'Change password',
+
+            'old_pas'=>'Old password',
+            'old_pas_plac'=>'Your Old Password ',
+            'new_pas'=>'New password',
+            'new_pas_plac'=>'Your New Password',
+            'confirm_pas'=>'Password confirm',
+            'confirm_pas_plac'=>'Your Password Confirmation',
+
+            'pas_good'=>'Password changed...',
+            'old_pas_bad'=>'Invalid password...',
 
         ]
     ];

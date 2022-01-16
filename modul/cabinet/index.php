@@ -1,11 +1,8 @@
 <?php
 namespace lib\Def;
-
 use incl\pro100\Def as Def100;
 use incl\pro100\User as User;
-
-Opt::$title='Cabinet';
-
+//Cabinet
 Opt::$title=Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['info_index'];
 
 //ASSISTANT start
