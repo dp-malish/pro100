@@ -24,14 +24,14 @@ class PersonalData{
             $birthday=Def\Validator::html_cod($_POST['birthday']);
 
             if(Def100\ValidExt::paternSymbol($name)|| mb_strlen($name,'UTF-8')>21){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'],'l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'].'name','l'=>1]);
             }elseif(Def100\ValidExt::paternSymbol($surname)|| mb_strlen($surname,'UTF-8')>26){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'],'l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'].'name_','l'=>1]);
             }elseif(!Def\Validator::paternInt($gender) && $gender!=''){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'].'gender','l'=>1]);
             }elseif($gender>2 && $gender!=''){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
-            }elseif(!Def100\ValidExt::paternDateHTMLForm($birthday)){
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'].'gender2','l'=>1]);
+            }elseif(!Def100\ValidExt::paternDateHTMLForm($birthday) && $birthday!=''){
                 //echo json_encode(['err'=>false,'answer'=>$birthday,'l'=>1]);
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }else{
@@ -58,7 +58,7 @@ class PersonalData{
 
                 if($DB->boolSQL($sql)){//'<p>'.$sql.'</p>'.
                     echo json_encode(['err'=>false,'answer'=>$good_answer,'l'=>2]);
-                }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
+                }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'].'sql','l'=>1]);
             }
         }
     }
