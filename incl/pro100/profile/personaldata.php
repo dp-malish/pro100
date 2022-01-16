@@ -1,36 +1,29 @@
 <?php
 namespace incl\pro100\Profile;
 
-use incl\pro100\Support\Support;
 use lib\Def as Def;
 use lib\Post\Post as Post;
 use incl\pro100\Def as Def100;
 use incl\pro100\User as User;
 
 
-
-
-
-
 class PersonalData{
-
 
     static function updatePersonal(){
         if(Post::issetPostKey(['name','surname','gender','birthday'])){
-
             $name=Def\Validator::html_cod($_POST['name']);
             $surname=Def\Validator::html_cod($_POST['surname']);
             $gender=Def\Validator::html_cod($_POST['gender']);
             $birthday=Def\Validator::html_cod($_POST['birthday']);
 
             if(Def100\ValidExt::paternSymbol($name)|| mb_strlen($name,'UTF-8')>21){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'].'name','l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'],'l'=>1]);
             }elseif(Def100\ValidExt::paternSymbol($surname)|| mb_strlen($surname,'UTF-8')>26){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'].'name_','l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'],'l'=>1]);
             }elseif(!Def\Validator::paternInt($gender) && $gender!=''){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'].'gender','l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }elseif($gender>2 && $gender!=''){
-                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'].'gender2','l'=>1]);
+                echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }elseif(!Def100\ValidExt::paternDateHTMLForm($birthday) && $birthday!=''){
                 //echo json_encode(['err'=>false,'answer'=>$birthday,'l'=>1]);
                 echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
@@ -58,7 +51,7 @@ class PersonalData{
 
                 if($DB->boolSQL($sql)){//'<p>'.$sql.'</p>'.
                     echo json_encode(['err'=>false,'answer'=>$good_answer,'l'=>2]);
-                }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'].'sql','l'=>1]);
+                }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
             }
         }
     }
@@ -107,18 +100,12 @@ foreach(Def100\LangLibCabMain::ARR_INDEX[Def\Opt::$lang]['sex_db'] as $k=>$v){
 
 <p class="note ac five_"><br>'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['star'].'</p>
 
-<script type="text/javascript">
-var pers_upd_btn=true;
+<script type="text/javascript">var pers_upd_btn=true;
 document.getElementById("personal_upd_btn").addEventListener("click",function(){
-    
-    
-    
     var name=document.getElementById("name_user").value;
     var surname=document.getElementById("surname_user").value;
     var gender=document.getElementById("gender_user").value;
     var birthday=document.getElementById("birthday_user").value;
-    
-    
     if(name.length<2 || name.length>20){
         $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'].'",{theme:"growl-error",life:4000});
     }else if(surname.length<2 || surname.length>25){
@@ -130,20 +117,9 @@ document.getElementById("personal_upd_btn").addEventListener("click",function(){
         }
     }
 });
-
-function formPersonalUpdate(arr){if(arr.l==1){
-    $.jGrowl(arr.answer,{theme:"growl-error",life:4000});pers_upd_btn=true;
-}else if(arr.l==2){
-    document.getElementById("aj_p_person").innerHTML="<p>"+arr.answer+"</p>";}
-}
-
-</script>
-
-
-';
-
+function formPersonalUpdate(arr){if(arr.l==1){$.jGrowl(arr.answer,{theme:"growl-error",life:4000});pers_upd_btn=true;
+}else if(arr.l==2){document.getElementById("aj_p_person").innerHTML="<p>"+arr.answer+"</p>";}}</script>';
         return $txt;
-
     }
 
 
