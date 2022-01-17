@@ -11,9 +11,9 @@
 }
 #up {
     width: 85px;
-    border:rgba(3,109,3,.8) 2px solid;;
+    border:rgba(30,48,86,.95) 2px solid;
     border-radius: 4px;
-    background: #d3ddd4;
+    background:#b9cfff;
     text-align: center;
     padding: 5px;
     position: fixed;
@@ -21,7 +21,7 @@
     right: 17px;
     cursor: pointer;
     display: none;
-    color: #333;
+    color:#000000;
     font-size: 90%;
     z-index:50;
 }
