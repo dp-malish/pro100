@@ -71,22 +71,27 @@ document.getElementById("pas_upd_btn").addEventListener("click",function(){
     var confirm_pas=document.getElementById("confirm_pas").value;
     
     
-    ajaxPostSend("pas_upd=1&old_pas="+old_pas+"&new_pas="+new_pas,formPasUpdate,true,true,"/ajax/cabinet/profile.php");
+    //ajaxPostSend("pas_upd=1&old_pas="+old_pas+"&new_pas="+new_pas,formPasUpdate,true,true,"/ajax/cabinet/profile.php");
 
-    /*if(name.length<2 || name.length>20){
-        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['name_err'].'",{theme:"growl-error",life:4000});
-    }else if(surname.length<2 || surname.length>25){
-        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['surname_err'].'",{theme:"growl-error",life:4000});
+    if(old_pas.length<'.Def100\OptCab::MIN_PASS.' || old_pas.length>'.Def100\OptCab::MAX_PASS.'){
+        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas_bad'].'",{theme:"growl-error",life:4000});
+        document.getElementById("old_pas").focus();
+    }else if(new_pas.length<'.Def100\OptCab::MIN_PASS.' || new_pas.length>'.Def100\OptCab::MAX_PASS.'){
+        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas_bad'].'",{theme:"growl-error",life:4000});
+        document.getElementById("new_pas").focus();
+    }else if(new_pas!=confirm_pas){
+        $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['new_pas_conf_bad'].'",{theme:"growl-error",life:4000});
+        document.getElementById("confirm_pas").focus();
     }else{
         if(pas_upd_btn){
-        ajaxPostSend("personal_upd=1&name="+name+"&surname="+surname+"&gender="+gender+"&birthday="+birthday,formPersonalUpdate,true,true,"/ajax/cabinet/profile.php");
+        ajaxPostSend("pas_upd=1&old_pas="+old_pas+"&new_pas="+new_pas,formPasUpdate,true,true,"/ajax/cabinet/profile.php");
         pas_upd_btn=false;
         }
-    }*/
+    }
 });
 function formPasUpdate(arr){
     if(arr.l==1){
-        $.jGrowl(arr.answer,{theme:"growl-error",life:4000});pers_upd_btn=true;
+        $.jGrowl(arr.answer,{theme:"growl-error",life:4000});pas_upd_btn=true;
 }else if(arr.l==2){
         document.getElementById("aj_p_pas").innerHTML="<p>"+arr.answer+"</p>";
     }
