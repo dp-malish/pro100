@@ -8,10 +8,7 @@ use incl\pro100\Profile as Prof;
 Opt::$title=Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['name'];
 
 
-Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['settings'].'</h3></div>';
 
-//настройки
-Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['upd_pas'].'</h4><div id="aj_p_pas" class="h_fon_field">'.Prof\PasSettings::getProfilePasInfo().'</div></div>';
 
 
 
@@ -28,3 +25,7 @@ Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLi
 Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['payment'].'</h4><div class="h_fon_field"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['ps'].' '.Def100\OptCab::paysSystems(1).'</h4><div id="aj_p_wal" class="h_fon_field">'.Prof\PaymentData::getProfilePerfectInfo().'</div></div></div>';
 
 //настройк
+Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['settings'].'</h3></div>';
+
+//настройки пароль
+Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['upd_pas'].'</h4><div id="aj_p_pas" class="h_fon_field">'.Prof\PasSettings::getProfilePasInfo().'</div></div>';
