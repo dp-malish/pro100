@@ -286,34 +286,3 @@
     font-weight: bold;
     display: inline-block;
 }
-
-
-/*.l1_pc_cell{
-    !*background:#050505 url("../../img/cab/button_left_blue.png") no-repeat;
-    background-size: 100% 100%;*!
-
-    position: relative;
-    height:78px;
-    width:130px;
-    float:right;
-    !*border:#4CA5C6 solid 2px;*!
-    text-align:center;
-    line-height:70px;
-    color:#ffffcc;
-    display:inline-block;
-    background-color: #b5524c;
-
-    border: 1px #000 solid;
-
-}
-.l1_pc_cell_und{
-    display: inline-block;
-    height:53px;
-    border-bottom: #00A72D solid 2px;
-}
-
-*/
-
-
-
-

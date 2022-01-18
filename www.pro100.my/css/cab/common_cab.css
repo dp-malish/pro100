@@ -111,9 +111,6 @@ A:hover, .link:hover {
     margin:13px auto;
     display:table;
     border-spacing:3px 11px;;
-    /*border:solid 2px red;*/
-    /*background-color: #000000;
-    box-shadow: 0 4px 10px 2px rgba(76, 165, 198,.4);*/
     width:50%;
 }
 @media screen and (min-width:651px) and (max-width:1000px){

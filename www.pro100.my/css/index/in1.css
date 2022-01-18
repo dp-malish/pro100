@@ -5,9 +5,7 @@
     background-size:cover;
     background-position-x:50%;
     background-position-y:50%;
-}
-
-#in1_l1{
+}#in1_l1{
     min-height:25px;
     overflow-x:hidden;
     position: absolute;
@@ -15,17 +13,11 @@
     left:0;
     width: 100%;
     z-index:6;
-}
-@media screen and (max-width:540px){
-    #in1_l1{top:4px}
-}
+}@media screen and (max-width:540px){#in1_l1{top:4px}}
 #in1_l1 h1{
     font-size:170%;
     font-weight:normal;
-}
-@media screen and (max-width:540px){
-    #in1_l1 h1{font-size:140%}
-}
+}@media screen and (max-width:540px){#in1_l1 h1{font-size:140%}}
 
 #in1_l2{
     position: absolute;
@@ -36,16 +28,13 @@
     color:#b9cfff;
     font-size:130%;
     z-index:7;
-}
-@media screen and (min-width:281px) and (max-width:700px){
+}@media screen and (min-width:281px) and (max-width:700px){
     #in1_l2{
         font-size:110%;
         top:101px;
     }
 }
-@media screen and (max-width:280px){
-    #in1_l2{font-size:110%;top:113px;}
-}
+@media screen and (max-width:280px){#in1_l2{font-size:110%;top:113px;}}
 
 #in1_l3{
     position:absolute;
@@ -53,7 +42,6 @@
     top:0;
     width: 100%;
     height: 100%;
-
     background:url("../../img/index/fone_p.png") no-repeat;
     background-size:cover;
     background-position-x:50%;
@@ -81,10 +69,9 @@
     background-size: 105% 105%;
     cursor: pointer;
     line-height:30px;
-    text-align: center;
+    text-align:center;
     border:rgba(3,109,3,.8) 2px solid;
-    margin: 0 5px 0 0;
-}
+    margin: 0 5px 0 0}
 #in1_l4_reg:hover,#in1_l4_log:hover{
     color: #00A72D;
     box-shadow:0 0 17px 8px rgba(25,123, 56,.2);
@@ -126,17 +113,8 @@
     background: rgba(2,2,17,.6);
     box-shadow: 0 4px 9px 2px rgb(100 149 255);
 }
-@media screen and (max-width:840px){
-    .in1_l5_flax_t{
-        margin:0 3px;
-        width:45%;
-    }
-}
-@media screen and (max-width:470px){
-    .in1_l5_flax_t{
-        padding:7px;
-    }
-}
+@media screen and (max-width:840px){.in1_l5_flax_t{margin:0 3px;width:45%}}
+@media screen and (max-width:470px){.in1_l5_flax_t{padding:7px}}
 
 #in1_l6{
     z-index:8;
@@ -148,8 +126,4 @@
     overflow: hidden;
     color:#fcfcfc;
     padding:5px 0;
-}
-
-#in1_l6 .in1_l5_flax_t{
-    margin:0 auto;
-}
+}#in1_l6 .in1_l5_flax_t{margin:0 auto}

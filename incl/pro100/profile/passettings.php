@@ -1,13 +1,10 @@
 <?php
 namespace incl\pro100\profile;
-
 use lib\Def as Def;
 use lib\Post\Post as Post;
 use incl\pro100\Def as Def100;
 use incl\pro100\User as User;
-
 class PasSettings{
-
     static function updatePas(){
         if(Post::issetPostKey(['old_pas','new_pas'])){$err=0;
             $old=Def\Validator::html_cod($_POST['old_pas']);
@@ -34,7 +31,6 @@ class PasSettings{
     }
 
     static function getProfilePasInfo(){
-
         $txt='<div class="d_inp">
 <span class="d_inp_l required">'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas'].'</span>
 <span class="d_inp_r">
@@ -58,21 +54,13 @@ class PasSettings{
 </span>
 <div class="cl"></div>
 </div>
-
 <div id="pas_upd_btn" class="cab_btn">'.Def100\LangLibCabBtn::ARR_BTN[Def\Opt::$lang]['update'].'</div>
-
 <p class="note ac five_"><br>'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['star'].'</p>
-
-
 <script type="text/javascript">var pas_upd_btn=true;
 document.getElementById("pas_upd_btn").addEventListener("click",function(){
     var old_pas=document.getElementById("old_pas").value;
     var new_pas=document.getElementById("new_pas").value;
     var confirm_pas=document.getElementById("confirm_pas").value;
-    
-    
-    //ajaxPostSend("pas_upd=1&old_pas="+old_pas+"&new_pas="+new_pas,formPasUpdate,true,true,"/ajax/cabinet/profile.php");
-
     if(old_pas.length<'.Def100\OptCab::MIN_PASS.' || old_pas.length>'.Def100\OptCab::MAX_PASS.'){
         $.jGrowl("'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['old_pas_bad'].'",{theme:"growl-error",life:4000});
         document.getElementById("old_pas").focus();
@@ -95,16 +83,7 @@ function formPasUpdate(arr){
 }else if(arr.l==2){
         document.getElementById("aj_p_pas").innerHTML="<p>"+arr.answer+"</p>";
     }
-    
 }</script>';
-
         return $txt;
-
     }
-
-
-
-
-
-
 }
