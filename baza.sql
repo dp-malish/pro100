@@ -86,4 +86,17 @@ CREATE TABLE IF NOT EXISTS support(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
+CREATE TABLE IF NOT EXISTS em_upd(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  id_user int(11) NOT NULL,
+  em_old varchar(100) DEFAULT NULL COMMENT 'Почта эл. старая',
+  em_new varchar(100) DEFAULT NULL COMMENT 'Почта эл. новая',
+  ip varchar(50) NOT NULL,
+  data int(11) NOT NULL,
+  readed tinyint(1) DEFAULT NULL,
+  hash varchar(255) NOT NULL,
+  PRIMARY KEY (id),
+  KEY hash(hash)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
 

@@ -2,7 +2,7 @@
 // Файлы phpmailer
 require '../lib/phpmailer/PHPMailer.php';
 require '../lib/phpmailer/SMTP.php';
-require '../lib/phpmailer/Exception.php';
+//require '../lib/phpmailer/Exception.php';
 
 // Переменные, которые отправляет пользователь
 //$name = $_POST['name'];
@@ -22,7 +22,8 @@ $body = "
 ";
 
 // Настройки PHPMailer
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+//$mail = new PHPMailer\PHPMailer\PHPMailer();
+$mail = new lib\PHPMailer\PHPMailer();
 
 $mail->SMTPOptions = array(
     'ssl' => array(

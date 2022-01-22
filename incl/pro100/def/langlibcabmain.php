@@ -279,6 +279,14 @@ class LangLibCabMain{
             'new_pas_conf_bad'=>'Новый пароль не совпадает...',
 
 
+
+            'upd_em'=>'Сменить email',
+            'cur_em'=>'Текущий email:',
+            'new_em'=>'Новый email:',
+            'new_em_plac'=>'Ваш новый email',
+            'new_em_answer'=>'Заявка на смену электронной почты создана. Инструкция для активации нового электронного ящика выслана Вам на новый электронный адрес.',
+
+
         ],
         'en'=>[
             'name'=>'PROFILE',
@@ -316,6 +324,14 @@ class LangLibCabMain{
             'old_pas_bad'=>'Invalid password...',
             'new_pas_bad'=>'The new password contains invalid characters...',
             'new_pas_conf_bad'=>'The new password does not match...',
+
+
+
+            'upd_em'=>'Change email',
+            'cur_em'=>'Current email:',
+            'new_em'=>'New email:',
+            'new_em_plac'=>'Your new email',
+            'new_em_answer'=>'Заявка на смену электронной почты создана. Инструкция для активации нового электронного ящика выслана Вам на новый электронный адрес.',
 
         ]
     ];

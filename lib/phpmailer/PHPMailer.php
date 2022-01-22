@@ -1,5 +1,6 @@
 <?php
-namespace PHPMailer\PHPMailer;
+//namespace PHPMailer\PHPMailer;
+namespace lib\PHPMailer;
 class PHPMailer
 {
     const CHARSET_ASCII = 'us-ascii';

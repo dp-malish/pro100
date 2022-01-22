@@ -17,6 +17,16 @@ Opt::$title=Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['name'];
 
 Opt::$main_content.='<div><h3 class="h_fon">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['name'].'</h3></div>';
 
+
+//**********
+
+//настройки update email
+Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_PROFILE[Opt::$lang]['upd_em'].'</h4><div id="aj_p_em" class="h_fon_field">'.Prof\MailSettings::getProfileMailInfo().'</div></div>';
+//**********
+//**********
+
+
+
 //Личные данные
 Opt::$main_content.='<div class="text_fon"><h4 class="h_fon_min">'.Def100\LangLibCabMain::ARR_INDEX[Opt::$lang]['personal'].'</h4><div id="aj_p_person" class="h_fon_field">'.Prof\PersonalData::getProfilePersonalInfo().'</div></div>';
 

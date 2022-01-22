@@ -5,6 +5,11 @@ class OptCab{
 
     const MAIL_WARNING='winipuh@gmail.com';
 
+    const MAIL_ON=false;
+
+
+
+
     const ARR_HI_PRIVILEGE=[300,301,302,303];
     static $hi_privilege=false;
 
