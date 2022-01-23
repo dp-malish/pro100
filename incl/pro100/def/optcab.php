@@ -7,6 +7,8 @@ class OptCab{
 
     const MAIL_ON=false;
 
+    const MAIL_SMTP='mail.';
+
 
 
 

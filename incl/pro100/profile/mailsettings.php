@@ -32,6 +32,8 @@ class MailSettings{
 
                 if($DB->boolSQL($sql)){
 
+                    $txt_mail='';
+
                     echo json_encode(['err'=>false,'answer'=>$sql,'l'=>2]);
 
                 }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);

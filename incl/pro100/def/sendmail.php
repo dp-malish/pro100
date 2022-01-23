@@ -9,6 +9,7 @@ class SendMail{
 
 
 
+        return true;
     }
 
 }
