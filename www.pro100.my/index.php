@@ -50,6 +50,9 @@ if($_SERVER['REQUEST_URI']!='/'){
             case'p':new \incl\pro100\Ref\Ref_link();break;//реф ссылка / учёт переходов
 
 
+            case 'em':\incl\pro100\Profile\MailSettings::confirmMail();break;//подтвердить почту
+
+
 
 
 

@@ -280,11 +280,16 @@ class LangLibCabMain{
 
 
 
+            'upd_em_title'=>'Смена email',
             'upd_em'=>'Сменить email',
             'cur_em'=>'Текущий email:',
             'new_em'=>'Новый email:',
             'new_em_plac'=>'Ваш новый email',
             'new_em_answer'=>'Заявка на смену электронной почты создана. Инструкция для активации нового электронного ящика выслана Вам на новый электронный адрес.',
+
+            'em_confirm'=>'Электронный адрес подтверждён',
+            'em_not_confirm'=>'Электронный адрес не подтверждён',
+            'em_try_later'=>'Попробуйте позже...',
 
 
         ],
@@ -326,12 +331,16 @@ class LangLibCabMain{
             'new_pas_conf_bad'=>'The new password does not match...',
 
 
-
+            'upd_em_title'=>'Смена email',
             'upd_em'=>'Change email',
             'cur_em'=>'Current email:',
             'new_em'=>'New email:',
             'new_em_plac'=>'Your new email',
-            'new_em_answer'=>'Заявка на смену электронной почты создана. Инструкция для активации нового электронного ящика выслана Вам на новый электронный адрес.',
+            'new_em_answer'=>'Application to change your email has been created. Instructions for activating the new email have been sent to your new email address.',
+
+            'em_confirm'=>'Email address is confirmed',
+            'em_not_confirm'=>'Email address is not confirmed',
+            'em_try_later'=>'Try later...',
 
         ]
     ];

@@ -25,7 +25,8 @@ class MailSettings{
                 $dt=time();
 
                 $hash=hash ('sha256',$dt.User\User::$ip,false);
-                $hash.=hash ('sha256',$dt.Def\Opt::SOLT,false);
+                //$hash.=hash ('sha256',$dt.Def\Opt::SOLT,false);
+                $hash.=$dt;
 
                 $sql='INSERT INTO `em_upd`(`id_user`, `em_old`, `em_new`, `ip`, `data`,  `hash`)
             VALUES ('.User\User::$arrDBUser['uid'].',\''.User\User::$arrDBUser['em'].'\','.$DB->realEscapeStr($em).','.$DB->realEscapeStr(User\User::$ip).','.$dt.','.$DB->realEscapeStr($hash).')';
@@ -90,4 +91,24 @@ function formEmUpdate(arr){
 
     }
 
+
+    static function confirmMail(){
+        if(!empty(Def\Route::$uri_parts[1])){
+            // em/11dcb0106d5ab7ebc2980f0d6910f2a5fe57e0d3b5839f1947e1702d167ba08c1643018779
+            $l_link=strlen(Def\Route::$uri_parts[1]);
+            if($l_link<73 || $l_link>77){Def\Route::$module404=1;}else{
+            $DB=new Def\SQLi();
+            $res=$DB->strSQL('SELECT `id`, `id_user`, `em_new` FROM `em_upd` WHERE hash='.$DB->realEscapeStr(Def\Route::$uri_parts[1]).' AND readed IS NULL LIMIT 1');
+                if($res){
+                    if($DB->boolSQL('UPDATE `em_upd` SET `readed`=1 WHERE id='.$res['id'])){
+                        if($DB->boolSQL('UPDATE `t_users` SET `lastip`='.$DB->realEscapeStr(User\User::$ip).',`last`='.time().',`em`='.$DB->realEscapeStr($res['em_new']).' WHERE uid='.$res['id_user'])){
+                            $answer=Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['em_confirm'];
+                        }else $answer=Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'];
+                    }else $answer=Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['em_try_later'];
+                    Def\Opt::$title=Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['upd_em_title'];
+                    Def\Opt::$main_content.='<div class="ac five_"><h4>'.Def\Opt::$title.'</h4><br><p>'.$answer.'</p><br><p>'.Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['cur_em'].' '.$res['em_new'].'</p><br></div><script type="text/javascript">setTimeout(\'location.replace("/")\', 13000);</script>';
+                }else Def\Route::$module404=1;
+            }
+        }else Def\Route::$module404=1;
+    }
 }
