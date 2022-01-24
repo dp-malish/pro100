@@ -331,7 +331,7 @@ class LangLibCabMain{
             'new_pas_conf_bad'=>'The new password does not match...',
 
 
-            'upd_em_title'=>'Смена email',
+            'upd_em_title'=>'Change of email address',
             'upd_em'=>'Change email',
             'cur_em'=>'Current email:',
             'new_em'=>'New email:',
