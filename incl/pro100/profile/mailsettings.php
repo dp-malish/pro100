@@ -42,10 +42,12 @@ class MailSettings{
                         $txt_mail_old_t=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em_text'].$em.Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em_text_1'];
 
                         //новое письмо
+                        $txt_mail_new=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em'];//тема
+                        $txt_mail_new_t=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em_text'].$em.Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em_text_1'];
 
 
 
-                        echo json_encode(['err'=>false,'answer'=>$txt_mail_old_t,'l'=>2]);
+                        echo json_encode(['err'=>false,'answer'=>$txt_mail_new.'<br>'.$txt_mail_new_t,'l'=>2]);
 
                     }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['new_em_answer'],'l'=>2]);
 

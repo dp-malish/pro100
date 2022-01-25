@@ -7,7 +7,7 @@ use \incl\pro100\Profile as Prof;
 
 set_include_path(get_include_path().PATH_SEPARATOR.'../../../');spl_autoload_register();
 new Opt('pro100');//Def opt
-//Opt::$lang='en';
+Opt::$lang='en';
 
 if(Post\Post::issetPostArr()){
     User\User::$selfUser=new User\User();//первый вход без пароля!!!! важно
