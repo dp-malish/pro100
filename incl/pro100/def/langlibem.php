@@ -27,11 +27,11 @@ class LangLibEm{
 <p>A link for confirmation has been sent to the address you provided: ',
             'notice_old_em_text_1'=>'<br>If this was not you, please contact our technical support team support@sochelping.com immediately.</p>
             <br><p>Sincerely, Social network of financial support SocHelping.</p>
-            <br><p>Warning!<br>Please, do not reply to this email. It was sent automatically.</p>',
+            <br><p>Attention!<br>Please, do not reply to this email. It was sent automatically.</p>',
 
             'notice_new_em'=>'Confirmation of new email address',
             'notice_new_em_text'=>'<p>An application to change your e-mail address has been created.</p><p>Follow the link provided in this email to confirm the change and complete the process: ',
-            'notice_new_em_text_1'=>'</p><br><p>Regards, SocHelping Team</p><br><p>Warning!<br>Please,  do not reply to this email. It was sent automatically.</p>',
+            'notice_new_em_text_1'=>'</p><br><p>Regards, SocHelping Team</p><br><p>Attention!<br>Please,  do not reply to this email. It was sent automatically.</p>',
         ]
 
     ];

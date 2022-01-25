@@ -42,8 +42,10 @@ class MailSettings{
                         $txt_mail_old_t=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em_text'].$em.Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em_text_1'];
 
                         //новое письмо
+                        $link=Def\Opt::$protocol.Def\Opt::$site.'/em/'.$hash;
+
                         $txt_mail_new=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em'];//тема
-                        $txt_mail_new_t=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em_text'].$em.Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em_text_1'];
+                        $txt_mail_new_t=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em_text'].'<a href="'.$link.'">'.$link.'</a>'.Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_new_em_text_1'];
 
 
 
