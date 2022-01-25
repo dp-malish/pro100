@@ -5,11 +5,18 @@ class OptCab{
 
     const MAIL_WARNING='winipuh@gmail.com';
 
-    const MAIL_ON=false;
+    const MAIL_ON=true;
 
     const MAIL_SMTP='mail.';
 
-
+    const MAIL_AUTO=[
+        'user'=>'support@sochelping.com',
+        'pass'=>'Mistartuem',
+        'ssl'=>'',
+        'port'=>25,
+        'from'=>'support@sochelping.com',
+        'from_name'=>'no-reply'
+    ];
 
 
     const ARR_HI_PRIVILEGE=[300,301,302,303];
@@ -52,21 +59,5 @@ class OptCab{
     const PM_PASS='3016248';
     const PM_ALT_PHRASE='hjkksdbnHKJHiu89899089';//$perfect_alt_phrase = strtoupper(md5('hjkksdbnHKJHiu89899089'));
     const PM_COMMISSION=2;//КОМИССИЯ СИСТЕМЫ В ПРОЦЕНТАХ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

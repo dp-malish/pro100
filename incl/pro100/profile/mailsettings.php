@@ -33,9 +33,21 @@ class MailSettings{
 
                 if($DB->boolSQL($sql)){
 
-                    $txt_mail='';
+                    if(Def100\OptCab::MAIL_ON){
 
-                    echo json_encode(['err'=>false,'answer'=>$sql,'l'=>2]);
+                        Def100\SendMail::sendTextMail();
+
+                        //оповещение
+                        $txt_mail_old=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em'];//тема
+                        $txt_mail_old_t=Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em_text'].$em.Def100\LangLibEm::ARR_MAIL[Def\Opt::$lang]['notice_old_em_text_1'];
+
+                        //новое письмо
+
+
+
+                        echo json_encode(['err'=>false,'answer'=>$txt_mail_old_t,'l'=>2]);
+
+                    }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['new_em_answer'],'l'=>2]);
 
                 }else echo json_encode(['err'=>false,'answer'=>Def100\LangLibCabMain::ARR_PROFILE[Def\Opt::$lang]['post_null'],'l'=>1]);
 
