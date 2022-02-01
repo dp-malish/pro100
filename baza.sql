@@ -113,3 +113,13 @@ GROUP BY t_in.usr;
 
 CREATE VIEW sum_in AS SELECT t_in.usr,(SUM(t_in.sum)) as sum_in FROM `t_in` GROUP BY t_in.usr;
 CREATE VIEW sum_out AS SELECT t_out.usr,(SUM(t_out.sum)) as sum_out FROM `t_out` GROUP BY t_out.usr;
+
+SELECT * FROM sum_in LEFT JOIN `sum_out` ON sum_in.usr=sum_out.usr;
+SELECT * FROM t_users LEFT JOIN sum_out ON t_users.uid = sum_out.usr;
+
+SELECT t_users.*,sum_out.sum_out
+FROM t_users
+LEFT JOIN sum_out
+ON t_users.uid = sum_out.usr;
+
+SELECT t_users.*,sum_in.sum_in,sum_out.sum_out FROM t_users LEFT JOIN sum_in ON t_users.uid = sum_in.usr LEFT JOIN sum_out ON t_users.uid = sum_out.usr;
