@@ -111,7 +111,7 @@ LEFT JOIN `t_out`
 ON t_in.usr=t_out.usr
 GROUP BY t_in.usr;
 
-CREATE VIEW sum_in AS SELECT t_in.usr,(SUM(t_in.sum)) as sum_in FROM `t_in` GROUP BY t_in.usr;
+CREATE VIEW sum_in AS SELECT t_in.usr,(SUM(t_in.sum)) as sum_in FROM `t_in` WHERE ty=1 GROUP BY t_in.usr;
 CREATE VIEW sum_out AS SELECT t_out.usr,(SUM(t_out.sum)) as sum_out FROM `t_out` GROUP BY t_out.usr;
 
 SELECT * FROM sum_in LEFT JOIN `sum_out` ON sum_in.usr=sum_out.usr;
