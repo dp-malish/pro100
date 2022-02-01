@@ -100,3 +100,15 @@ CREATE TABLE IF NOT EXISTS em_upd(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
+SELECT t_in.id,t_in.usr,t_in.sum as sum_in,t_out.usr,t_out.sum as sum_out FROM `t_in`
+LEFT JOIN `t_out`
+ON t_in.usr=t_out.usr;
+
+SELECT t_in.usr,(SUM(t_in.sum)) as sum_in,
+		(SUM(t_out.sum)) as sum_out
+        FROM `t_in`
+LEFT JOIN `t_out`
+ON t_in.usr=t_out.usr
+GROUP BY t_in.usr;
+
+CREATE VIEW sum_in AS SELECT t_in.usr,(SUM(t_in.sum)) as sum_in FROM `t_in` GROUP BY t_in.usr;
