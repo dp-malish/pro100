@@ -40,7 +40,7 @@ class OptCab{
     static $arr_sanction_list=[];//Login
 
     const  LEVEL_COST=[
-        '1' => '100',
+        '1' => '30',
         '2' => '200',
         '3' => '1000',
         '4' => '7000'];

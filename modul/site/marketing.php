@@ -1,6 +1,6 @@
 <?php
 namespace lib\Def;
-
+use incl\pro100\Def as Def100;
 Opt::$css.='<link rel="stylesheet" href="/css/marketing/m1.css">
     <link rel="stylesheet" href="/css/marketing/m2.css">
     <link rel="stylesheet" href="/css/marketing/m3.css">';
@@ -31,7 +31,7 @@ Opt::$main_content.='<main>
     <div id="m2_l1"><h2>INTRODUCTION TO MARKETING</h2></div>
     <div class="maxw">
         <div id="m2_l2">
-            <p>Marketing of the project is built in such a way that each participant activates his/her account with a one-time cost of $100, thus opening access to building his/her own highly profitable online business. Filling the 1st line 3 partners (participants invited by you), activation of the following lines is due to the construction of your structure (filling the lines of a certain number of participants) without further investment.</p>
+            <p>Marketing of the project is built in such a way that each participant activates his/her account with a one-time cost of $'.Def100\OptCab::LEVEL_COST[1].', thus opening access to building his/her own highly profitable online business. Filling the 1st line 3 partners (participants invited by you), activation of the following lines is due to the construction of your structure (filling the lines of a certain number of participants) without further investment.</p>
         </div>
     </div>
 

@@ -111,8 +111,8 @@ LEFT JOIN `t_out`
 ON t_in.usr=t_out.usr
 GROUP BY t_in.usr;
 
-CREATE VIEW sum_in AS SELECT t_in.usr,(SUM(t_in.sum)) as sum_in FROM `t_in` WHERE ty=1 GROUP BY t_in.usr;
-CREATE VIEW sum_out AS SELECT t_out.usr,(SUM(t_out.sum)) as sum_out FROM `t_out` GROUP BY t_out.usr;
+CREATE VIEW sp AS SELECT t_in.usr as p,(SUM(t_in.sum)) as sp FROM `t_in` WHERE ty=1 GROUP BY t_in.usr;
+CREATE VIEW sm AS SELECT t_out.usr as p,(SUM(t_out.sum)) as sm FROM `t_out` GROUP BY t_out.usr;
 
 SELECT * FROM sum_in LEFT JOIN `sum_out` ON sum_in.usr=sum_out.usr;
 SELECT * FROM t_users LEFT JOIN sum_out ON t_users.uid = sum_out.usr;
@@ -122,4 +122,5 @@ FROM t_users
 LEFT JOIN sum_out
 ON t_users.uid = sum_out.usr;
 
-SELECT t_users.*,sum_in.sum_in,sum_out.sum_out FROM t_users LEFT JOIN sum_in ON t_users.uid = sum_in.usr LEFT JOIN sum_out ON t_users.uid = sum_out.usr;
+
+SELECT t_users.*,sp.sp,sm.sm FROM t_users LEFT JOIN sp ON t_users.uid = sp.p LEFT JOIN sm ON t_users.uid = sm.p;
