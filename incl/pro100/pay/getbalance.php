@@ -12,7 +12,7 @@ class GetBalance{
     public $reserve=0;
     public $free=0;
 
-    public $current_limit=0;
+    public $current_limit=0;//Затраты на овышения уровня
 
     function FullView(){
 
