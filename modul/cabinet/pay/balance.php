@@ -20,7 +20,10 @@ Opt::$main_content.='
 
     Opt::$main_content.=$usr_bal->FullView();
 
+Opt::$main_content.='<br>Всего получено в проекте: '.$usr_bal->all_p.'<br>';
 
+
+Opt::$main_content.='<br>Всего выведено: '.$usr_bal->all_m.'<br>';
 
     Opt::$main_content.='</div>    
     </div>
