@@ -40,10 +40,12 @@ class OptCab{
     static $arr_sanction_list=[];//Login
 
     const  LEVEL_COST=[
-        '1' => '10',
-        '2' => '20',
-        '3' => '50',
-        '4' => '100'];
+        '1' => '30',
+        '2' => '60',
+        '3' => '300',
+        '4' => '3000'];
+
+    const COMMISSION=20;
 
     static function paysSystems($id) {
         switch($id){
