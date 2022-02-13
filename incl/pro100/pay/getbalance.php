@@ -11,9 +11,9 @@ class GetBalance{
     public $all_m=0;
     public $reserve=0;
     public $free=0;
-    public $free_level=0;
-    public $free_limit=[];
-    public $free_limit_residue=0;
+    public $free_level=0;//Саободные средства сумма по уровню
+    public $free_limit=[];//Саободные средства на уровне
+    public $free_limit_residue=0;//Общий возможный доход/остаток именно пользователя с учётом всех выщетов
 
     public $current_limit=0;//Затраты на овышения уровня
 
@@ -24,22 +24,19 @@ class GetBalance{
         $DB=new SQLi();
         $res=$DB->strSQL($sql);
 
-        //$cur_level_m;
-        //$this->current_limit=
-
-        $this->all_p=$res['sp']-Def100\OptCab::LEVEL_COST[1];
-
         $txt='';
 
         $partners=[0,3,9,27,81];
 
-        //$elements = count ($goroda);
         for($index=1;$index<=User\User::$arrDBUser['level'];$index++){
             //100*Def100\OptCab::COMMISSION
             $txt.=$index.' - '.  Def100\OptCab::LEVEL_COST[$index] .'-'.(Def100\OptCab::LEVEL_COST[$index]*$partners[$index]-(Def100\OptCab::LEVEL_COST[$index]*$partners[$index]/100*Def100\OptCab::COMMISSION)).  '<br>';
 
+            //Саободные средства на уровне
             $this->free_limit[$index]=Def100\OptCab::LEVEL_COST[$index]*$partners[$index]-(Def100\OptCab::LEVEL_COST[$index]*$partners[$index]/100*Def100\OptCab::COMMISSION);
+            //Саободные средства сумма по уровню
             $this->free_level+=$this->free_limit[$index];
+            //Общий возможный доход/остаток именно пользователя с учётом всех выщетов
             $this->free_limit_residue+=Def100\OptCab::LEVEL_COST[$index+1]-$this->free_limit[$index];
 
 
@@ -55,11 +52,15 @@ class GetBalance{
 
 
 
-        return $res['uid'].'<br>'.$res['level'].'<br>'.$res['bal'].'<br>'.$res['sp'].'<br>'.$res['sm'].'<br><br><br><br>'
+        return $res['uid'].'<br>'
+            .$res['level'].'<br>'
+            //$res['bal'].
+            .'<br>Всего плучено в проекте: '.$res['sp']
+            .'<br>Всего выведено из проекта:'.$res['sm'].'<br><br><br><br>'
             .$txt.
             '<br><br>Общий доход на уровне: '.($index-1). ' - '.$this->free_level
 
-            .'<br><br>Общий возможный остаток: '.$this->free_limit_residue.'<br><br>'.User\User::$arrDBUser['level'];
+            .'<br><br>Общий возможный доход/остаток: '.$this->free_limit_residue.'<br><br>'.User\User::$arrDBUser['level'];
 
 
     }
