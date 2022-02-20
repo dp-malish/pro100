@@ -44,6 +44,7 @@ class OptCab{
         '2' => '60',
         '3' => '300',
         '4' => '3000'];
+    const PARTNERS=[0,3,9,27,81];
 
     const COMMISSION=20;
 

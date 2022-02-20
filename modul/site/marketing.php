@@ -1,6 +1,6 @@
 <?php
 namespace lib\Def;
-use incl\pro100\Def as Def100;
+
 Opt::$css.='<link rel="stylesheet" href="/css/marketing/m1.css">
     <link rel="stylesheet" href="/css/marketing/m2.css">
     <link rel="stylesheet" href="/css/marketing/m3.css">';
@@ -9,7 +9,7 @@ Opt::$css.='<link rel="stylesheet" href="/css/marketing/m1.css">
 
 
 Opt::$title='SOCHELPING MARKETING PLAN - SOCIAL SERVICE OF FINANCIAL MUTUAL SUPPORT';
-Opt::$description='Marketing of the Sochelping project is built in such a way that each participant activates his/her account with a one-time cost of $100, thus opening access to building his/her own highly profitable online business.';
+Opt::$description='Marketing of the Sochelping project is built in such a way that each participant activates his/her account with a one-time cost of $30, thus opening access to building his/her own highly profitable online business.';
 
 
 
@@ -23,7 +23,7 @@ Opt::$main_content.='<main>
     <div id="m1_l2"></div>
     <div class="maxw">
         <div id="m1_l3">
-            <p>SocHelping.com is an alliance of like-minded people, giving everyone the opportunity to create Their own international business with a minimum financial investment of over $450,000. By following simple steps and developing Your business structure, we help each other to achieve quick and profitable results.</p>
+            <p>SocHelping.com is an alliance of like-minded people, giving everyone the opportunity to create Their own international business with a minimum financial investment of over $198 000. By following simple steps and developing Your business structure, we help each other to achieve quick and profitable results.</p>
         </div>
     </div>
 </div>
@@ -31,7 +31,7 @@ Opt::$main_content.='<main>
     <div id="m2_l1"><h2>INTRODUCTION TO MARKETING</h2></div>
     <div class="maxw">
         <div id="m2_l2">
-            <p>Marketing of the project is built in such a way that each participant activates his/her account with a one-time cost of $'.Def100\OptCab::LEVEL_COST[1].', thus opening access to building his/her own highly profitable online business. Filling the 1st line 3 partners (participants invited by you), activation of the following lines is due to the construction of your structure (filling the lines of a certain number of participants) without further investment.</p>
+            <p>Marketing of the project is built in such a way that each participant activates his/her account with a one-time cost of $30, thus opening access to building his/her own highly profitable online business. Filling the 1st line 3 partners (participants invited by you), activation of the following lines is due to the construction of your structure (filling the lines of a certain number of participants) without further investment.</p>
         </div>
     </div>
 
@@ -52,7 +52,7 @@ Opt::$main_content.='<main>
         <h2>Your Profit are fixed from each line:</h2>
     </div>
     <!--    <div id="in3_l2" class="ac">
-            <p>First line`s cost $100. This is the end of your investment.</p>
+            <p>First line`s cost $30. This is the end of your investment.</p>
             <p>The following lines are activated as your structure fills up with partners.</p>
         </div>-->
     <div id="m3_l3">
@@ -68,27 +68,27 @@ Opt::$main_content.='<main>
                 </div>
                 <div>
                     <div class="in3_l3_t_c">1</div>
-                    <div>$100</div>
+                    <div>$30</div>
                     <div>3</div>
-                    <div>$240</div>
+                    <div>$72</div>
                 </div>
                 <div>
                     <div class="in3_l3_t_c">2</div>
-                    <div>$200</div>
+                    <div>$60</div>
                     <div>9</div>
-                    <div>$1440</div>
+                    <div>$432</div>
                 </div>
                 <div>
                     <div class="in3_l3_t_c">3</div>
-                    <div>$1000</div>
+                    <div>$300</div>
                     <div>27</div>
-                    <div>$21600</div>
+                    <div>$6 480</div>
                 </div>
                 <div>
                     <div class="in3_l3_t_c">4</div>
-                    <div>$7000</div>
+                    <div>$3000</div>
                     <div>81</div>
-                    <div>$453600</div>
+                    <div>$194 400</div>
                 </div>
 
             </div>
@@ -102,7 +102,7 @@ Opt::$main_content.='<main>
             <p>If You want to continue to develop your structure, You just pay a fixed amount to activate the next line or add the missing amount of usd.</p>
             <h2>The overflow system. Advantages.</h2>
             <p>The system of spill-overs is actively working in the structure. What does it mean?</p>
-            <p>If Your first line is already filled, the new participant registering on Your link gets You to the second line, while the participant of the second line, under which the new registered, also receives Profit and fills his line with Your help. If the second line is just as - ready, he passes to You on the third line and so on. Thus, You have an incentive to help other participants to fill their lines, thereby increasing Your income and getting closer to the cherished 500k much faster.</p>
+            <p>If Your first line is already filled, the new participant registering on Your link gets You to the second line, while the participant of the second line, under which the new registered, also receives Profit and fills his line with Your help. If the second line is just as - ready, he passes to You on the third line and so on. Thus, You have an incentive to help other participants to fill their lines, thereby increasing Your income and getting closer to the cherished $198 000 much faster.</p>
             <p>Every time one of Your members completes a cash deposit, You automatically receive a cash transfer to your account, according to Your level!</p>
             <p>You may create as many accounts as You want. Every succeeding account is being developed in the same way as Service rules.</p>
             <p>The Service Commission charges 20% from each line.</p>

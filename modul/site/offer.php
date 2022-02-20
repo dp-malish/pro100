@@ -71,10 +71,10 @@ Opt::$main_content.='<main>
             <h3>4. Rules for Financial Assistance</h3>
             <p>Donating/financially assisting other members of the community is a one time process for the entire time they are in the community.</p>
             <h3>4.1 The cost of providing financial help:</h3>
-            <p>100 Dollars USA (the First level) - sent to the participant, which is a direct informational curator of this participant.</p>
-            <p>200 Dollars USA (Second level) - sent to the information curator of the second level of the higher partner structure of this participant.</p>
-            <p>1000 Dollars USA  (the Third level) - is sent to the information curator of the third level of the superior partner structure of the given participant.</p>
-            <p>7000 Dollars USA  (Fourth level) - forwarded to the information supervisor of the fourth level of the superior partner structure of this participant.</p>
+            <p>30 Dollars USA (the First level) - sent to the participant, which is a direct informational curator of this participant.</p>
+            <p>60 Dollars USA (Second level) - sent to the information curator of the second level of the higher partner structure of this participant.</p>
+            <p>300 Dollars USA  (the Third level) - is sent to the information curator of the third level of the superior partner structure of the given participant.</p>
+            <p>3 000 Dollars USA  (Fourth level) - forwarded to the information supervisor of the fourth level of the superior partner structure of this participant.</p>
             </section>
         </div>
     </div>

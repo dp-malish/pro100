@@ -12,7 +12,7 @@ Opt::$css.='<link rel="stylesheet" href="/css/index/in1.css">
 
 
 Opt::$title='SOCIAL NETWORK OF FINANCIAL MUTUAL SUPPORT';
-Opt::$description='SocHelping is an alliance of like-minded people, giving everyone the opportunity to create Their own international business with a minimum financial investment of over $450,000. By following simple steps and developing Your business structure, we help each other to achieve quick and profitable results.';
+Opt::$description='SocHelping is an alliance of like-minded people, giving everyone the opportunity to create Their own international business with a minimum financial investment of over $198 000. By following simple steps and developing Your business structure, we help each other to achieve quick and profitable results.';
 
 
 
@@ -23,7 +23,7 @@ Opt::$main_content.='<main>
     <div id="in1_l1">
         <h1>SOCIAL NETWORK OF FINANCIAL MUTUAL SUPPORT</h1>
     </div>
-    <div id="in1_l2">PROFIT IS OVER $450 000</div>
+    <div id="in1_l2">PROFIT IS OVER $198 000</div>
 
     <div id="in1_l3"><div id="particles-js"></div></div>
     <div id="in1_l4">
@@ -121,7 +121,7 @@ Opt::$main_content.='<main>
         <h2>ACTIVE MARKETING PLAN</h2>
     </div>
     <div id="in3_l2" class="ac">
-        <p>First line`s cost $100. This is the end of your investment.</p>
+        <p>First line`s cost $30. This is the end of your investment.</p>
         <p>The following lines are activated as your structure fills up with partners.</p>
     </div>
     <div id="in3_l3">
@@ -137,27 +137,27 @@ Opt::$main_content.='<main>
             </div>
             <div>
                 <div class="in3_l3_t_c">1</div>
-                <div>$100</div>
+                <div>$30</div>
                 <div>3</div>
-                <div>$240</div>
+                <div>$72</div>
             </div>
             <div>
                 <div class="in3_l3_t_c">2</div>
-                <div>$200</div>
+                <div>$60</div>
                 <div>9</div>
-                <div>$1440</div>
+                <div>$432</div>
             </div>
                 <div>
                     <div class="in3_l3_t_c">3</div>
-                    <div>$1000</div>
+                    <div>$300</div>
                     <div>27</div>
-                    <div>$21600</div>
+                    <div>$6 480</div>
                 </div>
                 <div>
                     <div class="in3_l3_t_c">4</div>
-                    <div>$7000</div>
+                    <div>$3000</div>
                     <div>81</div>
-                    <div>$453600</div>
+                    <div>$194 400</div>
                 </div>
 
             </div>
