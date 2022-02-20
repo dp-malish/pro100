@@ -39,7 +39,7 @@ class GetBalance{
             //Всего плучено в проекте (таблица sql минус активация уровней соглавсно твоему)
             if($index!=1)$this->all_p-=Def100\OptCab::LEVEL_COST[$index];
 
-            //Саободные средства на уровне
+            //Всего прибыль на уровне
             $this->free_limit[$index]=Def100\OptCab::LEVEL_COST[$index]*Def100\OptCab::PARTNERS[$index]-(Def100\OptCab::LEVEL_COST[$index]*Def100\OptCab::PARTNERS[$index]/100*Def100\OptCab::COMMISSION);
 
             //Саободные средства сумма по уровню
@@ -53,6 +53,7 @@ class GetBalance{
 
 
         }
+
 
         //Общий баланс сейчас
         $this->all_p;
@@ -83,7 +84,9 @@ class GetBalance{
             '<br>Саободные средства на уровне 4: '.$this->free_limit[4].' Остаток для вывода по уровню: '.$this->free_limit_withdrawal[4].
             '<br><br>Общий доход на уровне: '.$this->free_level
 
-            .'<br><br>Общий возможный доход/остаток: '.$this->free_limit_residue.'<br><br>'.User\User::$arrDBUser['level'].'<br><br><br><br>Общий баланс сейчас: '.$this->all_p.' Выведено уже: '.$this->all_m
+            .'<br><br>Общий возможный доход/остаток: '.$this->free_limit_residue.'<br><br>'.User\User::$arrDBUser['level'].
+            '<br><br><br><br>Общий баланс сейчас: '.$this->all_p.
+            ' Выведено уже: '.$this->all_m
 
 
             ;
